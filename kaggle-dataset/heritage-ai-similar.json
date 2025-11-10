@@ -1,0 +1,228 @@
+[
+  {
+    "slug": "asvakranta-temple",
+    "heuristic": "similar-state",
+    "state": "Assam",
+    "matches": [
+      {
+        "score": 1,
+        "site": {
+          "slug": "asvakranta-temple",
+          "name": "Asvakranta Temple Guwahati",
+          "state": "Assam",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.9,
+        "site": {
+          "slug": "sivasagar-fort",
+          "name": "Sivasagar Fort Sivasagar",
+          "state": "Assam",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.8,
+        "site": {
+          "slug": "jorhat-fort",
+          "name": "Jorhat Fort Jorhat",
+          "state": "Assam",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.7,
+        "site": {
+          "slug": "dah-parvatiya-temple-ruins",
+          "name": "Dah Parvatiya Temple Ruins Tezpur",
+          "state": "Assam",
+          "country": "India"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "kamalasagar-kali-temple-kasba",
+    "heuristic": "similar-state",
+    "state": "Tripura",
+    "matches": [
+      {
+        "score": 1,
+        "site": {
+          "slug": "kamalasagar-kali-temple-kasba",
+          "name": "Kamalasagar Kali Temple Kasba",
+          "state": "Tripura",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.9,
+        "site": {
+          "slug": "lakshmi-narayan-temple-agartala",
+          "name": "Lakshmi Narayan Temple Agartala",
+          "state": "Tripura",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.8,
+        "site": {
+          "slug": "uma-maheshwari-temple-agartala",
+          "name": "Uma Maheshwari Temple Agartala",
+          "state": "Tripura",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.7,
+        "site": {
+          "slug": "battala-mahadev-temple-tripura",
+          "name": "Battala Mahadev Temple Agartala",
+          "state": "Tripura",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.6,
+        "site": {
+          "slug": "chaturdasha-devata-temple-old-agartala",
+          "name": "Chaturdasha Devata Temple Agartala",
+          "state": "Tripura",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.5,
+        "site": {
+          "slug": "gunabati-group-of-temples",
+          "name": "Gunabati Temples Udaipur Tripura",
+          "state": "Tripura",
+          "country": "India"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "agroha-dham",
+    "heuristic": "similar-state",
+    "state": "Haryana",
+    "matches": [
+      {
+        "score": 1,
+        "site": {
+          "slug": "agroha-dham",
+          "name": "Agroha Dham Hisar",
+          "state": "Haryana",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.9,
+        "site": {
+          "slug": "bhuteshwar-temple",
+          "name": "Bhuteshwar Temple Jind",
+          "state": "Haryana",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.8,
+        "site": {
+          "slug": "firoz-shah-palace-complex",
+          "name": "Firoz Shah Palace Complex Hisar",
+          "state": "Haryana",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.7,
+        "site": {
+          "slug": "jyotisar-tirth",
+          "name": "Jyotisar Tirth Kurukshetra",
+          "state": "Haryana",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.6,
+        "site": {
+          "slug": "karna-fort",
+          "name": "Karna Fort Karnal",
+          "state": "Haryana",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.5,
+        "site": {
+          "slug": "mata-mansa-devi-mandir",
+          "name": "Mata Mansa Devi Mandir Panchkula",
+          "state": "Haryana",
+          "country": "India"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "akashiganga-temple",
+    "heuristic": "similar-state",
+    "state": "Arunachal Pradesh",
+    "matches": [
+      {
+        "score": 1,
+        "site": {
+          "slug": "akashiganga-temple",
+          "name": "Akashiganga Temple Along West Siang",
+          "state": "Arunachal Pradesh",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.9,
+        "site": {
+          "slug": "bhismaknagar-fort",
+          "name": "Bhismaknagar Fort Roing",
+          "state": "Arunachal Pradesh",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.8,
+        "site": {
+          "slug": "bomdila-monastery",
+          "name": "Bomdila Monastery Bomdila",
+          "state": "Arunachal Pradesh",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.7,
+        "site": {
+          "slug": "malinithan-temple",
+          "name": "Malinithan Temple Likabali",
+          "state": "Arunachal Pradesh",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.6,
+        "site": {
+          "slug": "meghna-cave-temple",
+          "name": "Meghna Cave Temple Bhalukpong",
+          "state": "Arunachal Pradesh",
+          "country": "India"
+        }
+      },
+      {
+        "score": 0.5,
+        "site": {
+          "slug": "parshuram-kund-temple",
+          "name": "Parshuram Kund Temple Lohit",
+          "state": "Arunachal Pradesh",
+          "country": "India"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "title": "Inheritage Cultural Heritage Dataset (India)",
+  "subtitle": "Open dataset of Indian & GLobal Indic Heritage Sites, temples, and monuments with architecture, cultural, geospatial, media, and AI metadata.",
+  "description": "This dataset is maintained by the Inheritage Foundation and mirrors the public API suite (v1.0). It includes denormalised records for 7,000+ Indian heritage sites, geospatial features (GeoJSON), media bundles (images, tours, CAD), citation metadata, platform headers (rate limits, caching), and AI-ready narratives/embeddings. All data is published under CC BY 4.0 with mandatory visible attribution. Developers can access the live API at https://inheritage.foundation/api/v1 and the TypeScript SDK at https://www.npmjs.com/package/@inheritage-foundation/sdk.",
+  "id": "inheritage-cultural-heritage-dataset",
+  "licenses": [
+    {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "resources": [
+    {
+      "path": "heritage-sites.csv",
+      "description": "Core catalogue of heritage sites with architecture, visitor info, cultural context, media, status, citations, and canonical URLs.",
+      "format": "csv"
+    },
+    {
+      "path": "heritage-geodata.geojson",
+      "description": "GeoJSON FeatureCollection of heritage sites with coordinates and citation metadata.",
+      "format": "geojson"
+    },
+    {
+      "path": "heritage-media.json",
+      "description": "Media bundles (images, tours, CAD, documents) linked to heritage sites, including watermark directives and citation text.",
+      "format": "json"
+    },
+    {
+      "path": "heritage-ai-similar.json",
+      "description": "Sample output from the AI context/similarity endpoint showing deterministic embeddings and cosine-ranked matches.",
+      "format": "json"
+    }
+  ],
+  "keywords": [
+    "heritage",
+    "india",
+    "culture",
+    "temples",
+    "architecture",
+    "geospatial",
+    "open-data",
+    "api",
+    "ai"
+  ],
+  "collaborators": [
+    {
+      "username": "inheritagefoundation",
+      "type": "organization"
+    }
+  ],
+  "private": false,
+  "isDraft": false,
+  "source": "https://inheritage.foundation/api/v1",
+  "maintainer": "Inheritage Foundation",
+  "dataUrl": "https://inheritage.foundation/api/v1",
+  "url": "https://inheritage.foundation/dataset"
+}
+

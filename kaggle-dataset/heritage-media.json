@@ -1,0 +1,978 @@
+{
+  "generated_from": "local_snapshot",
+  "data": [
+    {
+      "slug": "munneswaram-temple-chilaw-sri-lanka",
+      "primary_image": "https://munneswaram.org/uploads/images/munneswaram-main.jpg",
+      "media": [
+        "https://munneswaram.org/uploads/images/munneswaram-temple.jpg",
+        "https://munneswaram.org/uploads/images/munneswaram-festival.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "sanatan-mandir-cultural-centre-markham",
+      "primary_image": "https://smcc.ca/wp-content/uploads/2023/03/SMCC-Exterior.jpg",
+      "media": [
+        "https://smcc.ca/wp-content/uploads/2023/03/SMCC-Interior-Mandapam.jpg",
+        "https://smcc.ca/wp-content/uploads/2023/03/SMCC-Auditorium.jpg",
+        "https://smcc.ca/wp-content/uploads/2023/03/SMCC-Community-Event.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "asvakranta-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Asvakranta_Temple_Kamrup_Assam_India.jpg/1200px-Asvakranta_Temple_Kamrup_Assam_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Asvakranta_Temple_Kamrup_Assam_India.jpg/1200px-Asvakranta_Temple_Kamrup_Assam_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Asvakranta_Temple_Architecture.jpg/1200px-Asvakranta_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Asvakranta_Temple_Complex.jpg/1200px-Asvakranta_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "sivasagar-fort",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Sivasagar_Fort_Sivasagar_Assam_India.jpg/1200px-Sivasagar_Fort_Sivasagar_Assam_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Sivasagar_Fort_Sivasagar_Assam_India.jpg/1200px-Sivasagar_Fort_Sivasagar_Assam_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sivasagar_Fort_Architecture.jpg/1200px-Sivasagar_Fort_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sivasagar_Fort_Interior.jpg/1200px-Sivasagar_Fort_Interior.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "jorhat-fort",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Jorhat_Fort_Jorhat_Assam_India.jpg/1200px-Jorhat_Fort_Jorhat_Assam_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Jorhat_Fort_Jorhat_Assam_India.jpg/1200px-Jorhat_Fort_Jorhat_Assam_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Jorhat_Fort_Architecture.jpg/1200px-Jorhat_Fort_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Jorhat_Fort_Interior.jpg/1200px-Jorhat_Fort_Interior.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "kamalasagar-kali-temple-kasba",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Kamalasagar_Kali_Temple_Kasba.jpg/1200px-Kamalasagar_Kali_Temple_Kasba.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Kamalasagar_Kali_Temple_Kasba.jpg/1200px-Kamalasagar_Kali_Temple_Kasba.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kamalasagar_Kali_Temple_Lake.jpg/1200px-Kamalasagar_Kali_Temple_Lake.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Kamalasagar_Kali_Temple_Architecture.jpg/1200px-Kamalasagar_Kali_Temple_Architecture.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "agroha-dham",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Agroha_Dham_Hisar_Haryana_India.jpg/1200px-Agroha_Dham_Hisar_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Agroha_Dham_Hisar_Haryana_India.jpg/1200px-Agroha_Dham_Hisar_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Agroha_Dham_Architecture.jpg/1200px-Agroha_Dham_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Agroha_Dham_Complex.jpg/1200px-Agroha_Dham_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "akashiganga-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Akashiganga_Temple_Arunachal_Pradesh_India.jpg/1200px-Akashiganga_Temple_Arunachal_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Akashiganga_Temple_Arunachal_Pradesh_India.jpg/1200px-Akashiganga_Temple_Arunachal_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Akashiganga_Temple_Architecture.jpg/1200px-Akashiganga_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Akashiganga_Temple_Mountain_View.jpg/1200px-Akashiganga_Temple_Mountain_View.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "baba-balak-nath-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Baba_Balak_Nath_Temple_Hamirpur_Himachal_Pradesh_India.jpg/1200px-Baba_Balak_Nath_Temple_Hamirpur_Himachal_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Baba_Balak_Nath_Temple_Hamirpur_Himachal_Pradesh_India.jpg/1200px-Baba_Balak_Nath_Temple_Hamirpur_Himachal_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Baba_Balak_Nath_Temple_Architecture.jpg/1200px-Baba_Balak_Nath_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Baba_Balak_Nath_Temple_Complex.jpg/1200px-Baba_Balak_Nath_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "baba-harihar-nath-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Baba_Harihar_Nath_Temple_Sonepur_Bihar_India.jpg/1200px-Baba_Harihar_Nath_Temple_Sonepur_Bihar_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Baba_Harihar_Nath_Temple_Sonepur_Bihar_India.jpg/1200px-Baba_Harihar_Nath_Temple_Sonepur_Bihar_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Baba_Harihar_Nath_Temple_Architecture.jpg/1200px-Baba_Harihar_Nath_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Baba_Harihar_Nath_Temple_Complex.jpg/1200px-Baba_Harihar_Nath_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "bala-hanuman-mandir",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bala_Hanuman_Mandir_Jamnagar_Gujarat_India.jpg/1200px-Bala_Hanuman_Mandir_Jamnagar_Gujarat_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bala_Hanuman_Mandir_Jamnagar_Gujarat_India.jpg/1200px-Bala_Hanuman_Mandir_Jamnagar_Gujarat_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Bala_Hanuman_Mandir_Architecture.jpg/1200px-Bala_Hanuman_Mandir_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Bala_Hanuman_Mandir_Complex.jpg/1200px-Bala_Hanuman_Mandir_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "baripada-palace",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Baripada_Palace_Mayurbhanj_Odisha_India.jpg/1200px-Baripada_Palace_Mayurbhanj_Odisha_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Baripada_Palace_Mayurbhanj_Odisha_India.jpg/1200px-Baripada_Palace_Mayurbhanj_Odisha_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Baripada_Palace_Architecture.jpg/1200px-Baripada_Palace_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Baripada_Palace_Complex.jpg/1200px-Baripada_Palace_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "barrackpore-fort",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Barrackpore_Fort_West_Bengal_India.jpg/1200px-Barrackpore_Fort_West_Bengal_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Barrackpore_Fort_West_Bengal_India.jpg/1200px-Barrackpore_Fort_West_Bengal_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Barrackpore_Fort_Architecture.jpg/1200px-Barrackpore_Fort_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Barrackpore_Fort_Bastion.jpg/1200px-Barrackpore_Fort_Bastion.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "bhismaknagar-fort",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bhismaknagar_Fort_Arunachal_Pradesh_India.jpg/1200px-Bhismaknagar_Fort_Arunachal_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bhismaknagar_Fort_Arunachal_Pradesh_India.jpg/1200px-Bhismaknagar_Fort_Arunachal_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Bhismaknagar_Fort_Architecture.jpg/1200px-Bhismaknagar_Fort_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Bhismaknagar_Fort_Walls.jpg/1200px-Bhismaknagar_Fort_Walls.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "bhuteshwar-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bhuteshwar_Temple_Jind_Haryana_India.jpg/1200px-Bhuteshwar_Temple_Jind_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bhuteshwar_Temple_Jind_Haryana_India.jpg/1200px-Bhuteshwar_Temple_Jind_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Bhuteshwar_Temple_Architecture.jpg/1200px-Bhuteshwar_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Bhuteshwar_Temple_Complex.jpg/1200px-Bhuteshwar_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "bomdila-monastery",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bomdila_Monastery_Arunachal_Pradesh_India.jpg/1200px-Bomdila_Monastery_Arunachal_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bomdila_Monastery_Arunachal_Pradesh_India.jpg/1200px-Bomdila_Monastery_Arunachal_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Bomdila_Monastery_Architecture.jpg/1200px-Bomdila_Monastery_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Bomdila_Monastery_Prayer_Hall.jpg/1200px-Bomdila_Monastery_Prayer_Hall.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "chandrahasini-devi-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Chandrahasini_Devi_Temple_Janjgir_Chhattisgarh_India.jpg/1200px-Chandrahasini_Devi_Temple_Janjgir_Chhattisgarh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Chandrahasini_Devi_Temple_Janjgir_Chhattisgarh_India.jpg/1200px-Chandrahasini_Devi_Temple_Janjgir_Chhattisgarh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Chandrahasini_Devi_Temple_Architecture.jpg/1200px-Chandrahasini_Devi_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Chandrahasini_Devi_Temple_Complex.jpg/1200px-Chandrahasini_Devi_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "charantala-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Charantala_Temple_Shillong_Meghalaya_India.jpg/1200px-Charantala_Temple_Shillong_Meghalaya_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Charantala_Temple_Shillong_Meghalaya_India.jpg/1200px-Charantala_Temple_Shillong_Meghalaya_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Charantala_Temple_Architecture.jpg/1200px-Charantala_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Charantala_Temple_Complex.jpg/1200px-Charantala_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "chingnungkok-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Chingnungkok_Temple_Imphal_Manipur_India.jpg/1200px-Chingnungkok_Temple_Imphal_Manipur_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Chingnungkok_Temple_Imphal_Manipur_India.jpg/1200px-Chingnungkok_Temple_Imphal_Manipur_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Chingnungkok_Temple_Architecture.jpg/1200px-Chingnungkok_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Chingnungkok_Temple_Complex.jpg/1200px-Chingnungkok_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "chitai-golu-devta-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Chitai_Golu_Devta_Temple_Uttarakhand_India.jpg/1200px-Chitai_Golu_Devta_Temple_Uttarakhand_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Chitai_Golu_Devta_Temple_Uttarakhand_India.jpg/1200px-Chitai_Golu_Devta_Temple_Uttarakhand_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Chitai_Golu_Devta_Temple_Architecture.jpg/1200px-Chitai_Golu_Devta_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Chitai_Golu_Devta_Temple_Complex.jpg/1200px-Chitai_Golu_Devta_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "city-palace-jaipur",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/City_Palace_Jaipur_Rajasthan_India.jpg/1200px-City_Palace_Jaipur_Rajasthan_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/City_Palace_Jaipur_Rajasthan_India.jpg/1200px-City_Palace_Jaipur_Rajasthan_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/City_Palace_Architecture.jpg/1200px-City_Palace_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/City_Palace_Complex.jpg/1200px-City_Palace_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "doshiwada-ni-haveli",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Doshiwada_Ni_Haveli_Ahmedabad_Gujarat_India.jpg/1200px-Doshiwada_Ni_Haveli_Ahmedabad_Gujarat_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Doshiwada_Ni_Haveli_Ahmedabad_Gujarat_India.jpg/1200px-Doshiwada_Ni_Haveli_Ahmedabad_Gujarat_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Doshiwada_Ni_Haveli_Architecture.jpg/1200px-Doshiwada_Ni_Haveli_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Doshiwada_Ni_Haveli_Complex.jpg/1200px-Doshiwada_Ni_Haveli_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "durga-mandir-serchhip",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Durga_Mandir_Serchhip_Mizoram_India.jpg/1200px-Durga_Mandir_Serchhip_Mizoram_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Durga_Mandir_Serchhip_Mizoram_India.jpg/1200px-Durga_Mandir_Serchhip_Mizoram_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Durga_Mandir_Architecture_Serchhip.jpg/1200px-Durga_Mandir_Architecture_Serchhip.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Durga_Mandir_Complex_Serchhip.jpg/1200px-Durga_Mandir_Complex_Serchhip.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "dwarkamai-sai-baba-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Dwarkamai_Sai_Baba_Temple_Shillong_Meghalaya_India.jpg/1200px-Dwarkamai_Sai_Baba_Temple_Shillong_Meghalaya_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Dwarkamai_Sai_Baba_Temple_Shillong_Meghalaya_India.jpg/1200px-Dwarkamai_Sai_Baba_Temple_Shillong_Meghalaya_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Dwarkamai_Sai_Baba_Temple_Architecture.jpg/1200px-Dwarkamai_Sai_Baba_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Dwarkamai_Sai_Baba_Temple_Complex.jpg/1200px-Dwarkamai_Sai_Baba_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "firoz-shah-palace-complex",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Firoz_Shah_Palace_Complex_Hisar_Haryana_India.jpg/1200px-Firoz_Shah_Palace_Complex_Hisar_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Firoz_Shah_Palace_Complex_Hisar_Haryana_India.jpg/1200px-Firoz_Shah_Palace_Complex_Hisar_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Firoz_Shah_Palace_Complex_Architecture.jpg/1200px-Firoz_Shah_Palace_Complex_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Firoz_Shah_Palace_Complex_Complex.jpg/1200px-Firoz_Shah_Palace_Complex_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "ganesh-mandir-champhai",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Ganesh_Mandir_Champhai_Mizoram_India.jpg/1200px-Ganesh_Mandir_Champhai_Mizoram_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Ganesh_Mandir_Champhai_Mizoram_India.jpg/1200px-Ganesh_Mandir_Champhai_Mizoram_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Ganesh_Mandir_Architecture_Champhai.jpg/1200px-Ganesh_Mandir_Architecture_Champhai.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Ganesh_Mandir_Complex_Champhai.jpg/1200px-Ganesh_Mandir_Complex_Champhai.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "gnana-saraswathi-temple-basar",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Gnana_Saraswathi_Temple_Basar_Telangana_India.jpg/1200px-Gnana_Saraswathi_Temple_Basar_Telangana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Gnana_Saraswathi_Temple_Basar_Telangana_India.jpg/1200px-Gnana_Saraswathi_Temple_Basar_Telangana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gnana_Saraswathi_Temple_Gopuram.jpg/1200px-Gnana_Saraswathi_Temple_Gopuram.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Gnana_Saraswathi_Temple_Courtyard.jpg/1200px-Gnana_Saraswathi_Temple_Courtyard.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "hanuman-mandir-aizawl",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Hanuman_Mandir_Aizawl_Mizoram_India.jpg/1200px-Hanuman_Mandir_Aizawl_Mizoram_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Hanuman_Mandir_Aizawl_Mizoram_India.jpg/1200px-Hanuman_Mandir_Aizawl_Mizoram_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Hanuman_Mandir_Architecture_Aizawl.jpg/1200px-Hanuman_Mandir_Architecture_Aizawl.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hanuman_Mandir_Complex_Aizawl.jpg/1200px-Hanuman_Mandir_Complex_Aizawl.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "hiyangthang-lairembi-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Hiyangthang_Lairembi_Temple_Manipur_India.jpg/1200px-Hiyangthang_Lairembi_Temple_Manipur_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Hiyangthang_Lairembi_Temple_Manipur_India.jpg/1200px-Hiyangthang_Lairembi_Temple_Manipur_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Hiyangthang_Lairembi_Temple_Architecture.jpg/1200px-Hiyangthang_Lairembi_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hiyangthang_Lairembi_Temple_Complex.jpg/1200px-Hiyangthang_Lairembi_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "iskcon-temple-aizawl",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ISKCON_Temple_Aizawl_Mizoram_India.jpg/1200px-ISKCON_Temple_Aizawl_Mizoram_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ISKCON_Temple_Aizawl_Mizoram_India.jpg/1200px-ISKCON_Temple_Aizawl_Mizoram_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/ISKCON_Temple_Architecture_Aizawl.jpg/1200px-ISKCON_Temple_Architecture_Aizawl.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/ISKCON_Temple_Complex_Aizawl.jpg/1200px-ISKCON_Temple_Complex_Aizawl.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "iskcon-temple-shillong",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ISKCON_Temple_Shillong_Meghalaya_India.jpg/1200px-ISKCON_Temple_Shillong_Meghalaya_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ISKCON_Temple_Shillong_Meghalaya_India.jpg/1200px-ISKCON_Temple_Shillong_Meghalaya_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/ISKCON_Temple_Architecture.jpg/1200px-ISKCON_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/ISKCON_Temple_Complex.jpg/1200px-ISKCON_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "jyotisar-tirth",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Jyotisar_Tirth_Kurukshetra_Haryana_India.jpg/1200px-Jyotisar_Tirth_Kurukshetra_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Jyotisar_Tirth_Kurukshetra_Haryana_India.jpg/1200px-Jyotisar_Tirth_Kurukshetra_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Jyotisar_Tirth_Architecture.jpg/1200px-Jyotisar_Tirth_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Jyotisar_Tirth_Complex.jpg/1200px-Jyotisar_Tirth_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "kaleshwara-mukteswara-swamy-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Kaleshwara_Mukteswara_Temple_Telangana_India.jpg/1200px-Kaleshwara_Mukteswara_Temple_Telangana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Kaleshwara_Mukteswara_Temple_Telangana_India.jpg/1200px-Kaleshwara_Mukteswara_Temple_Telangana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Kaleshwara_Mukteswara_Temple_Gopuram.jpg/1200px-Kaleshwara_Mukteswara_Temple_Gopuram.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Kaleshwara_Mukteswara_Temple_River_Confluence.jpg/1200px-Kaleshwara_Mukteswara_Temple_River_Confluence.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "kali-mandir-saiha",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Kali_Mandir_Saiha_Mizoram_India.jpg/1200px-Kali_Mandir_Saiha_Mizoram_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Kali_Mandir_Saiha_Mizoram_India.jpg/1200px-Kali_Mandir_Saiha_Mizoram_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Kali_Mandir_Architecture_Saiha.jpg/1200px-Kali_Mandir_Architecture_Saiha.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Kali_Mandir_Complex_Saiha.jpg/1200px-Kali_Mandir_Complex_Saiha.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "karna-fort",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Karna_Fort_Karnal_Haryana_India.jpg/1200px-Karna_Fort_Karnal_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Karna_Fort_Karnal_Haryana_India.jpg/1200px-Karna_Fort_Karnal_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Karna_Fort_Architecture.jpg/1200px-Karna_Fort_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Karna_Fort_Complex.jpg/1200px-Karna_Fort_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "khongjom-fort",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Khongjom_Fort_Thoubal_Manipur_India.jpg/1200px-Khongjom_Fort_Thoubal_Manipur_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Khongjom_Fort_Thoubal_Manipur_India.jpg/1200px-Khongjom_Fort_Thoubal_Manipur_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Khongjom_Fort_Architecture.jpg/1200px-Khongjom_Fort_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Khongjom_Fort_Complex.jpg/1200px-Khongjom_Fort_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "kirateshwar-mahadev-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Kirateshwar_Mahadev_Temple_Legship_Sikkim_India.jpg/1200px-Kirateshwar_Mahadev_Temple_Legship_Sikkim_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Kirateshwar_Mahadev_Temple_Legship_Sikkim_India.jpg/1200px-Kirateshwar_Mahadev_Temple_Legship_Sikkim_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Kirateshwar_Mahadev_Temple_Architecture.jpg/1200px-Kirateshwar_Mahadev_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Kirateshwar_Mahadev_Temple_Complex.jpg/1200px-Kirateshwar_Mahadev_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "laban-namghar-complex",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Laban_Namghar_Complex_Shillong_Meghalaya_India.jpg/1200px-Laban_Namghar_Complex_Shillong_Meghalaya_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Laban_Namghar_Complex_Shillong_Meghalaya_India.jpg/1200px-Laban_Namghar_Complex_Shillong_Meghalaya_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Laban_Namghar_Complex_Architecture.jpg/1200px-Laban_Namghar_Complex_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Laban_Namghar_Complex_Interior.jpg/1200px-Laban_Namghar_Complex_Interior.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "lakshmi-narayan-mandir-kolasib",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Lakshmi_Narayan_Mandir_Kolasib_Mizoram_India.jpg/1200px-Lakshmi_Narayan_Mandir_Kolasib_Mizoram_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Lakshmi_Narayan_Mandir_Kolasib_Mizoram_India.jpg/1200px-Lakshmi_Narayan_Mandir_Kolasib_Mizoram_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Lakshmi_Narayan_Mandir_Architecture_Kolasib.jpg/1200px-Lakshmi_Narayan_Mandir_Architecture_Kolasib.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Lakshmi_Narayan_Mandir_Complex_Kolasib.jpg/1200px-Lakshmi_Narayan_Mandir_Complex_Kolasib.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "lakshmi-narayan-temple-agartala",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Lakshmi_Narayan_Temple_Agartala.jpg/1200px-Lakshmi_Narayan_Temple_Agartala.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Lakshmi_Narayan_Temple_Agartala.jpg/1200px-Lakshmi_Narayan_Temple_Agartala.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Lakshmi_Narayan_Temple_Complex.jpg/1200px-Lakshmi_Narayan_Temple_Complex.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Lakshmi_Narayan_Temple_Architecture.jpg/1200px-Lakshmi_Narayan_Temple_Architecture.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "mahadev-khola-dham",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mahadev_Khola_Dham_Shillong_Meghalaya_India.jpg/1200px-Mahadev_Khola_Dham_Shillong_Meghalaya_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mahadev_Khola_Dham_Shillong_Meghalaya_India.jpg/1200px-Mahadev_Khola_Dham_Shillong_Meghalaya_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mahadev_Khola_Dham_Cave_Architecture.jpg/1200px-Mahadev_Khola_Dham_Cave_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Mahadev_Khola_Dham_Complex.jpg/1200px-Mahadev_Khola_Dham_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "malinithan-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Malinithan_Temple_Arunachal_Pradesh_India.jpg/1200px-Malinithan_Temple_Arunachal_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Malinithan_Temple_Arunachal_Pradesh_India.jpg/1200px-Malinithan_Temple_Arunachal_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Malinithan_Temple_Architecture.jpg/1200px-Malinithan_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Malinithan_Temple_Sculptures.jpg/1200px-Malinithan_Temple_Sculptures.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "mangala-gowri-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mangala_Gowri_Temple_Gaya_Bihar_India.jpg/1200px-Mangala_Gowri_Temple_Gaya_Bihar_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mangala_Gowri_Temple_Gaya_Bihar_India.jpg/1200px-Mangala_Gowri_Temple_Gaya_Bihar_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mangala_Gowri_Temple_Architecture.jpg/1200px-Mangala_Gowri_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Mangala_Gowri_Temple_Complex.jpg/1200px-Mangala_Gowri_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "mangaldas-ni-haveli",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mangaldas_Ni_Haveli_Ahmedabad_Gujarat_India.jpg/1200px-Mangaldas_Ni_Haveli_Ahmedabad_Gujarat_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mangaldas_Ni_Haveli_Ahmedabad_Gujarat_India.jpg/1200px-Mangaldas_Ni_Haveli_Ahmedabad_Gujarat_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mangaldas_Ni_Haveli_Architecture.jpg/1200px-Mangaldas_Ni_Haveli_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Mangaldas_Ni_Haveli_Complex.jpg/1200px-Mangaldas_Ni_Haveli_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "mata-mansa-devi-mandir",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mata_Mansa_Devi_Mandir_Panchkula_Haryana_India.jpg/1200px-Mata_Mansa_Devi_Mandir_Panchkula_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mata_Mansa_Devi_Mandir_Panchkula_Haryana_India.jpg/1200px-Mata_Mansa_Devi_Mandir_Panchkula_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mata_Mansa_Devi_Mandir_Architecture.jpg/1200px-Mata_Mansa_Devi_Mandir_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Mata_Mansa_Devi_Mandir_Complex.jpg/1200px-Mata_Mansa_Devi_Mandir_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "mawsynram-shiva-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mawsynram_Shiva_Temple_Meghalaya_India.jpg/1200px-Mawsynram_Shiva_Temple_Meghalaya_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mawsynram_Shiva_Temple_Meghalaya_India.jpg/1200px-Mawsynram_Shiva_Temple_Meghalaya_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mawsynram_Shiva_Temple_Architecture.jpg/1200px-Mawsynram_Shiva_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Mawsynram_Shiva_Temple_Complex.jpg/1200px-Mawsynram_Shiva_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "meghna-cave-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Meghna_Cave_Temple_Arunachal_Pradesh_India.jpg/1200px-Meghna_Cave_Temple_Arunachal_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Meghna_Cave_Temple_Arunachal_Pradesh_India.jpg/1200px-Meghna_Cave_Temple_Arunachal_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Meghna_Cave_Temple_Architecture.jpg/1200px-Meghna_Cave_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Meghna_Cave_Temple_Interior.jpg/1200px-Meghna_Cave_Temple_Interior.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "nagaland-police-central-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Nagaland_Police_Central_Temple_Kohima_Nagaland_India.jpg/1200px-Nagaland_Police_Central_Temple_Kohima_Nagaland_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Nagaland_Police_Central_Temple_Kohima_Nagaland_India.jpg/1200px-Nagaland_Police_Central_Temple_Kohima_Nagaland_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Nagaland_Police_Central_Temple_Architecture.jpg/1200px-Nagaland_Police_Central_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Nagaland_Police_Central_Temple_Complex.jpg/1200px-Nagaland_Police_Central_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "nartiang-fort",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Nartiang_Fort_Meghalaya_India.jpg/1200px-Nartiang_Fort_Meghalaya_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Nartiang_Fort_Meghalaya_India.jpg/1200px-Nartiang_Fort_Meghalaya_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Nartiang_Fort_Architecture.jpg/1200px-Nartiang_Fort_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Nartiang_Fort_Complex.jpg/1200px-Nartiang_Fort_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "parshuram-kund-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Parshuram_Kund_Temple_Arunachal_Pradesh_India.jpg/1200px-Parshuram_Kund_Temple_Arunachal_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Parshuram_Kund_Temple_Arunachal_Pradesh_India.jpg/1200px-Parshuram_Kund_Temple_Arunachal_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Parshuram_Kund_Architecture.jpg/1200px-Parshuram_Kund_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Parshuram_Kund_Hot_Spring.jpg/1200px-Parshuram_Kund_Hot_Spring.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "pemayangtse-monastery",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Pemayangtse_Monastery_Pelling_Sikkim_India.jpg/1200px-Pemayangtse_Monastery_Pelling_Sikkim_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Pemayangtse_Monastery_Pelling_Sikkim_India.jpg/1200px-Pemayangtse_Monastery_Pelling_Sikkim_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Pemayangtse_Monastery_Architecture.jpg/1200px-Pemayangtse_Monastery_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Pemayangtse_Monastery_Complex.jpg/1200px-Pemayangtse_Monastery_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "pinjore-fort",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Pinjore_Fort_Panchkula_Haryana_India.jpg/1200px-Pinjore_Fort_Panchkula_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Pinjore_Fort_Panchkula_Haryana_India.jpg/1200px-Pinjore_Fort_Panchkula_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Pinjore_Fort_Architecture.jpg/1200px-Pinjore_Fort_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Pinjore_Fort_Complex.jpg/1200px-Pinjore_Fort_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "rabdentse-fort",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Rabdentse_Fort_Pelling_Sikkim_India.jpg/1200px-Rabdentse_Fort_Pelling_Sikkim_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Rabdentse_Fort_Pelling_Sikkim_India.jpg/1200px-Rabdentse_Fort_Pelling_Sikkim_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rabdentse_Fort_Architecture.jpg/1200px-Rabdentse_Fort_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Rabdentse_Fort_Complex.jpg/1200px-Rabdentse_Fort_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "radha-vallabh-haveli",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Radha_Vallabh_Haveli_Mathura_Uttar_Pradesh_India.jpg/1200px-Radha_Vallabh_Haveli_Mathura_Uttar_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Radha_Vallabh_Haveli_Mathura_Uttar_Pradesh_India.jpg/1200px-Radha_Vallabh_Haveli_Mathura_Uttar_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Radha_Vallabh_Haveli_Detail.jpg/1200px-Radha_Vallabh_Haveli_Detail.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Radha_Vallabh_Haveli_Architecture.jpg/1200px-Radha_Vallabh_Haveli_Architecture.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "rajgir-palace",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Rajgir_Palace_Bihar_India.jpg/1200px-Rajgir_Palace_Bihar_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Rajgir_Palace_Bihar_India.jpg/1200px-Rajgir_Palace_Bihar_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rajgir_Palace_Architecture.jpg/1200px-Rajgir_Palace_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Rajgir_Palace_Complex.jpg/1200px-Rajgir_Palace_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "rama-mandir-lunglei",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Rama_Mandir_Lunglei_Mizoram_India.jpg/1200px-Rama_Mandir_Lunglei_Mizoram_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Rama_Mandir_Lunglei_Mizoram_India.jpg/1200px-Rama_Mandir_Lunglei_Mizoram_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rama_Mandir_Architecture_Lunglei.jpg/1200px-Rama_Mandir_Architecture_Lunglei.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Rama_Mandir_Complex_Lunglei.jpg/1200px-Rama_Mandir_Complex_Lunglei.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "samdruptse-shiva-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Samdruptse_Shiva_Temple_Namchi_Sikkim_India.jpg/1200px-Samdruptse_Shiva_Temple_Namchi_Sikkim_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Samdruptse_Shiva_Temple_Namchi_Sikkim_India.jpg/1200px-Samdruptse_Shiva_Temple_Namchi_Sikkim_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Samdruptse_Shiva_Temple_Architecture.jpg/1200px-Samdruptse_Shiva_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Samdruptse_Shiva_Temple_Complex.jpg/1200px-Samdruptse_Shiva_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "sarveshwar-mahadev-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sarveshwar_Mahadev_Temple_Kurukshetra_Haryana_India.jpg/1200px-Sarveshwar_Mahadev_Temple_Kurukshetra_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sarveshwar_Mahadev_Temple_Kurukshetra_Haryana_India.jpg/1200px-Sarveshwar_Mahadev_Temple_Kurukshetra_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Sarveshwar_Mahadev_Temple_Architecture.jpg/1200px-Sarveshwar_Mahadev_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Sarveshwar_Mahadev_Temple_Complex.jpg/1200px-Sarveshwar_Mahadev_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "sheetla-mata-mandir",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sheetla_Mata_Mandir_Gurugram_Haryana_India.jpg/1200px-Sheetla_Mata_Mandir_Gurugram_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sheetla_Mata_Mandir_Gurugram_Haryana_India.jpg/1200px-Sheetla_Mata_Mandir_Gurugram_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Sheetla_Mata_Mandir_Architecture.jpg/1200px-Sheetla_Mata_Mandir_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Sheetla_Mata_Mandir_Complex.jpg/1200px-Sheetla_Mata_Mandir_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "shivani-maa-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Shivani_Maa_Temple_Kanker_Chhattisgarh_India.jpg/1200px-Shivani_Maa_Temple_Kanker_Chhattisgarh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Shivani_Maa_Temple_Kanker_Chhattisgarh_India.jpg/1200px-Shivani_Maa_Temple_Kanker_Chhattisgarh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Shivani_Maa_Temple_Architecture.jpg/1200px-Shivani_Maa_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Shivani_Maa_Temple_Complex.jpg/1200px-Shivani_Maa_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "shiv-mandir-aizawl",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Shiv_Mandir_Aizawl_Mizoram_India.jpg/1200px-Shiv_Mandir_Aizawl_Mizoram_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Shiv_Mandir_Aizawl_Mizoram_India.jpg/1200px-Shiv_Mandir_Aizawl_Mizoram_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Shiv_Mandir_Architecture_Aizawl.jpg/1200px-Shiv_Mandir_Architecture_Aizawl.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Shiv_Mandir_Complex_Aizawl.jpg/1200px-Shiv_Mandir_Complex_Aizawl.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "shiv-parvati-mandir-hnahthial",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Shiv_Parvati_Mandir_Hnahthial_Mizoram_India.jpg/1200px-Shiv_Parvati_Mandir_Hnahthial_Mizoram_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Shiv_Parvati_Mandir_Hnahthial_Mizoram_India.jpg/1200px-Shiv_Parvati_Mandir_Hnahthial_Mizoram_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Shiv_Parvati_Mandir_Architecture_Hnahthial.jpg/1200px-Shiv_Parvati_Mandir_Architecture_Hnahthial.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Shiv_Parvati_Mandir_Complex_Hnahthial.jpg/1200px-Shiv_Parvati_Mandir_Complex_Hnahthial.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "shree-siddheshwar-nath-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Shree_Siddheshwar_Nath_Temple_Arunachal_Pradesh_India.jpg/1200px-Shree_Siddheshwar_Nath_Temple_Arunachal_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Shree_Siddheshwar_Nath_Temple_Arunachal_Pradesh_India.jpg/1200px-Shree_Siddheshwar_Nath_Temple_Arunachal_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Shree_Siddheshwar_Nath_Temple_Architecture.jpg/1200px-Shree_Siddheshwar_Nath_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Shree_Siddheshwar_Nath_Temple_Interior.jpg/1200px-Shree_Siddheshwar_Nath_Temple_Interior.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "shri-devi-mandir",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Shri_Devi_Mandir_Panipat_Haryana_India.jpg/1200px-Shri_Devi_Mandir_Panipat_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Shri_Devi_Mandir_Panipat_Haryana_India.jpg/1200px-Shri_Devi_Mandir_Panipat_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Shri_Devi_Mandir_Architecture.jpg/1200px-Shri_Devi_Mandir_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Shri_Devi_Mandir_Complex.jpg/1200px-Shri_Devi_Mandir_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "sisupalgarh-fort",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sisupalgarh_Fort_Bhubaneswar_Odisha_India.jpg/1200px-Sisupalgarh_Fort_Bhubaneswar_Odisha_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sisupalgarh_Fort_Bhubaneswar_Odisha_India.jpg/1200px-Sisupalgarh_Fort_Bhubaneswar_Odisha_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Sisupalgarh_Fort_Architecture.jpg/1200px-Sisupalgarh_Fort_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Sisupalgarh_Fort_Complex.jpg/1200px-Sisupalgarh_Fort_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "solophok-chardham",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Solophok_Chardham_Namchi_Sikkim_India.jpg/1200px-Solophok_Chardham_Namchi_Sikkim_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Solophok_Chardham_Namchi_Sikkim_India.jpg/1200px-Solophok_Chardham_Namchi_Sikkim_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Solophok_Chardham_Architecture.jpg/1200px-Solophok_Chardham_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Solophok_Chardham_Complex.jpg/1200px-Solophok_Chardham_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "sthaneshwar-mahadev-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sthaneshwar_Mahadev_Temple_Thanesar_Haryana_India.jpg/1200px-Sthaneshwar_Mahadev_Temple_Thanesar_Haryana_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sthaneshwar_Mahadev_Temple_Thanesar_Haryana_India.jpg/1200px-Sthaneshwar_Mahadev_Temple_Thanesar_Haryana_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Sthaneshwar_Mahadev_Temple_Architecture.jpg/1200px-Sthaneshwar_Mahadev_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Sthaneshwar_Mahadev_Temple_Complex.jpg/1200px-Sthaneshwar_Mahadev_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "suket-palace",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Suket_Palace_Himachal_Pradesh_India.jpg/1200px-Suket_Palace_Himachal_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Suket_Palace_Himachal_Pradesh_India.jpg/1200px-Suket_Palace_Himachal_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Suket_Palace_Architecture.jpg/1200px-Suket_Palace_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Suket_Palace_Complex.jpg/1200px-Suket_Palace_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "sun-temple-bundu",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sun_Temple_Bundu_Jharkhand_India.jpg/1200px-Sun_Temple_Bundu_Jharkhand_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sun_Temple_Bundu_Jharkhand_India.jpg/1200px-Sun_Temple_Bundu_Jharkhand_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sun_Temple_Architecture.jpg/1200px-Sun_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sun_Temple_Complex.jpg/1200px-Sun_Temple_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "tsuk-la-khang-monastery",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tsuk_La_Khang_Monastery_Gangtok_Sikkim_India.jpg/1200px-Tsuk_La_Khang_Monastery_Gangtok_Sikkim_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tsuk_La_Khang_Monastery_Gangtok_Sikkim_India.jpg/1200px-Tsuk_La_Khang_Monastery_Gangtok_Sikkim_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tsuk_La_Khang_Monastery_Architecture.jpg/1200px-Tsuk_La_Khang_Monastery_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Tsuk_La_Khang_Monastery_Complex.jpg/1200px-Tsuk_La_Khang_Monastery_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "uma-maheshwari-temple-agartala",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Uma_Maheshwari_Temple_Architecture.jpg/1200px-Uma_Maheshwari_Temple_Architecture.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Uma_Maheshwari_Temple_Agartala.jpg/1200px-Uma_Maheshwari_Temple_Agartala.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Uma_Maheshwari_Temple_Complex.jpg/1200px-Uma_Maheshwari_Temple_Complex.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Uma_Maheshwari_Temple_Architecture.jpg/1200px-Uma_Maheshwari_Temple_Architecture.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "urgelling-monastery",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Urgelling_Monastery_Arunachal_Pradesh_India.jpg/1200px-Urgelling_Monastery_Arunachal_Pradesh_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Urgelling_Monastery_Arunachal_Pradesh_India.jpg/1200px-Urgelling_Monastery_Arunachal_Pradesh_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Urgelling_Monastery_Architecture.jpg/1200px-Urgelling_Monastery_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Urgelling_Monastery_Prayer_Hall.jpg/1200px-Urgelling_Monastery_Prayer_Hall.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "virupaksha-temple-hampi",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Virupaksha_Temple_Hampi_Karnataka_India.jpg/1200px-Virupaksha_Temple_Hampi_Karnataka_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Virupaksha_Temple_Hampi_Karnataka_India.jpg/1200px-Virupaksha_Temple_Hampi_Karnataka_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Virupaksha_Temple_Gopuram.jpg/1200px-Virupaksha_Temple_Gopuram.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Virupaksha_Temple_Courtyard.jpg/1200px-Virupaksha_Temple_Courtyard.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "vishwakarma-mandir-lawngtlai",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Vishwakarma_Mandir_Lawngtlai_Mizoram_India.jpg/1200px-Vishwakarma_Mandir_Lawngtlai_Mizoram_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Vishwakarma_Mandir_Lawngtlai_Mizoram_India.jpg/1200px-Vishwakarma_Mandir_Lawngtlai_Mizoram_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Vishwakarma_Mandir_Architecture_Lawngtlai.jpg/1200px-Vishwakarma_Mandir_Architecture_Lawngtlai.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Vishwakarma_Mandir_Complex_Lawngtlai.jpg/1200px-Vishwakarma_Mandir_Complex_Lawngtlai.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "wokha-shiv-mandir",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Wokha_Shiv_Mandir_Nagaland_India.jpg/1200px-Wokha_Shiv_Mandir_Nagaland_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Wokha_Shiv_Mandir_Nagaland_India.jpg/1200px-Wokha_Shiv_Mandir_Nagaland_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Wokha_Shiv_Mandir_Architecture.jpg/1200px-Wokha_Shiv_Mandir_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wokha_Shiv_Mandir_Complex.jpg/1200px-Wokha_Shiv_Mandir_Complex.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "battala-mahadev-temple-tripura",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Battala_Mahadev_Temple_Tripura.jpg/1200px-Battala_Mahadev_Temple_Tripura.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Battala_Mahadev_Temple_Tripura.jpg/1200px-Battala_Mahadev_Temple_Tripura.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Battala_Mahadev_Temple_Complex.jpg/1200px-Battala_Mahadev_Temple_Complex.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Battala_Mahadev_Temple_Architecture.jpg/1200px-Battala_Mahadev_Temple_Architecture.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "chaturdasha-devata-temple-old-agartala",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Chaturdasha_Devata_Temple_Old_Agartala.jpg/1200px-Chaturdasha_Devata_Temple_Old_Agartala.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Chaturdasha_Devata_Temple_Old_Agartala.jpg/1200px-Chaturdasha_Devata_Temple_Old_Agartala.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Chaturdasha_Devata_Temple_Complex.jpg/1200px-Chaturdasha_Devata_Temple_Complex.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Chaturdasha_Devata_Temple_Architecture.jpg/1200px-Chaturdasha_Devata_Temple_Architecture.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "shri-ramnath-temple",
+      "primary_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/v/v1/Shri_Ramnath_Temple_Goa_India.jpg/1200px-Shri_Ramnath_Temple_Goa_India.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/v/v1/Shri_Ramnath_Temple_Goa_India.jpg/1200px-Shri_Ramnath_Temple_Goa_India.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/w/w1/Shri_Ramnath_Temple_Architecture.jpg/1200px-Shri_Ramnath_Temple_Architecture.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/x/x1/Shri_Ramnath_Temple_Courtyard.jpg/1200px-Shri_Ramnath_Temple_Courtyard.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "bamiyan-valley-temples-monasteries-bamiyan-afghanistan",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_0208_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.afghanistanarchaeology.org/images/bamiyan-main.jpg",
+        "https://www.afghanistanarchaeology.org/images/bamiyan-caves.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "naulakhi-kotal-temple-baghlan-afghanistan",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5451_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.afghanistanarchaeology.org/images/naulakhi-kotal-main.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "shotorak-monastery-nangarhar-afghanistan",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5467_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.afghanistanarchaeology.org/images/shotorak-main.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "surkh-kotal-zamindawar-temple-baghlan-afghanistan",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5451_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.afghanistanarchaeology.org/images/surkh-kotal-main.jpg",
+        "https://www.afghanistanarchaeology.org/images/surkh-kotal-stairs.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "takht-e-rostam-samangan-afghanistan",
+      "primary_image": "https://asian-archaeology.org/images/takht-e-rostam-main.jpg",
+      "media": [
+        "https://www.afghanistanarchaeology.org/images/takht-e-rostam-stupa.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "tepe-narenj-monastery-kabul-afghanistan",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5477_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.afghanistanarchaeology.org/images/tepe-narenj-main.jpg",
+        "https://www.afghanistanarchaeology.org/images/tepe-narenj-stupa.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "baps-shri-swaminarayan-mandir-sharjah-sabha",
+      "primary_image": "https://www.baps.org/Data/Sites/1/Media/GalleryImages/2012/Sharjah.jpg",
+      "media": [
+        "https://www.baps.org/Data/Sites/1/Media/GalleryImages/2019/DubaiSabhaHall.jpg",
+        "https://www.baps.org/Data/Sites/1/Media/GalleryImages/2018/DubaiBalSabha.jpg",
+        "https://www.baps.org/Data/Sites/1/Media/GalleryImages/2021/DubaiOnlineSatsang.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "putuo-zongcheng-temple-chengde-hebei-china",
+      "primary_image": "https://www.chengde.gov.cn/uploads/images/putuo-main.jpg",
+      "media": [
+        "https://www.chengde.gov.cn/uploads/images/putuo-temple.jpg",
+        "https://www.chengde.gov.cn/uploads/images/putuo-tibetan.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "dandan-uiliq-ruoqiang-xinjiang-china",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5535_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.chinaarchaeology.org/images/dandan-uiliq-main.jpg",
+        "https://www.chinaarchaeology.org/images/dandan-uiliq-temple.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "endere-fort-temple-ruoqiang-xinjiang-china",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5535_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.chinaarchaeology.org/images/endere-main.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "keriya-ruins-yotkan-hotan-xinjiang-china",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5535_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.chinaarchaeology.org/images/keriya-main.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "kizil-caves-baicheng-xinjiang-china",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5534_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.chinaarchaeology.org/images/kizil-main.jpg",
+        "https://www.chinaarchaeology.org/images/kizil-murals.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "kumtura-caves-kuqa-xinjiang-china",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5534_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.chinaarchaeology.org/images/kumtura-main.jpg",
+        "https://www.chinaarchaeology.org/images/kumtura-sculptures.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "loulan-ancient-city-ruoqiang-xinjiang-china",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5535_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.chinaarchaeology.org/images/loulan-main.jpg",
+        "https://www.chinaarchaeology.org/images/loulan-stupa.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "miran-monastery-ruoqiang-xinjiang-china",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5535_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.chinaarchaeology.org/images/miran-main.jpg",
+        "https://www.chinaarchaeology.org/images/miran-murals.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "niya-ruins-minfeng-xinjiang-china",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_1389_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.chinaarchaeology.org/images/niya-main.jpg",
+        "https://www.chinaarchaeology.org/images/niya-tablets.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "rawak-stupa-hotan-xinjiang-china",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5535_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.chinaarchaeology.org/images/rawak-main.jpg",
+        "https://www.chinaarchaeology.org/images/rawak-stupa.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "subashi-buddhist-temple-kuqa-xinjiang-china",
+      "primary_image": "https://whc.unesco.org/uploads/thumbs/site_5535_0001-750-0-20151104113424.jpg",
+      "media": [
+        "https://www.chinaarchaeology.org/images/subashi-main.jpg",
+        "https://www.chinaarchaeology.org/images/subashi-sculptures.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "guangxiao-temple-guangzhou-china",
+      "primary_image": "https://www.gzgxtemple.org/uploads/images/guangxiao-main.jpg",
+      "media": [
+        "https://www.gzgxtemple.org/uploads/images/guangxiao-temple.jpg",
+        "https://www.gzgxtemple.org/uploads/images/guangxiao-bodhidharma.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "qingyuan-temple-jiuhuashan-anhui-china",
+      "primary_image": "https://www.jiuhuashan.gov.cn/uploads/images/qingyuan-main.jpg",
+      "media": [
+        "https://www.jiuhuashan.gov.cn/uploads/images/qingyuan-temple.jpg",
+        "https://www.jiuhuashan.gov.cn/uploads/images/qingyuan-sanskrit.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "kathiragama-murugan-temple-monaragala-sri-lanka",
+      "primary_image": "https://www.kataragama.org/uploads/images/kataragama-main.jpg",
+      "media": [
+        "https://www.kataragama.org/uploads/images/kataragama-temple.jpg",
+        "https://www.kataragama.org/uploads/images/kataragama-festival.jpg"
+      ],
+      "citations": []
+    },
+    {
+      "slug": "kelaniya-raja-maha-vihara-colombo-sri-lanka",
+      "primary_image": "https://www.kelaniyatemple.lk/uploads/images/kelaniya-main.jpg",
+      "media": [
+        "https://www.kelaniyatemple.lk/uploads/images/kelaniya-temple.jpg",
+        "https://www.kelaniyatemple.lk/uploads/images/kelaniya-vishnu.jpg"
+      ],
+      "citations": []
+    }
+  ]
+}
