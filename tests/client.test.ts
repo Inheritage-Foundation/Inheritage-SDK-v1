@@ -47,7 +47,10 @@ describe("InheritageClient", () => {
       body: undefined,
       signal: undefined,
     })
-    expect(result.data.dataset.name).toBe("Inheritage Cultural Heritage Dataset")
+    expect(result.data).not.toBeNull()
+    const manifest = result.data!
+    const dataset = manifest.dataset as { name: string }
+    expect(dataset.name).toBe("Inheritage Cultural Heritage Dataset")
     expect(result.traceId).toBe("trace-123")
     expect(result.rateLimit).toEqual({
       limit: 120,

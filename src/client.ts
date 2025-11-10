@@ -38,7 +38,7 @@ export interface InheritageClientOptions {
   baseUrl?: string
   attribution?: AttributionMode
   plan?: PlanMode
-  fetch?: typeof fetch
+  fetch?: typeof globalThis.fetch
   userAgent?: string
   defaultHeaders?: HeadersInit
 }
@@ -49,9 +49,9 @@ interface RequestOptions<TBody = unknown> extends ApiRequestOptions {
   body?: TBody
 }
 
-function ensureFetch(fetchImpl: typeof fetch | undefined): fetch {
+function ensureFetch(fetchImpl: typeof globalThis.fetch | undefined): typeof globalThis.fetch {
   if (typeof fetchImpl === "function") {
-    return fetchImpl as fetch
+    return fetchImpl
   }
   if (typeof globalThis.fetch === "function") {
     return globalThis.fetch
@@ -108,7 +108,7 @@ function serializeQuery(params?: Record<string, string | number | boolean | null
 
 export class InheritageClient {
   private readonly baseUrl: string
-  private readonly fetchImpl: typeof fetch
+  private readonly fetchImpl: typeof globalThis.fetch
   private readonly attribution: AttributionMode
   private readonly plan: PlanMode
   private readonly baseHeaders: Headers
