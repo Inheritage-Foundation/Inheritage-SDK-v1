@@ -8,13 +8,14 @@ const rateLimitHeaders = {
 }
 
 describe("InheritageClient", () => {
-  const client = new InheritageClient()
   const originalFetch = globalThis.fetch
   let fetchMock: ReturnType<typeof vi.fn>
+  let client: InheritageClient
 
   beforeEach(() => {
     fetchMock = vi.fn()
     globalThis.fetch = fetchMock as unknown as typeof fetch
+    client = new InheritageClient()
   })
 
   afterEach(() => {

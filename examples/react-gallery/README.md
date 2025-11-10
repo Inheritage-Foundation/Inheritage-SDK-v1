@@ -41,4 +41,3 @@ export function HeritageGallery({ slug }: { slug: string }) {
 ```
 
 Pair this with your favourite UI kit to create curated experiences for classrooms, museums, or travel apps.
-

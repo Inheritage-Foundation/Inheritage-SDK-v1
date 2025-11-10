@@ -484,7 +484,9 @@ export class InheritageClient {
    * Low-level request helper.
    */
   private async send<T>(options: RequestOptions): Promise<ApiResponse<T>> {
-    const url = new URL(this.normalizePath(options.path), this.baseUrl)
+    const base = this.baseUrl.endsWith("/") ? this.baseUrl : `${this.baseUrl}/`
+    const relativePath = (options.path ?? "").replace(/^\/+/, "")
+    const url = new URL(relativePath, base)
 
     if (options.query) {
       const query = serializeQuery(options.query)
@@ -575,13 +577,6 @@ export class InheritageClient {
       rateLimit,
       notModified: false,
     }
-  }
-
-  private normalizePath(path: string): string {
-    if (!path.startsWith("/")) {
-      return `/${path}`
-    }
-    return path
   }
 
   private prepareHeaders(overrides?: HeadersInit, body?: unknown): Headers {

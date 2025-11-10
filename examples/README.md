@@ -10,4 +10,3 @@ Four end-to-end samples showcasing the Inheritage SDK in different environments.
 | [`api-fetch-script`](./api-fetch-script/) | Node.js export script for researchers and data journalists. |
 
 Each folder includes a self-contained README and starter code. Copy, tweak, and share what you build in [Discussions](https://github.com/0xMilord/Inheritage-SDK-v1/discussions).
-
