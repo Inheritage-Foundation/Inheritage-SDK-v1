@@ -43,7 +43,7 @@
   "author": "Inheritage Foundation <api@inheritage.foundation>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/0xMilord/Inheritage-SDK-v1.git"
+    "url": "git+https://github.com/0xMilord/Inheritage-SDK-v1.git"
   },
   "bugs": {
     "url": "https://github.com/0xMilord/Inheritage-SDK-v1/issues"
@@ -59,4 +59,3 @@
   },
   "funding": "https://inheritage.foundation/donate"
 }
-
