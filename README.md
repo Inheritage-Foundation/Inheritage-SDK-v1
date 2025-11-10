@@ -8,7 +8,7 @@
 [![Open Data](https://img.shields.io/badge/data-CC%20BY%204.0-orange.svg)](https://inheritage.foundation/api/v1)
 
 <p align="center">
-  <img src="https://inheritage.foundation/og/inheritage-sdk.png" alt="Inheritage SDK social preview" width="720" />
+  <img src="./inheritage-sdk.jpg" alt="Inheritage SDK social preview" width="720" />
 </p>
 
 **Access India's cultural heritage programmatically.**  
