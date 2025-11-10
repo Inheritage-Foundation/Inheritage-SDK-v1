@@ -1,10 +1,10 @@
 # 🏛️ Inheritage SDK (TypeScript)
 
-[![CI](https://github.com/0xMilord/Inheritage-SDK-v1/actions/workflows/ci.yml/badge.svg)](https://github.com/0xMilord/Inheritage-SDK-v1/actions/workflows/ci.yml)
+[![CI](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/actions/workflows/ci.yml/badge.svg)](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/%40inheritage-foundation%2Fsdk?label=npm&color=blue)](https://www.npmjs.com/package/@inheritage-foundation/sdk)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](./LICENSE)
 [![API Docs](https://img.shields.io/badge/docs-API%20Suite-1f6feb.svg)](https://inheritage.foundation/docs/api)
-[![Discussions](https://img.shields.io/badge/chat-Discussions-8a2be2.svg)](https://github.com/0xMilord/Inheritage-SDK-v1/discussions)
+[![Discussions](https://img.shields.io/badge/chat-Discussions-8a2be2.svg)](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/discussions)
 [![Open Data](https://img.shields.io/badge/data-CC%20BY%204.0-f97316.svg)](https://inheritage.foundation/api/v1)
 
 ![Inheritage SDK social preview](./inheritage-sdk.jpg)
@@ -206,8 +206,8 @@ Additional resources:
 ## Support & Community
 
 - Documentation: [https://inheritage.foundation/docs/api](https://inheritage.foundation/docs/api)
-- Issues & feature requests: [GitHub tracker](https://github.com/0xMilord/Inheritage-SDK-v1/issues)
-- Discussions, project ideas, showcases: [GitHub Discussions](https://github.com/0xMilord/Inheritage-SDK-v1/discussions)
+- Issues & feature requests: [GitHub tracker](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/issues)
+- Discussions, project ideas, showcases: [GitHub Discussions](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/discussions)
 - Email: [api@inheritage.foundation](mailto:api@inheritage.foundation)
 
 We welcome PRs for bug fixes, new helpers, and additional examples. Please include tests where appropriate and ensure endpoints remain faithful to the production contract.
