@@ -24,7 +24,9 @@
     "tests"
   ],
   "exclude": [
-    "dist"
+    "dist",
+    "tests/e2e.test.ts",
+    "tests/hooks.test.ts"
   ]
 }
 

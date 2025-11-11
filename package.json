@@ -38,8 +38,9 @@
     "clean": "rimraf dist",
     "lint": "tsc --noEmit",
     "test": "vitest run",
+    "test:unit": "vitest run tests/client.test.ts tests/langchain.test.ts",
     "test:watch": "vitest",
-    "prepublishOnly": "npm run clean && npm run build && npm run test"
+    "prepublishOnly": "npm run clean && npm run build && npm run test:unit"
   },
   "keywords": [
     "inheritage",

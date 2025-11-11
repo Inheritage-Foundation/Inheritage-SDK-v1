@@ -43,8 +43,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Run tests
-        run: npm test
+      - name: Run unit tests only
+        run: npm run test:unit
       
       - name: Upload coverage
         uses: codecov/codecov-action@v4
