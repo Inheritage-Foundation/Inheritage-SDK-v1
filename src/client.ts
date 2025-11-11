@@ -707,5 +707,253 @@ export class InheritageClient {
 
     return headers
   }
+
+  // ========================
+  // CIDOC-CRM API
+  // ========================
+
+  /**
+   * Get heritage site in CIDOC-CRM JSON-LD format
+   * @param slug - Heritage site slug
+   * @param options - Request options
+   * @returns CIDOC-CRM JSON-LD representation
+   * @endpoint GET /cidoc/:slug
+   * @standard ISO 21127:2023 (CIDOC-CRM 7.1.3)
+   */
+  public async getHeritageCIDOC(slug: string, options?: ApiRequestOptions): Promise<ApiResponse<any>> {
+    return this.send({
+      method: "GET",
+      path: `/cidoc/${slug}`,
+      ...options,
+      headers: {
+        ...options?.headers,
+        Accept: "application/ld+json",
+      },
+    })
+  }
+
+  // ========================
+  // LIDO API
+  // ========================
+
+  /**
+   * Get heritage site in LIDO 1.1 XML format
+   * @param slug - Heritage site slug
+   * @param download - Whether to download as file (default: false)
+   * @param options - Request options
+   * @returns LIDO XML string
+   * @endpoint GET /lido/:slug
+   * @standard LIDO 1.1
+   */
+  public async getHeritageLIDO(
+    slug: string,
+    download: boolean = false,
+    options?: ApiRequestOptions
+  ): Promise<ApiResponse<string>> {
+    return this.send<string>({
+      method: "GET",
+      path: `/lido/${slug}`,
+      query: download ? { download: "true" } : undefined,
+      ...options,
+      headers: {
+        ...options?.headers,
+        Accept: "application/xml",
+      },
+    })
+  }
+
+  /**
+   * Export multiple heritage sites as LIDO XML (ZIP archive)
+   * @param params - Filter parameters (state, country, category, limit, offset)
+   * @param options - Request options
+   * @returns ZIP archive blob
+   * @endpoint GET /lido/export
+   * @standard LIDO 1.1
+   */
+  public async exportHeritageLIDO(
+    params?: {
+      state?: string
+      country?: string
+      category?: string
+      limit?: number
+      offset?: number
+    },
+    options?: ApiRequestOptions
+  ): Promise<ApiResponse<Blob>> {
+    return this.send<Blob>({
+      method: "GET",
+      path: "/lido/export",
+      query: params as Record<string, string | number>,
+      ...options,
+      headers: {
+        ...options?.headers,
+        Accept: "application/zip",
+      },
+    })
+  }
+
+  // ========================
+  // OAI-PMH API
+  // ========================
+
+  /**
+   * OAI-PMH Identify verb
+   * @param options - Request options
+   * @returns OAI-PMH XML response
+   * @endpoint GET /oai-pmh?verb=Identify
+   * @standard OAI-PMH 2.0
+   */
+  public async oaipmhIdentify(options?: ApiRequestOptions): Promise<ApiResponse<string>> {
+    return this.send<string>({
+      method: "GET",
+      path: "/oai-pmh",
+      query: { verb: "Identify" },
+      ...options,
+      headers: {
+        ...options?.headers,
+        Accept: "text/xml",
+      },
+    })
+  }
+
+  /**
+   * OAI-PMH ListMetadataFormats verb
+   * @param options - Request options
+   * @returns OAI-PMH XML response
+   * @endpoint GET /oai-pmh?verb=ListMetadataFormats
+   * @standard OAI-PMH 2.0
+   */
+  public async oaipmhListMetadataFormats(options?: ApiRequestOptions): Promise<ApiResponse<string>> {
+    return this.send<string>({
+      method: "GET",
+      path: "/oai-pmh",
+      query: { verb: "ListMetadataFormats" },
+      ...options,
+      headers: {
+        ...options?.headers,
+        Accept: "text/xml",
+      },
+    })
+  }
+
+  /**
+   * OAI-PMH ListSets verb
+   * @param options - Request options
+   * @returns OAI-PMH XML response
+   * @endpoint GET /oai-pmh?verb=ListSets
+   * @standard OAI-PMH 2.0
+   */
+  public async oaipmhListSets(options?: ApiRequestOptions): Promise<ApiResponse<string>> {
+    return this.send<string>({
+      method: "GET",
+      path: "/oai-pmh",
+      query: { verb: "ListSets" },
+      ...options,
+      headers: {
+        ...options?.headers,
+        Accept: "text/xml",
+      },
+    })
+  }
+
+  /**
+   * OAI-PMH ListIdentifiers verb
+   * @param metadataPrefix - Metadata format (oai_dc or lido)
+   * @param params - Optional filters (from, until, set, resumptionToken)
+   * @param options - Request options
+   * @returns OAI-PMH XML response
+   * @endpoint GET /oai-pmh?verb=ListIdentifiers
+   * @standard OAI-PMH 2.0
+   */
+  public async oaipmhListIdentifiers(
+    metadataPrefix: "oai_dc" | "lido",
+    params?: {
+      from?: string
+      until?: string
+      set?: string
+      resumptionToken?: string
+    },
+    options?: ApiRequestOptions
+  ): Promise<ApiResponse<string>> {
+    return this.send<string>({
+      method: "GET",
+      path: "/oai-pmh",
+      query: {
+        verb: "ListIdentifiers",
+        metadataPrefix,
+        ...params,
+      } as Record<string, string>,
+      ...options,
+      headers: {
+        ...options?.headers,
+        Accept: "text/xml",
+      },
+    })
+  }
+
+  /**
+   * OAI-PMH ListRecords verb
+   * @param metadataPrefix - Metadata format (oai_dc or lido)
+   * @param params - Optional filters (from, until, set, resumptionToken)
+   * @param options - Request options
+   * @returns OAI-PMH XML response
+   * @endpoint GET /oai-pmh?verb=ListRecords
+   * @standard OAI-PMH 2.0
+   */
+  public async oaipmhListRecords(
+    metadataPrefix: "oai_dc" | "lido",
+    params?: {
+      from?: string
+      until?: string
+      set?: string
+      resumptionToken?: string
+    },
+    options?: ApiRequestOptions
+  ): Promise<ApiResponse<string>> {
+    return this.send<string>({
+      method: "GET",
+      path: "/oai-pmh",
+      query: {
+        verb: "ListRecords",
+        metadataPrefix,
+        ...params,
+      } as Record<string, string>,
+      ...options,
+      headers: {
+        ...options?.headers,
+        Accept: "text/xml",
+      },
+    })
+  }
+
+  /**
+   * OAI-PMH GetRecord verb
+   * @param identifier - OAI identifier (e.g., oai:inheritage.foundation:heritage:taj-mahal)
+   * @param metadataPrefix - Metadata format (oai_dc or lido)
+   * @param options - Request options
+   * @returns OAI-PMH XML response
+   * @endpoint GET /oai-pmh?verb=GetRecord
+   * @standard OAI-PMH 2.0
+   */
+  public async oaipmhGetRecord(
+    identifier: string,
+    metadataPrefix: "oai_dc" | "lido",
+    options?: ApiRequestOptions
+  ): Promise<ApiResponse<string>> {
+    return this.send<string>({
+      method: "GET",
+      path: "/oai-pmh",
+      query: {
+        verb: "GetRecord",
+        identifier,
+        metadataPrefix,
+      },
+      ...options,
+      headers: {
+        ...options?.headers,
+        Accept: "text/xml",
+      },
+    })
+  }
 }
 

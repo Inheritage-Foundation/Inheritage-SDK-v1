@@ -15,6 +15,7 @@ Official TypeScript SDK for the [Inheritage Foundation](https://inheritage.found
 
 - 🏛️ **5000+ Heritage Sites**: Temples, forts, monuments across India
 - 🗺️ **GeoJSON Support**: EPSG:4326, bbox queries, native geospatial APIs
+- 🏛️ **CIDOC-CRM & Institutional**: JSON-LD, LIDO XML, OAI-PMH harvesting for museums & aggregators
 - 🤖 **AI-Ready**: 1536-d embeddings, semantic search, LangChain/LangGraph adapters
 - ⚛️ **React Hooks**: `useHeritage`, `useAIContext`, `useSimilarSites` with auto-caching
 - 🎨 **Attribution Component**: `<InheritageCitation />` for CC BY 4.0 compliance
@@ -250,6 +251,52 @@ Retrieve attribution metadata for any entity:
 const citation = await client.getCitation('taj-mahal')
 console.log(citation.data.required_display) // "Data © Inheritage Foundation"
 console.log(citation.data.license) // "CC BY 4.0"
+```
+
+### CIDOC-CRM & Institutional APIs
+
+**Endpoints**: `GET /cidoc/:slug`, `GET /lido/:slug`, `GET /lido/export`, `GET /oai-pmh`
+
+Access heritage data in international museum standards:
+
+**CIDOC-CRM JSON-LD** (ISO 21127:2023):
+```typescript
+const cidoc = await client.getHeritageCIDOC('hoysaleswara-temple')
+console.log(cidoc.data['@type']) // "E22_Human-Made_Object"
+console.log(cidoc.data.sameAs) // ["https://www.wikidata.org/entity/Q570336", ...]
+```
+
+**LIDO XML** (for museums, Europeana):
+```typescript
+// Single site
+const lido = await client.getHeritageLIDO('red-fort', false)
+console.log(lido.data) // "<lido:lido>...</lido:lido>"
+
+// Bulk export (ZIP)
+const lidoZip = await client.exportHeritageLIDO({
+  state: 'Karnataka',
+  category: 'Temple',
+  limit: 100,
+})
+// Returns ZIP blob with multiple LIDO XML files
+```
+
+**OAI-PMH 2.0** (for automated harvesting):
+```typescript
+// Repository identification
+const identify = await client.oaipmhIdentify()
+
+// List all records in LIDO format
+const records = await client.oaipmhListRecords('lido', {
+  from: '2025-01-01T00:00:00Z',
+  set: 'state:Karnataka',
+})
+
+// Get specific record
+const record = await client.oaipmhGetRecord(
+  'oai:inheritage.foundation:heritage:taj-mahal',
+  'lido'
+)
 ```
 
 ### AI Context, Metadata & Federation
