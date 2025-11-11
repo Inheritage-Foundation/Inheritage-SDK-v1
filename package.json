@@ -80,6 +80,7 @@
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^20.11.20",
     "@types/react": "^18.2.0",
+    "react": "^19.2.0",
     "rimraf": "^5.0.5",
     "tsup": "^7.2.0",
     "typescript": "^5.4.0",
@@ -87,4 +88,3 @@
   },
   "funding": "https://inheritage.foundation/donate"
 }
-
