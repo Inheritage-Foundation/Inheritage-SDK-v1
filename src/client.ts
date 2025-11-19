@@ -1,7 +1,9 @@
 import { InheritageApiError } from "./errors"
 import {
+  type AIContextDumpParams,
   type AIContextResponse,
   type AIEmbeddingResponse,
+  type AILicenseResponse,
   type AIMetadataResponse,
   type AISimilarParams,
   type AISimilarResponse,
@@ -9,9 +11,10 @@ import {
   type AIVectorRecord,
   type AIVisionRequest,
   type AIVisionResponse,
-  type AILicenseResponse,
   type ApiRequestOptions,
   type ApiResponse,
+  type ChangefeedParams,
+  type ChangefeedResponse,
   type CitationReportRequest,
   type CitationReportResponse,
   type CitationResponse,
@@ -21,14 +24,23 @@ import {
   type GeoHeritageParams,
   type GeoNearbyParams,
   type Heritage,
+  type HeritageDumpParams,
+  type HeritageFiltersResponse,
+  type HeritageLIDOParams,
+  type HeritageLidoExportParams,
   type HeritageListParams,
   type HeritageListResponse,
   type HeritageSearchParams,
+  type JsonValue,
   type MediaResponse,
   type MediaSearchParams,
   type MediaSearchResponse,
   type RateLimitInfo,
   type StatsResponse,
+  type TimelineFeaturedResponse,
+  type AATStyle,
+  type AATStyleListResponse,
+  type AATSearchParams,
 } from "./types"
 
 const DEFAULT_BASE_URL = "https://inheritage.foundation/api/v1"
@@ -53,6 +65,7 @@ interface RequestOptions<TBody = unknown> extends ApiRequestOptions {
   method: string
   path: string
   body?: TBody
+  responseType?: "json" | "text" | "arrayBuffer"
 }
 
 function ensureFetch(fetchImpl: typeof globalThis.fetch | undefined): typeof globalThis.fetch {
@@ -110,6 +123,31 @@ function serializeQuery(params?: Record<string, string | number | boolean | null
     search.set(key, String(value))
   })
   return search
+}
+
+function inferResponseType(contentType: string): "json" | "text" | "arrayBuffer" {
+  const normalized = contentType.toLowerCase()
+  if (!normalized) {
+    return "text"
+  }
+
+  if (normalized.includes("application/zip") || normalized.includes("application/octet-stream")) {
+    return "arrayBuffer"
+  }
+
+  if (normalized.includes("application/x-ndjson") || normalized.includes("application/jsonl")) {
+    return "text"
+  }
+
+  if (normalized.includes("application/json") || normalized.includes("+json")) {
+    return "json"
+  }
+
+  if (normalized.startsWith("text/") || normalized.includes("application/xml")) {
+    return "text"
+  }
+
+  return "text"
 }
 
 function parseNdjsonRecords(input: string | null | undefined): AIVectorRecord[] {
@@ -223,6 +261,19 @@ export class InheritageClient {
   }
 
   /**
+   * Fetch available heritage filter facets.
+   */
+  async getHeritageFilters(options: ApiRequestOptions = {}): Promise<ApiResponse<HeritageFiltersResponse>> {
+    return this.send<HeritageFiltersResponse>({
+      method: "GET",
+      path: "/heritage/filters",
+      ifNoneMatch: options.ifNoneMatch,
+      ifModifiedSince: options.ifModifiedSince,
+      signal: options.signal,
+    })
+  }
+
+  /**
    * Fetch heritage detail by slug.
    */
   async getHeritage(slug: string, params: { fields?: string[] } = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<Heritage>> {
@@ -288,6 +339,19 @@ export class InheritageClient {
   }
 
   /**
+   * Retrieve featured timeline links.
+   */
+  async getTimelineFeatured(options: ApiRequestOptions = {}): Promise<ApiResponse<TimelineFeaturedResponse>> {
+    return this.send<TimelineFeaturedResponse>({
+      method: "GET",
+      path: "/timeline/featured",
+      ifNoneMatch: options.ifNoneMatch,
+      ifModifiedSince: options.ifModifiedSince,
+      signal: options.signal,
+    })
+  }
+
+  /**
    * GeoJSON FeatureCollection of heritage sites.
    */
   async listGeoHeritage(params: GeoHeritageParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<GeoFeatureCollection>> {
@@ -346,6 +410,94 @@ export class InheritageClient {
     return this.send<GeoFeatureCollection>({
       method: "GET",
       path: "/geo/nearby",
+      query,
+      ifNoneMatch: options.ifNoneMatch,
+      ifModifiedSince: options.ifModifiedSince,
+      signal: options.signal,
+    })
+  }
+
+  /**
+   * Stream heritage NDJSON dump.
+   */
+  async getHeritageDump(params: HeritageDumpParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<string>> {
+    const query: Record<string, number> = {}
+    if (params.batch !== undefined) {
+      query.batch = params.batch
+    }
+
+    const headers = new Headers(options.headers)
+    headers.set("Accept", "application/x-ndjson")
+
+    return this.send<string>({
+      method: "GET",
+      path: "/dump/heritage.ndjson",
+      query,
+      headers,
+      ifNoneMatch: options.ifNoneMatch,
+      ifModifiedSince: options.ifModifiedSince,
+      signal: options.signal,
+    })
+  }
+
+  /**
+   * Download GeoJSON dump for all heritage sites.
+   */
+  async getGeoDump(options: ApiRequestOptions = {}): Promise<ApiResponse<GeoFeatureCollection>> {
+    const headers = new Headers(options.headers)
+    headers.set("Accept", "application/geo+json")
+
+    return this.send<GeoFeatureCollection>({
+      method: "GET",
+      path: "/dump/geo.geojson",
+      headers,
+      ifNoneMatch: options.ifNoneMatch,
+      ifModifiedSince: options.ifModifiedSince,
+      signal: options.signal,
+    })
+  }
+
+  /**
+   * Stream AI context JSONL dump.
+   */
+  async getAIContextDump(params: AIContextDumpParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<string>> {
+    const query: Record<string, string | number> = {}
+    if (params.batch !== undefined) {
+      query.batch = params.batch
+    }
+    if (params.includeEmbedding) {
+      query.include = "embedding"
+    }
+
+    const headers = new Headers(options.headers)
+    headers.set("Accept", "application/jsonl")
+
+    return this.send<string>({
+      method: "GET",
+      path: "/dump/ai-context.jsonl",
+      query,
+      headers,
+      ifNoneMatch: options.ifNoneMatch,
+      ifModifiedSince: options.ifModifiedSince,
+      signal: options.signal,
+    })
+  }
+
+  /**
+   * Retrieve dataset changefeed entries.
+   */
+  async getChangefeed(params: ChangefeedParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<ChangefeedResponse>> {
+    const query: Record<string, string | number> = {}
+    if (params.since) {
+      query.since = typeof params.since === "string" ? params.since : params.since.toISOString()
+    }
+    if (params.limit !== undefined) {
+      query.limit = params.limit
+    }
+
+    return this.send<ChangefeedResponse>({
+      method: "GET",
+      path: "/changes",
       query,
       ifNoneMatch: options.ifNoneMatch,
       ifModifiedSince: options.ifModifiedSince,
@@ -573,7 +725,7 @@ export class InheritageClient {
 
     return {
       ...response,
-      data: parseNdjsonRecords(response.data),
+      data: parseNdjsonRecords(typeof response.data === "string" ? response.data : ""),
     }
   }
 
@@ -587,6 +739,138 @@ export class InheritageClient {
       ifNoneMatch: options.ifNoneMatch,
       ifModifiedSince: options.ifModifiedSince,
       headers: options.headers,
+      signal: options.signal,
+    })
+  }
+
+  /**
+   * CIDOC-CRM JSON-LD payload for a heritage site.
+   */
+  async getHeritageCIDOC(slug: string, options: ApiRequestOptions = {}): Promise<ApiResponse<JsonValue>> {
+    if (!slug || typeof slug !== "string") {
+      throw new Error("slug is required")
+    }
+
+    const headers = new Headers(options.headers)
+    headers.set("Accept", "application/ld+json")
+
+    return this.send<JsonValue>({
+      method: "GET",
+      path: `/cidoc/${encodeURIComponent(slug)}`,
+      headers,
+      ifNoneMatch: options.ifNoneMatch,
+      ifModifiedSince: options.ifModifiedSince,
+      signal: options.signal,
+    })
+  }
+
+  /**
+   * LIDO 1.1 XML export for a heritage site.
+   */
+  async getHeritageLIDO(slug: string, params: HeritageLIDOParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<string>> {
+    if (!slug || typeof slug !== "string") {
+      throw new Error("slug is required")
+    }
+
+    const query: Record<string, string> = {}
+    if (params.download) {
+      query.download = "true"
+    }
+
+    const headers = new Headers(options.headers)
+    headers.set("Accept", "application/xml")
+
+    return this.send<string>({
+      method: "GET",
+      path: `/lido/${encodeURIComponent(slug)}`,
+      query,
+      headers,
+      ifNoneMatch: options.ifNoneMatch,
+      ifModifiedSince: options.ifModifiedSince,
+      signal: options.signal,
+    })
+  }
+
+  /**
+   * Bulk LIDO export (ZIP archive).
+   */
+  async exportHeritageLIDO(params: HeritageLidoExportParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<ArrayBuffer>> {
+    const query: Record<string, string | number> = {}
+    if (params.state) {
+      query.state = params.state
+    }
+    if (params.country) {
+      query.country = params.country
+    }
+    if (params.category) {
+      query.category = params.category
+    }
+    if (params.limit !== undefined) {
+      query.limit = params.limit
+    }
+    if (params.offset !== undefined) {
+      query.offset = params.offset
+    }
+
+    const headers = new Headers(options.headers)
+    headers.set("Accept", "application/zip")
+
+    return this.send<ArrayBuffer>({
+      method: "GET",
+      path: "/lido/export",
+      query,
+      headers,
+      signal: options.signal,
+    })
+  }
+
+  /**
+   * Search AAT (Art & Architecture Thesaurus) terms.
+   */
+  async searchAAT(params: AATSearchParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<AATStyleListResponse>> {
+    const query: Record<string, string | number> = {}
+    if (params.q) {
+      query.q = params.q
+    }
+    if (params.limit !== undefined) {
+      query.limit = params.limit
+    }
+    if (params.offset !== undefined) {
+      query.offset = params.offset
+    }
+    if (params.regions && params.regions.length > 0) {
+      query.regions = params.regions.join(",")
+    }
+    if (params.timePeriods && params.timePeriods.length > 0) {
+      query.timePeriods = params.timePeriods.join(",")
+    }
+    if (params.dynasties && params.dynasties.length > 0) {
+      query.dynasties = params.dynasties.join(",")
+    }
+
+    return this.send<AATStyleListResponse>({
+      method: "GET",
+      path: "/aat",
+      query,
+      headers: options.headers,
+      signal: options.signal,
+    })
+  }
+
+  /**
+   * Get a single AAT term by ID, slug, or style_id.
+   */
+  async getAATTerm(idOrSlug: string, options: ApiRequestOptions = {}): Promise<ApiResponse<AATStyle>> {
+    if (!idOrSlug || typeof idOrSlug !== "string") {
+      throw new Error("idOrSlug is required")
+    }
+
+    return this.send<AATStyle>({
+      method: "GET",
+      path: `/aat/${encodeURIComponent(idOrSlug)}`,
+      headers: options.headers,
+      ifNoneMatch: options.ifNoneMatch,
+      ifModifiedSince: options.ifModifiedSince,
       signal: options.signal,
     })
   }
@@ -651,17 +935,33 @@ export class InheritageClient {
       }
     }
 
-    let parsedBody: unknown = null
     const contentType = response.headers.get("Content-Type") || ""
+    const inferredType = inferResponseType(contentType)
+    let finalType: "json" | "text" | "arrayBuffer" = inferredType === "json" ? "json" : options.responseType ?? inferredType
+    if (inferredType === "json") {
+      finalType = "json"
+    }
 
-    if (response.status !== 204 && contentType.includes("application/json")) {
+    let parsedBody: unknown = null
+
+    if (response.status !== 204) {
       try {
-        parsedBody = await response.json()
+        if (finalType === "arrayBuffer") {
+          parsedBody = await response.arrayBuffer()
+        } else if (finalType === "text") {
+          parsedBody = await response.text()
+        } else {
+          parsedBody = await response.json()
+        }
       } catch {
-        parsedBody = null
+        if (finalType === "arrayBuffer") {
+          parsedBody = new ArrayBuffer(0)
+        } else if (finalType === "text") {
+          parsedBody = ""
+        } else {
+          parsedBody = null
+        }
       }
-    } else if (response.status !== 204) {
-      parsedBody = await response.text()
     }
 
     if (!response.ok) {

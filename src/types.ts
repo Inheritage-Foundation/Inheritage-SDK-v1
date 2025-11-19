@@ -175,6 +175,21 @@ export interface HeritageListResponse {
   }
 }
 
+export interface HeritageFacetOptions {
+  states: string[]
+  countries: string[]
+  dynasties: string[]
+  styles: string[]
+  materials: string[]
+  periods: string[]
+  categories: string[]
+}
+
+export interface HeritageFiltersResponse {
+  filters: HeritageFacetOptions
+  generated_at: string
+}
+
 export interface GeoFeatureProperties {
   slug: string | null
   name: string | null
@@ -421,6 +436,15 @@ export interface DatasetManifest {
   links: DatasetManifestLink[]
 }
 
+export interface TimelineLink {
+  name: string
+  href: string
+}
+
+export interface TimelineFeaturedResponse {
+  timelines: TimelineLink[]
+}
+
 export interface StatsResponse {
   counts: {
     total: number
@@ -495,5 +519,117 @@ export interface SystemHeaders {
   rateLimit?: RateLimitInfo
   etag?: string | null
   lastModified?: string | null
+}
+
+export interface ChangefeedParams {
+  since?: string | Date
+  limit?: number
+}
+
+export interface ChangefeedEntry {
+  slug: string | null
+  updated_at: string | null
+  created_at: string | null
+  published: boolean
+  operation: "upsert" | "unpublished"
+  checksum: string
+  url: string | null
+}
+
+export interface ChangefeedMeta {
+  count: number
+  limit: number
+  since: string
+  next_since: string | null
+  has_more: boolean
+  dataset_hash: string
+  last_updated: string | null
+}
+
+export interface ChangefeedResponse {
+  data: ChangefeedEntry[]
+  meta: ChangefeedMeta
+}
+
+export interface HeritageDumpParams {
+  batch?: number
+}
+
+export interface AIContextDumpParams {
+  batch?: number
+  includeEmbedding?: boolean
+}
+
+export interface HeritageLIDOParams {
+  download?: boolean
+}
+
+export interface HeritageLidoExportParams {
+  state?: string
+  country?: string
+  category?: string
+  limit?: number
+  offset?: number
+}
+
+// AAT (Art & Architecture Thesaurus) Types
+export interface AATStyleMetadata {
+  regions?: string[]
+  timePeriods?: string[]
+  dynasties?: string[]
+  sacredContexts?: string[]
+  associatedDeities?: string[]
+  primaryMaterials?: string[]
+  architecturalFeatures?: string[]
+  keywords?: string[]
+  recommendedSources?: Array<{
+    title: string
+    type: string | null
+    url: string | null
+    notes: string | null
+  }>
+}
+
+export interface AATStyle {
+  id: string
+  style_id: string
+  slug: string
+  label: string
+  uri: string
+  description?: string | null
+  fragments?: string[] | null
+  evidence?: JsonValue
+  metadata?: AATStyleMetadata | null
+  created_at?: string
+  updated_at?: string
+  siteCount?: number
+  primarySiteCount?: number
+  relatedSites?: Array<{
+    id: string
+    name: string
+    slug: string
+    isPrimary: boolean
+    confidenceScore?: number
+  }>
+}
+
+export interface AATStyleListResponse {
+  total: number
+  data: AATStyle[]
+  pagination: {
+    page: number
+    pageSize: number
+    total: number
+    totalPages: number
+  }
+}
+
+export interface AATSearchParams {
+  q?: string
+  limit?: number
+  offset?: number
+  regions?: string[]
+  timePeriods?: string[]
+  dynasties?: string[]
 }
 

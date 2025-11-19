@@ -79,6 +79,40 @@ describe("InheritageClient", () => {
     expect(result.data).toBeNull()
   })
 
+  it("fetches heritage filter facets", async () => {
+    const body = {
+      filters: {
+        states: ["Karnataka"],
+        countries: ["India"],
+        dynasties: ["Vijayanagara"],
+        styles: ["Dravidian"],
+        materials: ["Granite"],
+        periods: ["12th Century"],
+        categories: ["Temple"],
+      },
+      generated_at: "2025-11-12T00:00:00Z",
+    }
+
+    fetchMock.mockResolvedValue(
+      new Response(JSON.stringify(body), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+          ...rateLimitHeaders,
+        },
+      })
+    )
+
+    const result = await client.getHeritageFilters()
+    expect(fetchMock).toHaveBeenCalledWith("https://inheritage.foundation/api/v1/heritage/filters", {
+      method: "GET",
+      headers: expect.any(Headers),
+      body: undefined,
+      signal: undefined,
+    })
+    expect(result.data.filters.states).toContain("Karnataka")
+  })
+
   it("throws InheritageApiError with envelope metadata on API errors", async () => {
     fetchMock.mockResolvedValue(
       new Response(
@@ -179,6 +213,75 @@ describe("InheritageClient", () => {
     expect(result.traceId).toBe("trace-meta")
   })
 
+  it("retrieves featured timeline links", async () => {
+    const body = {
+      timelines: [
+        { name: "Timeline of Temple Architecture in India", href: "/timeline/temples-in-india" },
+      ],
+    }
+
+    fetchMock.mockResolvedValue(
+      new Response(JSON.stringify(body), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+          ...rateLimitHeaders,
+        },
+      })
+    )
+
+    const result = await client.getTimelineFeatured()
+    expect(fetchMock).toHaveBeenCalledWith("https://inheritage.foundation/api/v1/timeline/featured", {
+      method: "GET",
+      headers: expect.any(Headers),
+      body: undefined,
+      signal: undefined,
+    })
+    expect(result.data.timelines[0].href).toBe("/timeline/temples-in-india")
+  })
+
+  it("retrieves dataset changefeed entries", async () => {
+    const body = {
+      data: [
+        {
+          slug: "taj-mahal",
+          updated_at: "2025-11-12T00:00:00Z",
+          created_at: "2024-01-01T00:00:00Z",
+          published: true,
+          operation: "upsert",
+          checksum: "abc123",
+          url: "https://inheritage.foundation/heritage/taj-mahal",
+        },
+      ],
+      meta: {
+        count: 1,
+        limit: 10,
+        since: "2025-11-01T00:00:00Z",
+        next_since: null,
+        has_more: false,
+        dataset_hash: "sha256:xyz",
+        last_updated: "2025-11-12T00:00:00Z",
+      },
+    }
+
+    fetchMock.mockResolvedValue(
+      new Response(JSON.stringify(body), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+          ...rateLimitHeaders,
+        },
+      })
+    )
+
+    const since = new Date("2025-11-01T00:00:00Z")
+    const result = await client.getChangefeed({ since, limit: 10 })
+    const [url] = fetchMock.mock.calls[0]
+    expect(url).toBe("https://inheritage.foundation/api/v1/changes?since=2025-11-01T00%3A00%3A00.000Z&limit=10")
+    expect(result.data[0].slug).toBe("taj-mahal")
+    expect(result.data[0].operation).toBe("upsert")
+  })
+
   it("parses AI vector index NDJSON feed", async () => {
     const ndjson = [
       JSON.stringify({
@@ -274,6 +377,141 @@ describe("InheritageClient", () => {
     })
     expect(result.data.requirements.ai_headers["AI-Use-Allowed"]).toBe("true")
     expect(result.traceId).toBe("trace-license")
+  })
+
+  it("streams heritage NDJSON dump as text", async () => {
+    const ndjson = `{"slug": "site-1"}\n`
+    fetchMock.mockResolvedValue(
+      new Response(ndjson, {
+        status: 200,
+        headers: {
+          "Content-Type": "application/x-ndjson",
+          ...rateLimitHeaders,
+        },
+      })
+    )
+
+    const result = await client.getHeritageDump({ batch: 250 })
+    const [url, init] = fetchMock.mock.calls[0]
+    const headers = new Headers(init?.headers as HeadersInit)
+    expect(url).toBe("https://inheritage.foundation/api/v1/dump/heritage.ndjson?batch=250")
+    expect(headers.get("Accept")).toBe("application/x-ndjson")
+    expect(result.data).toBe(ndjson)
+  })
+
+  it("streams AI context dump with embedding flag", async () => {
+    const jsonl = `{"slug":"site-1"}\n`
+    fetchMock.mockResolvedValue(
+      new Response(jsonl, {
+        status: 200,
+        headers: {
+          "Content-Type": "application/jsonl",
+          ...rateLimitHeaders,
+        },
+      })
+    )
+
+    const result = await client.getAIContextDump({ batch: 100, includeEmbedding: true })
+    const [url, init] = fetchMock.mock.calls[0]
+    const headers = new Headers(init?.headers as HeadersInit)
+    expect(url).toBe("https://inheritage.foundation/api/v1/dump/ai-context.jsonl?batch=100&include=embedding")
+    expect(headers.get("Accept")).toBe("application/jsonl")
+    expect(result.data).toBe(jsonl)
+  })
+
+  it("retrieves GeoJSON dump", async () => {
+    const body = {
+      type: "FeatureCollection",
+      features: [],
+      metadata: {
+        total: 1,
+        published: 1,
+        last_updated: "2025-11-12T00:00:00Z",
+        dataset_hash: "sha256:xyz",
+      },
+    }
+
+    fetchMock.mockResolvedValue(
+      new Response(JSON.stringify(body), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/geo+json",
+          ...rateLimitHeaders,
+        },
+      })
+    )
+
+    const result = await client.getGeoDump()
+    const [, init] = fetchMock.mock.calls[0]
+    const headers = new Headers(init?.headers as HeadersInit)
+    expect(headers.get("Accept")).toBe("application/geo+json")
+    expect(result.data.metadata.total).toBe(1)
+  })
+
+  it("fetches CIDOC JSON-LD payload", async () => {
+    const body = {
+      "@context": "https://inheritage.foundation/context/cidoc-crm.jsonld",
+      "@type": "E22_Human-Made_Object",
+      name: "Taj Mahal",
+    }
+
+    fetchMock.mockResolvedValue(
+      new Response(JSON.stringify(body), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/ld+json",
+          ...rateLimitHeaders,
+        },
+      })
+    )
+
+    const result = await client.getHeritageCIDOC("taj-mahal")
+    const [, init] = fetchMock.mock.calls[0]
+    const headers = new Headers(init?.headers as HeadersInit)
+    expect(headers.get("Accept")).toBe("application/ld+json")
+    expect((result.data as Record<string, unknown>)["@type"]).toBe("E22_Human-Made_Object")
+  })
+
+  it("fetches LIDO XML payload", async () => {
+    const xml = `<lido:lido xmlns:lido="http://www.lido-schema.org">...</lido:lido>`
+
+    fetchMock.mockResolvedValue(
+      new Response(xml, {
+        status: 200,
+        headers: {
+          "Content-Type": "application/xml",
+          ...rateLimitHeaders,
+        },
+      })
+    )
+
+    const result = await client.getHeritageLIDO("red-fort", { download: true })
+    const [url, init] = fetchMock.mock.calls[0]
+    const headers = new Headers(init?.headers as HeadersInit)
+    expect(url).toBe("https://inheritage.foundation/api/v1/lido/red-fort?download=true")
+    expect(headers.get("Accept")).toBe("application/xml")
+    expect(result.data).toContain("<lido:lido")
+  })
+
+  it("exports LIDO ZIP archive", async () => {
+    const buffer = new TextEncoder().encode("zip").buffer
+
+    fetchMock.mockResolvedValue(
+      new Response(buffer, {
+        status: 200,
+        headers: {
+          "Content-Type": "application/zip",
+          ...rateLimitHeaders,
+        },
+      })
+    )
+
+    const result = await client.exportHeritageLIDO({ state: "Karnataka", limit: 10 })
+    const [url, init] = fetchMock.mock.calls[0]
+    const headers = new Headers(init?.headers as HeadersInit)
+    expect(url).toBe("https://inheritage.foundation/api/v1/lido/export?state=Karnataka&limit=10")
+    expect(headers.get("Accept")).toBe("application/zip")
+    expect(result.data).toBeInstanceOf(ArrayBuffer)
   })
 
   it("throws when calling vision context without image payload", async () => {
