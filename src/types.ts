@@ -172,6 +172,7 @@ export interface HeritageListResponse {
     total: number
     limit: number
     offset: number
+    page?: number
   }
 }
 
@@ -497,6 +498,8 @@ export interface GeoNearbyParams {
   lat: number
   lon: number
   radius_km?: number
+  radius?: number
+  limit?: number
 }
 
 export interface MediaSearchParams {

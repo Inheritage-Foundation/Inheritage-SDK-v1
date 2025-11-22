@@ -40,9 +40,11 @@ describe('React Hooks', () => {
       } as Heritage
 
       vi.spyOn(mockClient, 'getHeritage').mockResolvedValue({
+        status: 200,
         data: mockData,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>
@@ -93,9 +95,11 @@ describe('React Hooks', () => {
     it('refetch function works', async () => {
       const mockData: Heritage = { id: '1', slug: 'taj-mahal', name: 'Taj Mahal' } as Heritage
       vi.spyOn(mockClient, 'getHeritage').mockResolvedValue({
+        status: 200,
         data: mockData,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>
@@ -128,9 +132,11 @@ describe('React Hooks', () => {
       }
 
       vi.spyOn(mockClient, 'listHeritage').mockResolvedValue({
+        status: 200,
         data: mockResponse,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>
@@ -158,13 +164,15 @@ describe('React Hooks', () => {
       }
 
       vi.spyOn(mockClient, 'getGeoNearby').mockResolvedValue({
+        status: 200,
         data: mockGeoJSON,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>
-        useGeoNearby({ lat: 28.6139, lon: 77.2090, radius: 10 }, { client: mockClient })
+        useGeoNearby({ lat: 28.6139, lon: 77.2090, radius_km: 10 }, { client: mockClient })
       )
 
       await waitFor(() => expect(result.current.loading).toBe(false))
@@ -175,7 +183,7 @@ describe('React Hooks', () => {
 
     it('does not fetch if coordinates are invalid', async () => {
       const { result } = renderHook(() =>
-        useGeoNearby({ lat: NaN, lon: 77.2090, radius: 10 }, { client: mockClient })
+        useGeoNearby({ lat: NaN, lon: 77.2090, radius_km: 10 }, { client: mockClient })
       )
 
       await waitFor(() => expect(result.current.loading).toBe(false))
@@ -187,16 +195,17 @@ describe('React Hooks', () => {
   describe('useMedia', () => {
     it('fetches media bundle', async () => {
       const mockMedia: MediaResponse = {
-        primary_image: 'https://example.com/image.jpg',
-        gallery: [],
-        panoramas: [],
-        // ... other fields
-      } as MediaResponse
+        heritage_id: 'test-id',
+        items: [],
+        citations: [],
+      }
 
       vi.spyOn(mockClient, 'getMedia').mockResolvedValue({
+        status: 200,
         data: mockMedia,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>
@@ -212,16 +221,20 @@ describe('React Hooks', () => {
   describe('useCitation', () => {
     it('fetches citation metadata', async () => {
       const mockCitation: CitationResponse = {
-        name: 'Inheritage Foundation',
-        url: 'https://inheritage.foundation',
+        entity: 'Inheritage Foundation',
+        citation_html: '<p>Data © Inheritage Foundation</p>',
+        citation_markdown: 'Data © Inheritage Foundation',
+        citation_text: 'Data © Inheritage Foundation',
         license: 'CC BY 4.0',
-        required_display: 'Data © Inheritage Foundation',
+        source_url: 'https://inheritage.foundation',
       }
 
       vi.spyOn(mockClient, 'getCitation').mockResolvedValue({
+        status: 200,
         data: mockCitation,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>
@@ -251,9 +264,11 @@ describe('React Hooks', () => {
       }
 
       vi.spyOn(mockClient, 'getAIContext').mockResolvedValue({
+        status: 200,
         data: mockContext,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>
@@ -285,9 +300,11 @@ describe('React Hooks', () => {
       }
 
       vi.spyOn(mockClient, 'findSimilar').mockResolvedValue({
+        status: 200,
         data: mockSimilar,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>
@@ -322,8 +339,13 @@ describe('React Hooks', () => {
         model_version: '2025-01-15',
         prompt_template_version: 'v1.1.0',
         retrieval_policy: 'full:v1',
-        license: 'CC BY 4.0',
-        license_url: 'https://inheritage.foundation/license/ai',
+        license: {
+          name: 'CC BY 4.0',
+          citation_required: true,
+          ai_use_allowed: true,
+          ai_license_terms: 'https://creativecommons.org/licenses/by/4.0/',
+        },
+        locale: null,
         citations: {} as any,
         official_url: 'https://inheritage.foundation/heritage/taj-mahal',
         same_as: [],
@@ -332,9 +354,11 @@ describe('React Hooks', () => {
       }
 
       vi.spyOn(mockClient, 'getAIMetadata').mockResolvedValue({
+        status: 200,
         data: mockMetadata,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>
@@ -369,9 +393,11 @@ describe('React Hooks', () => {
       ]
 
       vi.spyOn(mockClient, 'getAIVectorIndex').mockResolvedValue({
+        status: 200,
         data: mockVectors,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>
@@ -393,8 +419,8 @@ describe('React Hooks', () => {
       ]
 
       vi.spyOn(mockClient, 'getAIVectorIndex')
-        .mockResolvedValueOnce({ data: mockVectors1, headers: new Headers(), traceId: 'trace1' })
-        .mockResolvedValueOnce({ data: mockVectors2, headers: new Headers(), traceId: 'trace2' })
+        .mockResolvedValueOnce({ status: 200, data: mockVectors1, headers: new Headers(), traceId: 'trace1', notModified: false })
+        .mockResolvedValueOnce({ status: 200, data: mockVectors2, headers: new Headers(), traceId: 'trace2', notModified: false })
 
       const { result } = renderHook(() =>
         useAIVectorIndex({ limit: 1 }, { client: mockClient })
@@ -416,9 +442,11 @@ describe('React Hooks', () => {
       ]
 
       vi.spyOn(mockClient, 'getAIVectorIndex').mockResolvedValue({
+        status: 200,
         data: mockVectors,
         headers: new Headers(),
         traceId: 'test-trace',
+        notModified: false,
       })
 
       const { result } = renderHook(() =>

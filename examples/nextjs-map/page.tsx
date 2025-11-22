@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import maplibregl from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
-import { InheritageClient } from "@inheritage/sdk"
+import { InheritageClient } from "@inheritage-foundation/sdk"
 
 const inheritage = new InheritageClient()
 
@@ -21,20 +21,20 @@ export default function HeritageMap() {
 
     inheritage
       .listGeoHeritage({ limit: 200 })
-      .then(({ data }) => {
-        data.features.forEach((feature) => {
+      .then(({ data }: { data: { features: Array<{ geometry: { coordinates: [number, number] }; properties: { name?: string; state?: string } }> } }) => {
+        data.features.forEach((feature: { geometry: { coordinates: [number, number] }; properties: { name?: string; state?: string } }) => {
           const [lon, lat] = feature.geometry.coordinates
           new maplibregl.Marker()
             .setLngLat([lon, lat])
             .setPopup(
               new maplibregl.Popup().setHTML(
-                `<strong>${feature.properties.name}</strong><br/>${feature.properties.state ?? ""}`
+                `<strong>${feature.properties.name || ''}</strong><br/>${feature.properties.state ?? ""}`
               )
             )
             .addTo(map)
         })
       })
-      .catch((error) => {
+      .catch((error: unknown) => {
         console.error("Failed to load heritage map", error)
       })
 

@@ -56,7 +56,7 @@
     "openapi",
     "cc-by"
   ],
-  "author": "Inheritage Foundation <api@inheritage.foundation>",
+  "author": "Inheritage Foundation <hello@inheritage.foundation>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Inheritage-Foundation/Inheritage-SDK-v1.git"

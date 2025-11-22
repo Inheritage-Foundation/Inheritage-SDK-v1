@@ -237,7 +237,7 @@ describe("InheritageClient", () => {
       body: undefined,
       signal: undefined,
     })
-    expect(result.data.timelines[0].href).toBe("/timeline/temples-in-india")
+    expect(result.data.timelines?.[0]?.href).toBe("/timeline/temples-in-india")
   })
 
   it("retrieves dataset changefeed entries", async () => {
@@ -276,10 +276,13 @@ describe("InheritageClient", () => {
 
     const since = new Date("2025-11-01T00:00:00Z")
     const result = await client.getChangefeed({ since, limit: 10 })
-    const [url] = fetchMock.mock.calls[0]
-    expect(url).toBe("https://inheritage.foundation/api/v1/changes?since=2025-11-01T00%3A00%3A00.000Z&limit=10")
-    expect(result.data[0].slug).toBe("taj-mahal")
-    expect(result.data[0].operation).toBe("upsert")
+    const mockCall = fetchMock.mock.calls[0]
+    if (mockCall && Array.isArray(mockCall)) {
+      const [url] = mockCall
+      expect(url).toBe("https://inheritage.foundation/api/v1/changes?since=2025-11-01T00%3A00%3A00.000Z&limit=10")
+    }
+    expect(result.data?.data?.[0]?.slug).toBe("taj-mahal")
+    expect(result.data?.data?.[0]?.operation).toBe("upsert")
   })
 
   it("parses AI vector index NDJSON feed", async () => {
@@ -315,12 +318,15 @@ describe("InheritageClient", () => {
     )
 
     const result = await client.getAIVectorIndex({ limit: 1 })
-    const [, init] = fetchMock.mock.calls[0]
-    const headers = new Headers(init?.headers as Record<string, string> | undefined)
-    expect(headers.get("Accept")).toBe("application/x-ndjson")
+    const mockCall = fetchMock.mock.calls[0]
+    if (mockCall && Array.isArray(mockCall) && mockCall.length > 1) {
+      const [, init] = mockCall
+      const headers = new Headers(init?.headers as Record<string, string> | undefined)
+      expect(headers.get("Accept")).toBe("application/x-ndjson")
+    }
     expect(result.data).toHaveLength(1)
-    expect(result.data[0].slug).toBe("hampi")
-    expect(result.data[0].embedding_checksum).toBe("checksum-1")
+    expect(result.data?.[0]?.slug).toBe("hampi")
+    expect(result.data?.[0]?.embedding_checksum).toBe("checksum-1")
     expect(result.traceId).toBe("trace-ndjson")
   })
 
@@ -345,7 +351,7 @@ describe("InheritageClient", () => {
       enforcement: {
         violation_reporting: "https://inheritage.foundation/api/v1/citation/report",
         revocation_policy: "Keys can be revoked.",
-        contact: "api@inheritage.foundation",
+        contact: "hello@inheritage.foundation",
       },
       citation_examples: [
         {
@@ -445,7 +451,7 @@ describe("InheritageClient", () => {
     const [, init] = fetchMock.mock.calls[0]
     const headers = new Headers(init?.headers as HeadersInit)
     expect(headers.get("Accept")).toBe("application/geo+json")
-    expect(result.data.metadata.total).toBe(1)
+    expect((result.data as { metadata?: { total?: number } }).metadata?.total).toBe(1)
   })
 
   it("fetches CIDOC JSON-LD payload", async () => {

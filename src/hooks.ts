@@ -17,7 +17,6 @@ import type {
   AIContextResponse,
   AISimilarParams,
   AISimilarResponse,
-  ApiResponse,
   AIMetadataResponse,
   AIVectorIndexParams,
   AIVectorRecord,

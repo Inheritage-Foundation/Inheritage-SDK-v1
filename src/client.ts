@@ -247,7 +247,7 @@ export class InheritageClient {
       offset: params.offset,
     }
     if (params.fields?.length) {
-      query.fields = params.fields.join(",")
+      query['fields'] = params.fields.join(",")
     }
 
     return this.send<HeritageListResponse>({
@@ -283,7 +283,7 @@ export class InheritageClient {
 
     const query: Record<string, string | undefined> = {}
     if (params.fields?.length) {
-      query.fields = params.fields.join(",")
+      query['fields'] = params.fields.join(",")
     }
 
     return this.send<Heritage>({
@@ -312,7 +312,7 @@ export class InheritageClient {
       limit: params.limit,
     }
     if (params.fields?.length) {
-      query.fields = params.fields.join(",")
+      query['fields'] = params.fields.join(",")
     }
 
     return this.send({
@@ -404,7 +404,7 @@ export class InheritageClient {
       lon: params.lon,
     }
     if (params.radius_km !== undefined) {
-      query.radius_km = params.radius_km
+      query['radius_km'] = params.radius_km
     }
 
     return this.send<GeoFeatureCollection>({
@@ -423,7 +423,7 @@ export class InheritageClient {
   async getHeritageDump(params: HeritageDumpParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<string>> {
     const query: Record<string, number> = {}
     if (params.batch !== undefined) {
-      query.batch = params.batch
+      query['batch'] = params.batch
     }
 
     const headers = new Headers(options.headers)
@@ -463,10 +463,10 @@ export class InheritageClient {
   async getAIContextDump(params: AIContextDumpParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<string>> {
     const query: Record<string, string | number> = {}
     if (params.batch !== undefined) {
-      query.batch = params.batch
+      query['batch'] = params.batch
     }
     if (params.includeEmbedding) {
-      query.include = "embedding"
+      query['include'] = "embedding"
     }
 
     const headers = new Headers(options.headers)
@@ -489,10 +489,10 @@ export class InheritageClient {
   async getChangefeed(params: ChangefeedParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<ChangefeedResponse>> {
     const query: Record<string, string | number> = {}
     if (params.since) {
-      query.since = typeof params.since === "string" ? params.since : params.since.toISOString()
+      query['since'] = typeof params.since === "string" ? params.since : params.since.toISOString()
     }
     if (params.limit !== undefined) {
-      query.limit = params.limit
+      query['limit'] = params.limit
     }
 
     return this.send<ChangefeedResponse>({
@@ -637,13 +637,13 @@ export class InheritageClient {
 
     const body: Record<string, unknown> = {}
     if (params.slug) {
-      body.slug = params.slug
+      body['slug'] = params.slug
     }
     if (params.embedding) {
-      body.embedding = params.embedding
+      body['embedding'] = params.embedding
     }
     if (params.limit !== undefined) {
-      body.limit = params.limit
+      body['limit'] = params.limit
     }
 
     return this.send<AISimilarResponse>({
@@ -701,13 +701,13 @@ export class InheritageClient {
       if (!Number.isFinite(params.limit)) {
         throw new Error("limit must be a finite number")
       }
-      query.limit = Number(params.limit)
+      query['limit'] = Number(params.limit)
     }
     if (params.offset !== undefined) {
       if (!Number.isFinite(params.offset)) {
         throw new Error("offset must be a finite number")
       }
-      query.offset = Number(params.offset)
+      query['offset'] = Number(params.offset)
     }
 
     const headers = new Headers(options.headers)
@@ -774,7 +774,7 @@ export class InheritageClient {
 
     const query: Record<string, string> = {}
     if (params.download) {
-      query.download = "true"
+      query['download'] = "true"
     }
 
     const headers = new Headers(options.headers)
@@ -797,19 +797,19 @@ export class InheritageClient {
   async exportHeritageLIDO(params: HeritageLidoExportParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<ArrayBuffer>> {
     const query: Record<string, string | number> = {}
     if (params.state) {
-      query.state = params.state
+      query['state'] = params.state
     }
     if (params.country) {
-      query.country = params.country
+      query['country'] = params.country
     }
     if (params.category) {
-      query.category = params.category
+      query['category'] = params.category
     }
     if (params.limit !== undefined) {
-      query.limit = params.limit
+      query['limit'] = params.limit
     }
     if (params.offset !== undefined) {
-      query.offset = params.offset
+      query['offset'] = params.offset
     }
 
     const headers = new Headers(options.headers)
@@ -830,22 +830,22 @@ export class InheritageClient {
   async searchAAT(params: AATSearchParams = {}, options: ApiRequestOptions = {}): Promise<ApiResponse<AATStyleListResponse>> {
     const query: Record<string, string | number> = {}
     if (params.q) {
-      query.q = params.q
+      query['q'] = params.q
     }
     if (params.limit !== undefined) {
-      query.limit = params.limit
+      query['limit'] = params.limit
     }
     if (params.offset !== undefined) {
-      query.offset = params.offset
+      query['offset'] = params.offset
     }
     if (params.regions && params.regions.length > 0) {
-      query.regions = params.regions.join(",")
+      query['regions'] = params.regions.join(",")
     }
     if (params.timePeriods && params.timePeriods.length > 0) {
-      query.timePeriods = params.timePeriods.join(",")
+      query['timePeriods'] = params.timePeriods.join(",")
     }
     if (params.dynasties && params.dynasties.length > 0) {
-      query.dynasties = params.dynasties.join(",")
+      query['dynasties'] = params.dynasties.join(",")
     }
 
     return this.send<AATStyleListResponse>({
@@ -885,7 +885,8 @@ export class InheritageClient {
 
     if (options.query) {
       const query = serializeQuery(options.query)
-      if ([...query.keys()].length > 0) {
+      const queryKeys = Array.from(query.keys())
+      if (queryKeys.length > 0) {
         const existing = url.searchParams
         query.forEach((value, key) => {
           existing.set(key, value)
@@ -965,7 +966,7 @@ export class InheritageClient {
     }
 
     if (!response.ok) {
-      const errorEnvelope = typeof parsedBody === "object" && parsedBody !== null ? (parsedBody as Record<string, any>).error : undefined
+      const errorEnvelope = typeof parsedBody === "object" && parsedBody !== null ? (parsedBody as Record<string, any>)['error'] : undefined
       const error = new InheritageApiError({
         status: response.status,
         code: errorEnvelope?.code ?? "INTERNAL_SERVER_ERROR",
@@ -1012,85 +1013,6 @@ export class InheritageClient {
   // CIDOC-CRM API
   // ========================
 
-  /**
-   * Get heritage site in CIDOC-CRM JSON-LD format
-   * @param slug - Heritage site slug
-   * @param options - Request options
-   * @returns CIDOC-CRM JSON-LD representation
-   * @endpoint GET /cidoc/:slug
-   * @standard ISO 21127:2023 (CIDOC-CRM 7.1.3)
-   */
-  public async getHeritageCIDOC(slug: string, options?: ApiRequestOptions): Promise<ApiResponse<any>> {
-    return this.send({
-      method: "GET",
-      path: `/cidoc/${slug}`,
-      ...options,
-      headers: {
-        ...options?.headers,
-        Accept: "application/ld+json",
-      },
-    })
-  }
-
-  // ========================
-  // LIDO API
-  // ========================
-
-  /**
-   * Get heritage site in LIDO 1.1 XML format
-   * @param slug - Heritage site slug
-   * @param download - Whether to download as file (default: false)
-   * @param options - Request options
-   * @returns LIDO XML string
-   * @endpoint GET /lido/:slug
-   * @standard LIDO 1.1
-   */
-  public async getHeritageLIDO(
-    slug: string,
-    download: boolean = false,
-    options?: ApiRequestOptions
-  ): Promise<ApiResponse<string>> {
-    return this.send<string>({
-      method: "GET",
-      path: `/lido/${slug}`,
-      query: download ? { download: "true" } : undefined,
-      ...options,
-      headers: {
-        ...options?.headers,
-        Accept: "application/xml",
-      },
-    })
-  }
-
-  /**
-   * Export multiple heritage sites as LIDO XML (ZIP archive)
-   * @param params - Filter parameters (state, country, category, limit, offset)
-   * @param options - Request options
-   * @returns ZIP archive blob
-   * @endpoint GET /lido/export
-   * @standard LIDO 1.1
-   */
-  public async exportHeritageLIDO(
-    params?: {
-      state?: string
-      country?: string
-      category?: string
-      limit?: number
-      offset?: number
-    },
-    options?: ApiRequestOptions
-  ): Promise<ApiResponse<Blob>> {
-    return this.send<Blob>({
-      method: "GET",
-      path: "/lido/export",
-      query: params as Record<string, string | number>,
-      ...options,
-      headers: {
-        ...options?.headers,
-        Accept: "application/zip",
-      },
-    })
-  }
 
   // ========================
   // OAI-PMH API

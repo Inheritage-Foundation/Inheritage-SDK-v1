@@ -19,6 +19,7 @@ import {
   InheritageCitation,
   InheritageClient,
 } from '@inheritage-foundation/sdk'
+import type { Heritage, MediaResponse, AIContextResponse, AISimilarResponse, GeoFeatureCollection } from '../src/types'
 
 // Create a shared client instance (optional, hooks create their own if not provided)
 const client = new InheritageClient({
@@ -34,7 +35,7 @@ export function HeritageSitePage({ slug }: { slug: string }) {
   const { data: aiContext } = useAIContext(slug, { client })
   const { data: similar } = useSimilarSites({ slug, limit: 3 }, { client })
   const { data: media } = useMedia(slug, { client })
-
+  
   if (loading) {
     return <LoadingSpinner message="Loading heritage site..." />
   }
@@ -47,17 +48,27 @@ export function HeritageSitePage({ slug }: { slug: string }) {
     return <NotFound />
   }
 
+  // Type assertion: site is guaranteed to be non-null at this point
+  const siteData: Heritage = site
+  const mediaData: MediaResponse | null = media
+  const aiContextData: AIContextResponse | null = aiContext
+  const similarData: AISimilarResponse | null = similar
+
   return (
     <div className="heritage-site-page">
       {/* Hero Section */}
       <section className="hero">
-        {media?.primary_image && (
-          <img src={media.primary_image} alt={site.name} className="hero-image" />
+        {(siteData.media?.primary_image || (mediaData && (mediaData as MediaResponse).items && (mediaData as MediaResponse).items[0]?.url)) && (
+          <img 
+            src={siteData.media?.primary_image || (mediaData && (mediaData as MediaResponse).items && (mediaData as MediaResponse).items[0]?.url) || ''} 
+            alt={siteData.name} 
+            className="hero-image" 
+          />
         )}
         <div className="hero-content">
-          <h1>{site.name}</h1>
+          <h1>{siteData.name}</h1>
           <p className="subtitle">
-            {site.state}, {site.country} • {site.category}
+            {siteData.state}, {siteData.country} • {siteData.category}
           </p>
         </div>
       </section>
@@ -66,23 +77,23 @@ export function HeritageSitePage({ slug }: { slug: string }) {
       <main className="content">
         <section className="description">
           <h2>About</h2>
-          <p>{site.description || site.summary}</p>
+          <p>{siteData.description || siteData.summary}</p>
 
-          {site.architecture.style && (
+          {siteData.architecture.style && (
             <div className="architecture-info">
               <h3>Architecture</h3>
               <ul>
                 <li>
-                  <strong>Style:</strong> {site.architecture.style}
+                  <strong>Style:</strong> {siteData.architecture.style}
                 </li>
-                {site.year_built && (
+                {siteData.year_built && (
                   <li>
-                    <strong>Year Built:</strong> {site.year_built}
+                    <strong>Year Built:</strong> {siteData.year_built}
                   </li>
                 )}
-                {site.built_by && (
+                {siteData.built_by && (
                   <li>
-                    <strong>Built By:</strong> {site.built_by}
+                    <strong>Built By:</strong> {String(siteData.built_by)}
                   </li>
                 )}
               </ul>
@@ -91,21 +102,21 @@ export function HeritageSitePage({ slug }: { slug: string }) {
         </section>
 
         {/* AI Context Section */}
-        {aiContext && (
+        {aiContextData && (
           <section className="ai-context">
             <h2>AI-Generated Context</h2>
-            <p>{aiContext.context}</p>
+            <p>{(aiContextData as AIContextResponse).context}</p>
             <details>
               <summary>Technical Details</summary>
               <ul>
                 <li>
-                  <strong>Embedding Model:</strong> {aiContext.model} v{aiContext.model_version}
+                  <strong>Embedding Model:</strong> {(aiContextData as AIContextResponse).model} v{(aiContextData as AIContextResponse).model_version}
                 </li>
                 <li>
-                  <strong>Dimensions:</strong> {aiContext.embedding_dimensions}
+                  <strong>Dimensions:</strong> {(aiContextData as AIContextResponse).embedding_dimensions}
                 </li>
                 <li>
-                  <strong>Checksum:</strong> {aiContext.embedding_checksum.slice(0, 16)}...
+                  <strong>Checksum:</strong> {(aiContextData as AIContextResponse).embedding_checksum?.slice(0, 16)}...
                 </li>
               </ul>
             </details>
@@ -113,11 +124,11 @@ export function HeritageSitePage({ slug }: { slug: string }) {
         )}
 
         {/* Similar Sites */}
-        {similar && similar.data.length > 0 && (
+        {similarData && (similarData as AISimilarResponse).data && (similarData as AISimilarResponse).data.length > 0 && (
           <section className="similar-sites">
             <h2>Similar Heritage Sites</h2>
             <div className="site-grid">
-              {similar.data.map((entry) => (
+              {(similarData as AISimilarResponse).data.map((entry: { site: Heritage; score: number }) => (
                 <SiteCard
                   key={entry.site.slug}
                   site={entry.site}
@@ -129,24 +140,24 @@ export function HeritageSitePage({ slug }: { slug: string }) {
         )}
 
         {/* Visitor Information */}
-        {site.visitor_info && (
+        {siteData.visitor_info && (
           <section className="visitor-info">
             <h2>Visitor Information</h2>
             <ul>
-              {site.visitor_info.visiting_hours && (
+              {siteData.visitor_info.visiting_hours && (
                 <li>
-                  <strong>Hours:</strong> {site.visitor_info.visiting_hours}
+                  <strong>Hours:</strong> {siteData.visitor_info.visiting_hours}
                 </li>
               )}
-              {site.visitor_info.entry_fee && (
+              {siteData.visitor_info.entry_fee && (
                 <li>
-                  <strong>Entry Fee:</strong> {site.visitor_info.entry_fee}
+                  <strong>Entry Fee:</strong> {siteData.visitor_info.entry_fee}
                 </li>
               )}
-              {site.visitor_info.website && (
+              {siteData.visitor_info.website && (
                 <li>
                   <strong>Website:</strong>{' '}
-                  <a href={site.visitor_info.website} target="_blank" rel="noopener noreferrer">
+                  <a href={siteData.visitor_info.website} target="_blank" rel="noopener noreferrer">
                     Visit Official Site
                   </a>
                 </li>
@@ -158,7 +169,9 @@ export function HeritageSitePage({ slug }: { slug: string }) {
 
       {/* Attribution Footer */}
       <footer className="attribution-footer">
-        <InheritageCitation citation={site.citations} display="block" showBadge showLegal />
+        {siteData.citations && siteData.citations.length > 0 && (
+          <InheritageCitation citation={siteData.citations} display="block" showBadge showLegal />
+        )}
       </footer>
     </div>
   )
@@ -193,7 +206,6 @@ export function NearbyHeritageSitesMap() {
       ? {
           lat: userLocation.lat,
           lon: userLocation.lon,
-          radius,
           limit: 20,
         }
       : ({} as any),
@@ -203,6 +215,9 @@ export function NearbyHeritageSitesMap() {
   if (loading || !userLocation) {
     return <LoadingSpinner message="Finding nearby sites..." />
   }
+
+  // Type assertion for nearby data
+  const nearbyData: GeoFeatureCollection | null = nearby
 
   return (
     <div className="nearby-map-container">
@@ -223,22 +238,22 @@ export function NearbyHeritageSitesMap() {
       {/* Map component (using Leaflet, Mapbox, etc.) */}
       <div className="map">
         {/* Render markers from nearby.features */}
-        {nearby?.features.map((feature) => (
+        {nearbyData && (nearbyData as GeoFeatureCollection).features && (nearbyData as GeoFeatureCollection).features.map((feature) => (
           <Marker
-            key={feature.properties.slug}
+            key={feature.properties.slug || ''}
             position={[feature.geometry.coordinates[1], feature.geometry.coordinates[0]]}
-            title={feature.properties.name}
+            title={feature.properties.name || ''}
           />
         ))}
       </div>
 
       {/* Site List */}
       <div className="site-list">
-        <h3>Nearby Sites ({nearby?.features.length || 0})</h3>
-        {nearby?.features.map((feature) => (
-          <div key={feature.properties.slug} className="site-list-item">
-            <a href={`/heritage/${feature.properties.slug}`}>
-              <strong>{feature.properties.name}</strong>
+        <h3>Nearby Sites ({nearbyData ? (nearbyData as GeoFeatureCollection).features?.length || 0 : 0})</h3>
+        {nearbyData && (nearbyData as GeoFeatureCollection).features && (nearbyData as GeoFeatureCollection).features.map((feature) => (
+          <div key={feature.properties.slug || ''} className="site-list-item">
+            <a href={`/heritage/${feature.properties.slug || ''}`}>
+              <strong>{feature.properties.name || ''}</strong>
             </a>
             <span className="state">{feature.properties.state}</span>
           </div>
