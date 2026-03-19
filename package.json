@@ -1,7 +1,7 @@
 {
   "name": "@inheritage-foundation/sdk",
   "version": "0.3.0",
-  "description": "TypeScript SDK for the Inheritage API — India's open cultural heritage dataset.",
+  "description": "Official TypeScript SDK for Inheritage API — Access 5000+ Indian heritage sites with React hooks, AI embeddings, GeoJSON, CIDOC-CRM, LIDO XML, OAI-PMH, and LangChain integration. Production-ready, type-safe, CC BY 4.0 compliant.",
   "license": "Apache-2.0",
   "type": "module",
   "main": "dist/index.cjs",
@@ -46,18 +46,34 @@
   "keywords": [
     "inheritage",
     "heritage",
+    "india",
+    "cultural-heritage",
+    "temples",
+    "monuments",
     "open-data",
     "digital-heritage",
     "cultural-preservation",
     "api",
     "sdk",
     "typescript",
+    "react",
+    "hooks",
     "geojson",
     "ai",
+    "embeddings",
+    "langchain",
     "openapi",
-    "cc-by"
+    "cidoc-crm",
+    "lido",
+    "oai-pmh",
+    "sparql",
+    "cc-by",
+    "creative-commons"
   ],
-  "author": "Inheritage Foundation <hello@inheritage.foundation>",
+  "author": "Ayush Mishra <hello@inheritage.foundation> (https://ayush.studio)",
+  "contributors": [
+    "Team Inheritage <hello@inheritage.foundation>"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Inheritage-Foundation/Inheritage-SDK-v1.git"
@@ -87,6 +103,7 @@
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",

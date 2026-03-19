@@ -1,8 +1,18 @@
 /**
- * React hooks for the Inheritage SDK
+ * React Hooks for Inheritage SDK
  * 
- * Provides convenient hooks for fetching heritage data, AI context, and geospatial features
- * with automatic error handling, loading states, and caching.
+ * Composable hooks for fetching heritage data with automatic
+ * loading states, error handling, and caching
+ * 
+ * @version 0.3.0
+ * @author Ayush Mishra <hello@inheritage.foundation> (https://ayush.studio)
+ * @license Apache-2.0
+ * @copyright Team Inheritage
+ * 
+ * @example
+ * ```typescript
+ * const { data, loading } = useHeritage('taj-mahal')
+ * ```
  */
 
 import { useCallback, useEffect, useState } from "react"

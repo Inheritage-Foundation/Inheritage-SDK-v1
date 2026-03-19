@@ -71,7 +71,7 @@ describe('E2E Tests', () => {
   })
 
   describe('Geospatial API', () => {
-    it('finds nearby heritage sites (Delhi)', async () => {
+    it('finds nearby heritage sites (Delhi)', { timeout: 10000 }, async () => {
       const response = await client.getGeoNearby({
         lat: 28.6139,
         lon: 77.2090,
@@ -88,8 +88,8 @@ describe('E2E Tests', () => {
       expect(feature.type).toBe('Feature')
       expect(feature.geometry.type).toBe('Point')
       expect(feature.geometry.coordinates).toHaveLength(2)
-      expect(feature.properties.slug).toBeDefined()
-      expect(feature.properties.name).toBeDefined()
+      expect(feature.properties?.slug).toBeDefined()
+      expect(feature.properties?.name).toBeDefined()
     })
 
     it('returns single site as GeoJSON', async () => {
@@ -403,8 +403,9 @@ describe('E2E Tests', () => {
         await client.getHeritage('this-site-does-not-exist-xyz')
         expect.fail('Should have thrown an error')
       } catch (error: any) {
-        expect(error.statusCode).toBe(404)
+        expect(error.status).toBe(404)
         expect(error.message).toBeDefined()
+        expect(error.code).toBe('NOT_FOUND')
       }
     })
 

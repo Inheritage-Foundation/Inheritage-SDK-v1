@@ -1,3 +1,15 @@
+/**
+ * Error Classes for Inheritage SDK
+ * 
+ * Custom error types with rich context for debugging
+ * Includes rate limit info, trace IDs, and documentation links
+ * 
+ * @version 0.3.0
+ * @author Ayush Mishra <hello@inheritage.foundation> (https://ayush.studio)
+ * @license Apache-2.0
+ * @copyright Team Inheritage
+ */
+
 import type { RateLimitInfo } from "./types"
 
 export interface InheritageApiErrorOptions<TError = unknown> {

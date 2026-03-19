@@ -1,3 +1,22 @@
+/**
+ * Inheritage API Client
+ * 
+ * Production-grade TypeScript client for the Inheritage Foundation API
+ * Provides type-safe access to 5000+ Indian heritage sites
+ * 
+ * @version 0.3.0
+ * @author Ayush Mishra <hello@inheritage.foundation> (https://ayush.studio)
+ * @license Apache-2.0
+ * @copyright Team Inheritage
+ * 
+ * @example
+ * ```typescript
+ * const client = new InheritageClient({ attribution: 'visible' })
+ * const site = await client.getHeritage('hoysaleswara-temple')
+ * console.log(site.data.name) // "Hoysaleswara Temple"
+ * ```
+ */
+
 import { InheritageApiError } from "./errors"
 import {
   type AIContextDumpParams,

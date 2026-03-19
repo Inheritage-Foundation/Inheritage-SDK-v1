@@ -1,3 +1,15 @@
+/**
+ * TypeScript Type Definitions
+ * 
+ * Comprehensive type definitions for the Inheritage API
+ * Generated from OpenAPI 3.1 specification
+ * 
+ * @version 0.3.0
+ * @author Ayush Mishra <hello@inheritage.foundation> (https://ayush.studio)
+ * @license Apache-2.0
+ * @copyright Team Inheritage
+ */
+
 export type JsonValue =
   | string
   | number

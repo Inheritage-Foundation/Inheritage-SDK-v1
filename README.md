@@ -1,45 +1,126 @@
 # @inheritage-foundation/sdk
 
 [![npm version](https://img.shields.io/npm/v/@inheritage-foundation/sdk.svg)](https://www.npmjs.com/package/@inheritage-foundation/sdk)
+[![npm downloads](https://img.shields.io/npm/dm/@inheritage-foundation/sdk.svg)](https://www.npmjs.com/package/@inheritage-foundation/sdk)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CI](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/actions/workflows/ci.yml/badge.svg)](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/actions)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org)
 
-Official TypeScript SDK for the [Inheritage Foundation](https://www.inheritage.foundation) public API. Access India's documented heritage programmatically—temples, monuments, cultural sites—with zero gatekeeping, full attribution, and production-grade ergonomics.
+> **Official TypeScript SDK for the [Inheritage Foundation](https://www.inheritage.foundation) API**  
+> Access India's documented cultural heritage programmatically—5000+ temples, monuments, and cultural sites with zero gatekeeping, full attribution, and production-grade ergonomics.
 
-**License:** Apache 2.0 (SDK code) | Data under CC BY 4.0  
-**Data Attribution:** Required per CC BY 4.0 — see [AI Usage Policy](https://www.inheritage.foundation/license/ai)
-
----
-
-## Features
-
-- 🏛️ **5000+ Heritage Sites**: Temples, forts, monuments across India
-- 🗺️ **GeoJSON Support**: EPSG:4326, bbox queries, native geospatial APIs
-- 🏛️ **CIDOC-CRM & Institutional**: JSON-LD, LIDO XML, OAI-PMH harvesting for museums & aggregators
-- 🤖 **AI-Ready**: 1536-d embeddings, semantic search, LangChain/LangGraph adapters
-- ⚛️ **React Hooks**: `useHeritage`, `useAIContext`, `useSimilarSites` with auto-caching
-- 🎨 **Attribution Component**: `<InheritageCitation />` for CC BY 4.0 compliance
-- 📦 **Tree-shakeable**: ESM/CJS dual build, zero runtime dependencies (except React for hooks)
-- 🔒 **Type-Safe**: Full TypeScript definitions generated from OpenAPI spec
-- ⚡ **Smart Caching**: ETag, If-None-Match, stale-while-revalidate support
-- 🚦 **Rate Limit Aware**: Automatic retry headers, exponential backoff utilities
-- 🌐 **Multi-Format**: JSON, GeoJSON, NDJSON vector feeds
+**Designed & Engineered by [Ayush Mishra](https://ayush.studio)** • **Team Inheritage**  
+**License:** Apache 2.0 (SDK code) | **Data:** CC BY 4.0 (requires attribution)  
+**[API Docs](https://www.inheritage.foundation/docs)** • **[SDK Reference](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1#readme)** • **[Playground](https://www.inheritage.foundation/docs/playground)**
 
 ---
 
-## Installation
+## ✨ Why Use This SDK?
+
+- 🏛️ **5000+ Heritage Sites** — Temples, forts, monuments, UNESCO sites across India
+- 🗺️ **GeoJSON-First** — Native geospatial APIs with EPSG:4326, bbox queries, nearby search
+- 🤖 **AI-Ready** — 1536-d embeddings, semantic search, LangChain/LangGraph adapters
+- ⚛️ **React Hooks** — `useHeritage`, `useAIContext` with auto-caching, loading states
+- 🏛️ **Museum Standards** — CIDOC-CRM JSON-LD, LIDO XML, OAI-PMH for aggregators
+- 🎨 **CC BY Compliance** — `<InheritageCitation />` component for attribution
+- 📦 **Tree-Shakeable** — ESM/CJS dual build, zero runtime dependencies
+- 🔒 **Type-Safe** — Full TypeScript definitions from OpenAPI 3.1 spec
+- ⚡ **Smart Caching** — ETag, If-None-Match, stale-while-revalidate
+- 🌐 **Multi-Format** — JSON, GeoJSON, NDJSON, XML, JSON-LD
+
+---
+
+## 📑 Table of Contents
+
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+  - [Basic Usage](#basic-usage)
+  - [React Hooks](#react-hooks)
+  - [AI & Semantic Search](#ai--semantic-search)
+  - [LangChain Integration](#langchain-integration)
+- [API Coverage](#-api-coverage)
+  - [Heritage API](#heritage-api)
+  - [Geospatial API](#geospatial-api)
+  - [Media API](#media-api)
+  - [Citation API](#citation-api)
+  - [CIDOC-CRM & Institutional](#cidoc-crm--institutional)
+  - [AI Context & Federation](#ai-context--federation)
+- [React Hooks Reference](#-react-hooks-reference)
+- [Components Reference](#-components-reference)
+- [Advanced Features](#-advanced-features)
+  - [Caching & Conditional Requests](#caching--conditional-requests)
+  - [Rate Limit Handling](#rate-limit-handling)
+  - [Abort Requests](#abort-requests)
+- [Testing](#-testing)
+- [Contributing](#-contributing)
+- [License & Attribution](#-license--attribution)
+- [Resources](#-resources)
+- [Support](#-support)
+
+---
+
+## 📦 Installation
+
+### Package Managers
 
 ```bash
+# npm
 npm install @inheritage-foundation/sdk
-# or
+
+# yarn
 yarn add @inheritage-foundation/sdk
-# or
+
+# pnpm
 pnpm add @inheritage-foundation/sdk
+
+# bun
+bun add @inheritage-foundation/sdk
+```
+
+### Peer Dependencies
+
+The SDK has **zero runtime dependencies** except for React (optional):
+
+```json
+{
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
+}
+```
+
+**Install React only if using hooks or components:**
+
+```bash
+# For React projects
+npm install @inheritage-foundation/sdk react react-dom
+
+# For Node.js / vanilla TypeScript projects (no React needed)
+npm install @inheritage-foundation/sdk
+```
+
+### CDN / ESM Import
+
+For browser usage without bundlers:
+
+```html
+<script type="module">
+  import { InheritageClient } from 'https://esm.sh/@inheritage-foundation/sdk'
+  
+  const client = new InheritageClient()
+  const site = await client.getHeritage('taj-mahal')
+  console.log(site.data.name)
+</script>
 ```
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 ### Basic Usage
 
@@ -579,12 +660,28 @@ When using this SDK, you **must** provide visible attribution per CC BY 4.0. The
 
 ---
 
-## Support
+## 👨‍💻 Created by
 
-- **Email**: [hello@inheritage.foundation](mailto:hello@inheritage.foundation)
-- **Discord**: [Join our community](https://discord.gg/inheritage)
-- **Funding**: [Support our mission](https://www.inheritage.foundation/donate)
+**Ayush Mishra**  
+*CTO & Lead Designer* • [ayush.studio](https://ayush.studio)
+
+Built with ❤️ by **Team Inheritage** — Preserving India's cultural heritage through open data and modern developer tools.
 
 ---
 
-**Built with ❤️ by [Inheritage Foundation](https://www.inheritage.foundation)** | Preserving India's cultural heritage through open data
+## 📞 Support & Community
+
+- **Discord**: [Join our community](https://discord.gg/inheritage)
+- **GitHub**: [Inheritage-Foundation/Inheritage-SDK-v1](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1)
+- **Email**: [hello@inheritage.foundation](mailto:hello@inheritage.foundation)
+- **Website**: [inheritage.foundation](https://www.inheritage.foundation)
+
+---
+
+## 🙏 Acknowledgments
+
+Special thanks to the open-source community and cultural heritage institutions worldwide for making this project possible.
+
+---
+
+**Built with ❤️ by [Ayush Mishra](https://ayush.studio)** | **Team Inheritage** | Preserving India's cultural heritage through open data

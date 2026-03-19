@@ -1,8 +1,13 @@
 /**
  * InheritageCitation React Component
- * 
+ *
  * Renders CC BY 4.0 attribution for Inheritage data.
  * Automatically extracts citation from API responses or accepts custom citation data.
+ * 
+ * @version 0.3.0
+ * @author Ayush Mishra <hello@inheritage.foundation> (https://ayush.studio)
+ * @license Apache-2.0
+ * @copyright Team Inheritage
  */
 
 import React from "react"
