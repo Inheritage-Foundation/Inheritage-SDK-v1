@@ -20,6 +20,18 @@ import type {
   AIMetadataResponse,
   AIVectorIndexParams,
   AIVectorRecord,
+  // New types for missing hooks
+  StatsResponse,
+  TimelineFeaturedResponse,
+  HeritageSearchParams,
+  HeritageFiltersResponse,
+  ChangefeedResponse,
+  ChangefeedParams,
+  AIVisionResponse,
+  AIVisionRequest,
+  AILicenseResponse,
+  AATStyleListResponse,
+  AATSearchParams,
 } from "./types"
 import { InheritageClient, type InheritageClientOptions } from "./client"
 
@@ -433,5 +445,468 @@ export function useAIVectorIndex(
   }, [hasMore, loading, offset, limit, fetchData])
 
   return { data, loading, error, hasMore, loadMore }
+}
+
+// ========================
+// Missing Hooks
+// ========================
+
+export interface UseStatsResult {
+  data: StatsResponse | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+export interface UseTimelineFeaturedResult {
+  data: TimelineFeaturedResponse | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+export interface UseHeritageSearchResult {
+  data: HeritageListResponse | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+export interface UseRandomHeritageResult {
+  data: Heritage | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+export interface UseRandomMediaResult {
+  data: MediaResponse | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+export interface UseHeritageFiltersResult {
+  data: HeritageFiltersResponse | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+export interface UseChangefeedResult {
+  data: ChangefeedResponse | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+export interface UseAIVisionResult {
+  data: AIVisionResponse | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+export interface UseAILicenseResult {
+  data: AILicenseResponse | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+export interface UseHeritageCIDOCResult {
+  data: string | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+export interface UseAATResult {
+  data: AATStyleListResponse | null
+  loading: boolean
+  error: Error | null
+  refetch: () => Promise<void>
+}
+
+/**
+ * Fetch dataset statistics
+ */
+export function useStats(options: UseHeritageOptions = {}): UseStatsResult {
+  const [data, setData] = useState<StatsResponse | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!enabled) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.getStats()
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [enabled, client])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
+}
+
+/**
+ * Fetch featured timeline links
+ */
+export function useTimelineFeatured(options: UseHeritageOptions = {}): UseTimelineFeaturedResult {
+  const [data, setData] = useState<TimelineFeaturedResponse | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!enabled) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.getTimelineFeatured()
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [enabled, client])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
+}
+
+/**
+ * Search heritage sites
+ */
+export function useHeritageSearch(
+  params: HeritageSearchParams = {},
+  options: UseHeritageOptions = {}
+): UseHeritageSearchResult {
+  const [data, setData] = useState<HeritageListResponse | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!enabled) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.searchHeritage(params)
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [JSON.stringify(params), enabled, client])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
+}
+
+/**
+ * Fetch random heritage site
+ */
+export function useRandomHeritage(options: UseHeritageOptions = {}): UseRandomHeritageResult {
+  const [data, setData] = useState<Heritage | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!enabled) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.getRandomHeritage()
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [enabled, client])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
+}
+
+/**
+ * Fetch random media
+ */
+export function useRandomMedia(options: UseHeritageOptions = {}): UseRandomMediaResult {
+  const [data, setData] = useState<MediaResponse | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!enabled) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.getRandomMedia()
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [enabled, client])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
+}
+
+/**
+ * Fetch heritage filter facets
+ */
+export function useHeritageFilters(options: UseHeritageOptions = {}): UseHeritageFiltersResult {
+  const [data, setData] = useState<HeritageFiltersResponse | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!enabled) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.getHeritageFilters()
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [enabled, client])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
+}
+
+/**
+ * Fetch dataset changefeed
+ */
+export function useChangefeed(
+  params: ChangefeedParams = {},
+  options: UseHeritageOptions = {}
+): UseChangefeedResult {
+  const [data, setData] = useState<ChangefeedResponse | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!enabled) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.getChangefeed(params)
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [JSON.stringify(params), enabled, client])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
+}
+
+/**
+ * Fetch AI vision context
+ */
+export function useAIVision(
+  request: AIVisionRequest,
+  options: UseHeritageOptions = {}
+): UseAIVisionResult {
+  const [data, setData] = useState<AIVisionResponse | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!enabled || !request.image) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.getAIVisionContext(request)
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [JSON.stringify(request), enabled, client])
+
+  useEffect(() => {
+    if (enabled && request.image) {
+      fetchData()
+    }
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
+}
+
+/**
+ * Fetch AI license terms
+ */
+export function useAILicense(options: UseHeritageOptions = {}): UseAILicenseResult {
+  const [data, setData] = useState<AILicenseResponse | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!enabled) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.getAILicense()
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [enabled, client])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
+}
+
+/**
+ * Fetch heritage CIDOC-CRM JSON-LD
+ */
+export function useHeritageCIDOC(
+  slug: string,
+  options: UseHeritageOptions = {}
+): UseHeritageCIDOCResult {
+  const [data, setData] = useState<string | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!slug || !enabled) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.getHeritageCIDOC(slug)
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [slug, enabled, client])
+
+  useEffect(() => {
+    if (slug && enabled) {
+      fetchData()
+    }
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
+}
+
+/**
+ * Search AAT terms
+ */
+export function useAAT(
+  params: AATSearchParams = {},
+  options: UseHeritageOptions = {}
+): UseAATResult {
+  const [data, setData] = useState<AATStyleListResponse | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
+
+  const client = options.client ?? new InheritageClient(options.clientOptions)
+  const enabled = options.enabled !== false
+
+  const fetchData = useCallback(async () => {
+    if (!enabled) return
+
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await client.searchAAT(params)
+      setData(response.data)
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error(String(err)))
+    } finally {
+      setLoading(false)
+    }
+  }, [JSON.stringify(params), enabled, client])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  return { data, loading, error, refetch: fetchData }
 }
 

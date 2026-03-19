@@ -224,7 +224,7 @@ describe('E2E Tests', () => {
       expect(tools).toBeInstanceOf(Array)
       expect(tools.length).toBeGreaterThan(0)
 
-      const contextTool = tools.find(tool => tool.name === 'get_heritage_ai_context')
+      const contextTool = tools.find(tool => tool.name === 'inheritage_context')
       expect(contextTool).toBeDefined()
 
       if (contextTool) {

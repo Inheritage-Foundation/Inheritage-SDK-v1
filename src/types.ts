@@ -636,3 +636,210 @@ export interface AATSearchParams {
   dynasties?: string[]
 }
 
+// ========================
+// Missing API Types
+// ========================
+
+/**
+ * SPARQL Query Request
+ */
+export interface SparqlQueryRequest {
+  query: string
+}
+
+/**
+ * SPARQL Query Response
+ */
+export interface SparqlResponse {
+  head: {
+    vars: string[]
+  }
+  results: {
+    bindings: Array<Record<string, { type: string; value: string }>>
+  }
+}
+
+/**
+ * Atlas Sites Response
+ */
+export interface AtlasSite {
+  slug: string
+  name: string
+  state: string
+  category: string
+  coordinates: {
+    lat: number
+    lng: number
+  }
+  image?: string
+  description?: string
+}
+
+export interface AtlasSitesResponse {
+  sites: AtlasSite[]
+  total: number
+}
+
+/**
+ * Google Maps Geocode Response
+ */
+export interface GeocodeResponse {
+  results: Array<{
+    formatted_address: string
+    geometry: {
+      location: {
+        lat: number
+        lng: number
+      }
+    }
+    place_id: string
+    types: string[]
+  }>
+  status: string
+}
+
+/**
+ * Google Maps Elevation Request
+ */
+export interface ElevationRequest {
+  locations: Array<{ lat: number; lng: number }>
+}
+
+/**
+ * Google Maps Elevation Response
+ */
+export interface ElevationResponse {
+  results: Array<{
+    elevation: number
+    location: {
+      lat: number
+      lng: number
+    }
+    resolution: number
+  }>
+  status: string
+}
+
+/**
+ * Google Maps Places Request
+ */
+export interface PlacesRequest {
+  location: { lat: number; lng: number }
+  radius: number
+  type?: string
+  keyword?: string
+}
+
+/**
+ * Google Maps Places Response
+ */
+export interface PlacesResponse {
+  results: Array<{
+    name: string
+    place_id: string
+    vicinity: string
+    geometry: {
+      location: {
+        lat: number
+        lng: number
+      }
+    }
+    rating?: number
+    types: string[]
+  }>
+  status: string
+}
+
+/**
+ * AAT Languages Response
+ */
+export interface AATLanguage {
+  id: string
+  name: string
+  code?: string
+}
+
+export interface AATLanguagesResponse {
+  languages: AATLanguage[]
+  total: number
+}
+
+/**
+ * AAT Materials Response
+ */
+export interface AATMaterial {
+  id: string
+  name: string
+  description?: string
+}
+
+export interface AATMaterialsResponse {
+  materials: AATMaterial[]
+  total: number
+}
+
+/**
+ * AAT Scripts Response
+ */
+export interface AATScript {
+  id: string
+  name: string
+  code?: string
+}
+
+export interface AATScriptsResponse {
+  scripts: AATScript[]
+  total: number
+}
+
+/**
+ * AAT Reconcile Request (OpenRefine)
+ */
+export interface AATReconcileRequest {
+  queries: Record<string, { query: string; limit?: number }>
+}
+
+/**
+ * AAT Reconcile Response (OpenRefine)
+ */
+export interface AATReconcileResponse {
+  [key: string]: {
+    result: Array<{
+      id: string
+      name: string
+      score: number
+      match?: boolean
+      types?: string[]
+    }>
+  }
+}
+
+/**
+ * Lead Submission Request
+ */
+export interface LeadSubmissionRequest {
+  organization: string
+  contact_name: string
+  email: string
+  phone?: string
+  intended_use: string
+  api_volume?: string
+  timeline?: string
+  source?: string
+  plan?: string
+}
+
+/**
+ * Pilot Application Request
+ */
+export interface PilotApplicationRequest {
+  organization: string
+  contact_name: string
+  email: string
+  role: string
+  intended_use: string
+  data_needs: string
+  timeline: string
+  additional_info?: string
+}
+

@@ -41,6 +41,22 @@ import {
   type AATStyle,
   type AATStyleListResponse,
   type AATSearchParams,
+  // New types for missing endpoints
+  type SparqlQueryRequest,
+  type SparqlResponse,
+  type AtlasSitesResponse,
+  type GeocodeResponse,
+  type ElevationRequest,
+  type ElevationResponse,
+  type PlacesRequest,
+  type PlacesResponse,
+  type AATLanguagesResponse,
+  type AATMaterialsResponse,
+  type AATScriptsResponse,
+  type AATReconcileRequest,
+  type AATReconcileResponse,
+  type LeadSubmissionRequest,
+  type PilotApplicationRequest,
 } from "./types"
 
 const DEFAULT_BASE_URL = "https://inheritage.foundation/api/v1"
@@ -1013,6 +1029,259 @@ export class InheritageClient {
   // CIDOC-CRM API
   // ========================
 
+  // ========================
+  // SPARQL API
+  // ========================
+
+  /**
+   * Execute a SPARQL query against the heritage knowledge graph.
+   * @param request - SPARQL query request
+   * @param options - Request options
+   * @returns SPARQL query results
+   * @endpoint GET/POST /sparql
+   * @standard SPARQL 1.1
+   */
+  public async executeSparqlQuery(
+    request: SparqlQueryRequest,
+    options: ApiRequestOptions = {}
+  ): Promise<ApiResponse<SparqlResponse>> {
+    if (!request.query || typeof request.query !== "string") {
+      throw new Error("query is required")
+    }
+
+    // Use POST for large queries, GET for small ones
+    const usePost = request.query.length > 2048
+
+    if (usePost) {
+      return this.send<SparqlResponse>({
+        method: "POST",
+        path: "/sparql",
+        body: request,
+        ...options,
+      })
+    } else {
+      return this.send<SparqlResponse>({
+        method: "GET",
+        path: "/sparql",
+        query: { query: request.query },
+        ...options,
+      })
+    }
+  }
+
+  // ========================
+  // Atlas API
+  // ========================
+
+  /**
+   * Fetch atlas view of heritage sites.
+   * @param options - Request options
+   * @returns Atlas sites listing
+   * @endpoint GET /atlas/sites
+   */
+  public async getAtlasSites(options: ApiRequestOptions = {}): Promise<ApiResponse<AtlasSitesResponse>> {
+    return this.send<AtlasSitesResponse>({
+      method: "GET",
+      path: "/atlas/sites",
+      ...options,
+    })
+  }
+
+  // ========================
+  // Google Maps API (Proxied)
+  // ========================
+
+  /**
+   * Geocode an address to coordinates.
+   * @param address - Address to geocode
+   * @param options - Request options
+   * @returns Geocoding results
+   * @endpoint GET /google-maps/geocode
+   */
+  public async geocodeAddress(
+    address: string,
+    options: ApiRequestOptions = {}
+  ): Promise<ApiResponse<GeocodeResponse>> {
+    if (!address || typeof address !== "string") {
+      throw new Error("address is required")
+    }
+
+    return this.send<GeocodeResponse>({
+      method: "GET",
+      path: "/google-maps/geocode",
+      query: { address },
+      ...options,
+    })
+  }
+
+  /**
+   * Get elevation data for locations.
+   * @param request - Elevation request with locations
+   * @param options - Request options
+   * @returns Elevation results
+   * @endpoint POST /google-maps/elevation
+   */
+  public async getElevation(
+    request: ElevationRequest,
+    options: ApiRequestOptions = {}
+  ): Promise<ApiResponse<ElevationResponse>> {
+    if (!request.locations || !Array.isArray(request.locations) || request.locations.length === 0) {
+      throw new Error("locations array is required")
+    }
+
+    return this.send<ElevationResponse>({
+      method: "POST",
+      path: "/google-maps/elevation",
+      body: request,
+      ...options,
+    })
+  }
+
+  /**
+   * Search for places near a location.
+   * @param request - Places search request
+   * @param options - Request options
+   * @returns Places results
+   * @endpoint POST /google-maps/places
+   */
+  public async searchPlaces(
+    request: PlacesRequest,
+    options: ApiRequestOptions = {}
+  ): Promise<ApiResponse<PlacesResponse>> {
+    if (!request.location || !request.radius) {
+      throw new Error("location and radius are required")
+    }
+
+    return this.send<PlacesResponse>({
+      method: "POST",
+      path: "/google-maps/places",
+      body: request,
+      ...options,
+    })
+  }
+
+  // ========================
+  // AAT Sub-endpoints
+  // ========================
+
+  /**
+   * Fetch AAT languages.
+   * @param options - Request options
+   * @returns AAT languages list
+   * @endpoint GET /aat/languages
+   */
+  public async getAATLanguages(options: ApiRequestOptions = {}): Promise<ApiResponse<AATLanguagesResponse>> {
+    return this.send<AATLanguagesResponse>({
+      method: "GET",
+      path: "/aat/languages",
+      ...options,
+    })
+  }
+
+  /**
+   * Fetch AAT materials.
+   * @param options - Request options
+   * @returns AAT materials list
+   * @endpoint GET /aat/materials
+   */
+  public async getAATMaterials(options: ApiRequestOptions = {}): Promise<ApiResponse<AATMaterialsResponse>> {
+    return this.send<AATMaterialsResponse>({
+      method: "GET",
+      path: "/aat/materials",
+      ...options,
+    })
+  }
+
+  /**
+   * Fetch AAT scripts.
+   * @param options - Request options
+   * @returns AAT scripts list
+   * @endpoint GET /aat/scripts
+   */
+  public async getAATScripts(options: ApiRequestOptions = {}): Promise<ApiResponse<AATScriptsResponse>> {
+    return this.send<AATScriptsResponse>({
+      method: "GET",
+      path: "/aat/scripts",
+      ...options,
+    })
+  }
+
+  /**
+   * Reconcile AAT terms (OpenRefine integration).
+   * @param request - Reconcile request
+   * @param options - Request options
+   * @returns Reconcile results
+   * @endpoint GET/POST /aat/reconcile
+   * @standard OpenRefine Reconciliation API
+   */
+  public async reconcileAAT(
+    request: AATReconcileRequest,
+    options: ApiRequestOptions = {}
+  ): Promise<ApiResponse<AATReconcileResponse>> {
+    if (!request.queries || typeof request.queries !== "object") {
+      throw new Error("queries object is required")
+    }
+
+    return this.send<AATReconcileResponse>({
+      method: "POST",
+      path: "/aat/reconcile",
+      body: request,
+      ...options,
+    })
+  }
+
+  // ========================
+  // Leads & Pilots
+  // ========================
+
+  /**
+   * Submit a lead generation form.
+   * @param request - Lead submission request
+   * @param options - Request options
+   * @returns Success response
+   * @endpoint POST /leads/submit
+   */
+  public async submitLead(
+    request: LeadSubmissionRequest,
+    options: ApiRequestOptions = {}
+  ): Promise<ApiResponse<{ success: boolean }>> {
+    if (!request.organization || !request.contact_name || !request.email || !request.intended_use) {
+      throw new Error("organization, contact_name, email, and intended_use are required")
+    }
+
+    return this.send<{ success: boolean }>({
+      method: "POST",
+      path: "/leads/submit",
+      body: request,
+      ...options,
+    })
+  }
+
+  /**
+   * Apply for pilot program.
+   * @param request - Pilot application request
+   * @param options - Request options
+   * @returns Success response
+   * @endpoint POST /pilots/apply
+   */
+  public async applyForPilot(
+    request: PilotApplicationRequest,
+    options: ApiRequestOptions = {}
+  ): Promise<ApiResponse<{ success: boolean }>> {
+    const requiredFields = ["organization", "contact_name", "email", "role", "intended_use", "data_needs", "timeline"]
+    for (const field of requiredFields) {
+      if (!(request as any)[field]) {
+        throw new Error(`${field} is required`)
+      }
+    }
+
+    return this.send<{ success: boolean }>({
+      method: "POST",
+      path: "/pilots/apply",
+      body: request,
+      ...options,
+    })
+  }
 
   // ========================
   // OAI-PMH API
