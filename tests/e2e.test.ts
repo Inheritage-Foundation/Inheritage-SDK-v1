@@ -28,12 +28,20 @@ describe('E2E Tests', () => {
   })
 
   describe('Heritage API', () => {
-    it('fetches a known heritage site (Taj Mahal)', async () => {
-      const response = await client.getHeritage('taj-mahal')
+    it('fetches a known heritage site', async () => {
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.getHeritage(validSlug)
 
       expect(response.data).toBeDefined()
-      expect(response.data.slug).toBe('taj-mahal')
-      expect(response.data.name).toContain('Taj Mahal')
+      expect(response.data.slug).toBe(validSlug)
+      expect(response.data.name).toBeDefined()
       expect(response.data.state).toBeDefined()
       expect(response.data.coordinates).toBeDefined()
     })
@@ -85,17 +93,33 @@ describe('E2E Tests', () => {
     })
 
     it('returns single site as GeoJSON', async () => {
-      const response = await client.getGeoFeature('taj-mahal')
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.getGeoFeature(validSlug)
 
       expect(response.data.type).toBe('Feature')
       expect(response.data.geometry.type).toBe('Point')
-      expect(response.data.properties.slug).toBe('taj-mahal')
+      expect(response.data.properties?.slug).toBe(validSlug)
     })
   })
 
   describe('Media API', () => {
     it('fetches media bundle for a site', async () => {
-      const response = await client.getMedia('taj-mahal')
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.getMedia(validSlug)
 
       expect(response.data).toBeDefined()
       expect(response.data.heritage_id).toBeDefined()
@@ -105,10 +129,18 @@ describe('E2E Tests', () => {
 
   describe('Citation API', () => {
     it('fetches citation metadata', async () => {
-      const response = await client.getCitation('taj-mahal')
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.getCitation(validSlug)
 
       expect(response.data).toBeDefined()
-      expect(response.data.entity).toBeDefined()
+      expect(response.data.entity).toBe(validSlug)
       expect(response.data.license).toBeDefined()
       expect(response.data.citation_text).toBeDefined()
     })
@@ -116,10 +148,18 @@ describe('E2E Tests', () => {
 
   describe('AI API', () => {
     it('fetches AI context and embedding', async () => {
-      const response = await client.getAIContext('taj-mahal')
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.getAIContext(validSlug)
 
       expect(response.data).toBeDefined()
-      expect(response.data.slug).toBe('taj-mahal')
+      expect(response.data.slug).toBe(validSlug)
       expect(response.data.context).toBeDefined()
       expect(typeof response.data.context).toBe('string')
       expect(response.data.context.length).toBeGreaterThan(50)
@@ -130,17 +170,33 @@ describe('E2E Tests', () => {
     })
 
     it('fetches embedding only', async () => {
-      const response = await client.getAIEmbedding('taj-mahal')
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.getAIEmbedding(validSlug)
 
       expect(response.data).toBeDefined()
-      expect(response.data.slug).toBe('taj-mahal')
+      expect(response.data.slug).toBe(validSlug)
       expect(response.data.embedding).toBeInstanceOf(Array)
       expect(response.data.dimensions).toBe(1536)
       expect(response.data.embedding_checksum).toBeDefined()
     })
 
     it('finds similar sites by slug', async () => {
-      const response = await client.findSimilar({ slug: 'taj-mahal', limit: 5 })
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.findSimilar({ slug: validSlug, limit: 5 })
 
       expect(response.data).toBeDefined()
       expect(response.data.data).toBeInstanceOf(Array)
@@ -166,10 +222,18 @@ describe('E2E Tests', () => {
     })
 
     it('fetches AI metadata', async () => {
-      const response = await client.getAIMetadata('taj-mahal')
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.getAIMetadata(validSlug)
 
       expect(response.data).toBeDefined()
-      expect(response.data.slug).toBe('taj-mahal')
+      expect(response.data.slug).toBe(validSlug)
       expect(response.data.embedding_checksum).toBeDefined()
       expect(response.data.license).toBeDefined()
       expect(typeof response.data.license).toBe('object')
@@ -202,13 +266,21 @@ describe('E2E Tests', () => {
 
   describe('LangChain Integration', () => {
     it('creates and invokes heritage context runnable', async () => {
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
       const runnable = createHeritageContextRunnable({ client })
 
-      const result = await runnable.invoke({ slug: 'taj-mahal' })
+      const result = await runnable.invoke({ slug: validSlug })
 
       expect(result).toBeDefined()
       if (result && typeof result === 'object' && 'slug' in result) {
-        expect(result.slug).toBe('taj-mahal')
+        expect(result.slug).toBe(validSlug)
         if ('context' in result) {
           expect(result.context).toBeDefined()
         }
@@ -219,6 +291,14 @@ describe('E2E Tests', () => {
     })
 
     it('creates toolkit with working tools', async () => {
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
       const tools = createInheritageToolkit({ client })
 
       expect(tools).toBeInstanceOf(Array)
@@ -228,13 +308,13 @@ describe('E2E Tests', () => {
       expect(contextTool).toBeDefined()
 
       if (contextTool) {
-        const result = await contextTool.runnable.invoke({ slug: 'taj-mahal' })
+        const result = await contextTool.runnable.invoke({ slug: validSlug })
         expect(result).toBeDefined()
         const resultStr = typeof result === 'string' ? result : JSON.stringify(result)
         expect(typeof resultStr).toBe('string')
 
         const parsed = JSON.parse(resultStr)
-        expect(parsed.slug).toBe('taj-mahal')
+        expect(parsed.slug).toBe(validSlug)
         expect(parsed.context).toBeDefined()
       }
     })
@@ -242,7 +322,15 @@ describe('E2E Tests', () => {
 
   describe('HTTP Headers', () => {
     it('includes attribution headers in responses', async () => {
-      const response = await client.getHeritage('taj-mahal')
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.getHeritage(validSlug)
 
       expect(response.headers).toBeDefined()
       // Check for common headers
@@ -251,7 +339,15 @@ describe('E2E Tests', () => {
     })
 
     it('includes trace ID for debugging', async () => {
-      const response = await client.getHeritage('taj-mahal')
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.getHeritage(validSlug)
 
       expect(response.traceId).toBeDefined()
       expect(typeof response.traceId).toBe('string')
@@ -259,7 +355,15 @@ describe('E2E Tests', () => {
     })
 
     it('includes rate limit info', async () => {
-      const response = await client.getHeritage('taj-mahal')
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response = await client.getHeritage(validSlug)
 
       expect(response.rateLimit).toBeDefined()
       expect(response.rateLimit?.limit).toBeGreaterThan(0)
@@ -270,11 +374,19 @@ describe('E2E Tests', () => {
 
   describe('Caching', () => {
     it('supports ETag conditional requests', async () => {
-      const response1 = await client.getHeritage('taj-mahal')
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
+      const response1 = await client.getHeritage(validSlug)
       const etag = response1.headers?.get('ETag')
 
       if (etag) {
-        const response2 = await client.getHeritage('taj-mahal', { ifNoneMatch: etag })
+        const response2 = await client.getHeritage(validSlug, { ifNoneMatch: etag })
 
         if (response2.notModified) {
           expect(response2.data).toBeNull()
@@ -297,11 +409,19 @@ describe('E2E Tests', () => {
     })
 
     it('handles rate limiting (if triggered)', async () => {
+      // First get a list to find a valid slug
+      const listResponse = await client.listHeritage({ limit: 1 })
+      const validSlug = listResponse.data.data[0]?.slug
+      
+      if (!validSlug) {
+        throw new Error('No heritage sites available for testing')
+      }
+      
       // This test may not trigger rate limits in CI, but demonstrates handling
       try {
         // Make many requests quickly
         const promises = Array.from({ length: 150 }, () =>
-          client.getHeritage('taj-mahal')
+          client.getHeritage(validSlug)
         )
         await Promise.all(promises)
       } catch (error: any) {

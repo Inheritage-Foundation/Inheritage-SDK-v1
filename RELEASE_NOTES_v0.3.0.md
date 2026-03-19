@@ -38,6 +38,7 @@
 ### Configuration Improvements
 
 #### TypeScript (`tsconfig.json`)
+
 - ✅ Changed `moduleResolution` to `"bundler"` (better tree-shaking)
 - ✅ Fixed `rootDir` to `"./src"` (proper build structure)
 - ✅ Changed `jsx` to `"react-jsx"` (modern JSX transform)
@@ -45,6 +46,7 @@
 - ✅ Added `declarationDir` for explicit declaration output
 
 #### Package (`package.json`)
+
 - ✅ Added `engines` field (Node.js >=18.0.0, npm >=9.0.0)
 - ✅ Added `publishConfig.access: public`
 - ✅ Fixed bugs URL (consistent GitHub organization)
@@ -52,10 +54,12 @@
 - ✅ Updated `prepublishOnly` to run full test suite
 
 #### Build (`tsup.config.ts`)
+
 - ✅ Enabled sourcemaps (`sourcemap: true`)
 - ✅ Better debugging for production issues
 
 #### Test (`vitest.config.ts`)
+
 - ✅ Changed environment to `jsdom` (for React components)
 - ✅ Added coverage reporting with thresholds
 - ✅ 80% coverage target for branches, functions, lines, statements
@@ -95,10 +99,12 @@
 ## 📝 Files Modified
 
 ### Source Code
+
 - `src/client.ts` - Fixed `as any` cast, updated User-Agent
 - `src/hooks.ts` - Fixed TypeScript errors
 
 ### Configuration
+
 - `package.json` - Dependencies, engines, scripts
 - `tsconfig.json` - Compiler options
 - `tsup.config.ts` - Sourcemaps
@@ -109,12 +115,14 @@
 ## ✅ Quality Checks
 
 ### TypeScript Linting
+
 ```bash
 npm run lint
 # ✅ No errors
 ```
 
 ### Unit Tests
+
 ```bash
 npm test
 # ✅ Client tests: 17 passed
@@ -124,6 +132,7 @@ npm test
 ```
 
 ### Build
+
 ```bash
 npm run build
 # ✅ Compiles successfully
@@ -144,6 +153,7 @@ npm install @inheritage-foundation/sdk@0.3.0
 ```
 
 Or update existing:
+
 ```bash
 npm install @inheritage-foundation/sdk@latest
 ```
@@ -153,6 +163,7 @@ npm install @inheritage-foundation/sdk@latest
 ## 🎯 Usage Examples
 
 ### Basic Client
+
 ```typescript
 import { InheritageClient } from '@inheritage-foundation/sdk'
 
@@ -163,6 +174,7 @@ console.log(data.name) // "Taj Mahal"
 ```
 
 ### React Hooks
+
 ```typescript
 import { useHeritage } from '@inheritage-foundation/sdk/hooks'
 
@@ -177,6 +189,7 @@ function HeritageSite({ slug }) {
 ```
 
 ### LangChain Integration
+
 ```typescript
 import { createInheritageToolkit } from '@inheritage-foundation/sdk/langchain'
 
@@ -201,6 +214,7 @@ const tools = createInheritageToolkit({ client })
 ## 📋 Next Release (v0.4.0)
 
 ### Planned Features
+
 - [ ] Add tests for all hooks (80%+ coverage)
 - [ ] Add more React components (`<HeritageCard />`, `<HeritageMap />`)
 - [ ] Add API key authentication support
@@ -211,9 +225,9 @@ const tools = createInheritageToolkit({ client })
 
 ## 📞 Support
 
-- **Documentation:** https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/tree/main/docs
-- **Issues:** https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/issues
-- **API Docs:** https://www.inheritage.foundation/docs
+- **Documentation:** <https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/tree/main/docs>
+- **Issues:** <https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/issues>
+- **API Docs:** <https://www.inheritage.foundation/docs>
 
 ---
 
@@ -224,8 +238,6 @@ Data under CC BY 4.0 License
 SDK under Apache-2.0 License
 
 ---
-
-**Release Status:** ✅ **PRODUCTION READY**  
-**Quality:** ✅ **NO TYPESCRIPT ERRORS**  
-**Tests:** ✅ **UNIT TESTS PASSING**  
-**Build:** ✅ **COMPILES SUCCESSFULLY**
+**Repository**: <https://github.com/Inheritage-Foundation/Inheritage-SDK-v1>  
+**npm Package**: <https://www.npmjs.com/package/@inheritage-foundation/sdk>  
+**Documentation**: <https://www.inheritage.foundation/docs>
