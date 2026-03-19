@@ -226,7 +226,7 @@ describe('React Hooks', () => {
         citation_markdown: 'Data © Inheritage Foundation',
         citation_text: 'Data © Inheritage Foundation',
         license: 'CC BY 4.0',
-        source_url: 'https://inheritage.foundation',
+        source_url: 'https://www.inheritage.foundation',
       }
 
       vi.spyOn(mockClient, 'getCitation').mockResolvedValue({
@@ -347,7 +347,7 @@ describe('React Hooks', () => {
         },
         locale: null,
         citations: {} as any,
-        official_url: 'https://inheritage.foundation/heritage/taj-mahal',
+        official_url: 'https://www.inheritage.foundation/heritage/taj-mahal',
         same_as: [],
         sources: [],
         updated_at: '2025-01-15T00:00:00Z',

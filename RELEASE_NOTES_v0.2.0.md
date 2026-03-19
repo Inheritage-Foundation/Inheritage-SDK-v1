@@ -3,7 +3,7 @@
 ## 🎉 Successfully Committed and Pushed to GitHub
 
 **Release Date**: January 15, 2025  
-**Repository**: https://github.com/Inheritage-Foundation/Inheritage-SDK-v1  
+**Repository**: <https://github.com/Inheritage-Foundation/Inheritage-SDK-v1>  
 **Tag**: v0.2.0  
 **Commit**: 1ce9f64
 
@@ -12,6 +12,7 @@
 ## 📦 What Was Committed
 
 ### New Files Created (11 files)
+
 1. `.github/workflows/publish.yml` - npm publish automation
 2. `CHANGELOG.md` - Version history
 3. `docs/components.md` - React components guide
@@ -25,6 +26,7 @@
 11. `tests/langchain.test.ts` - LangChain unit tests
 
 ### Modified Files (10 files)
+
 1. `package.json` - Version bump to 0.2.0, new dependencies
 2. `README.md` - Updated with hooks and components
 3. `src/index.ts` - Export hooks, components, langchain
@@ -37,6 +39,7 @@
 10. `docs/index.md` - Updated API coverage
 
 ### Stats
+
 - **21 files changed**
 - **4,231 insertions**
 - **188 deletions**
@@ -47,6 +50,7 @@
 ## 🚀 Major Features Added
 
 ### 1. React Hooks (9 total)
+
 ```typescript
 // Data fetching
 useHeritage(slug)
@@ -63,6 +67,7 @@ useAIVectorIndex(params)
 ```
 
 ### 2. React Components
+
 ```tsx
 <InheritageCitation 
   citation={data.citations} 
@@ -73,6 +78,7 @@ useAIVectorIndex(params)
 ```
 
 ### 3. LangChain 0.2+ Integration
+
 ```typescript
 // Runnables
 createHeritageContextRunnable({ client })
@@ -84,6 +90,7 @@ createInheritageToolkit(client) // 4 tools
 ```
 
 ### 4. New API Endpoint Support
+
 - `/api/v1/ai/meta/:slug` - AI metadata bundle
 - `/api/v1/ai/vector-index.ndjson` - Vector DB sync
 - `/api/v1/ai/vision/context` - Image → context
@@ -94,6 +101,7 @@ createInheritageToolkit(client) // 4 tools
 ## 📚 Documentation Added
 
 ### Comprehensive Guides
+
 1. **Hooks Guide** (`docs/hooks.md`)
    - All 9 hooks documented
    - Usage examples
@@ -112,6 +120,7 @@ createInheritageToolkit(client) // 4 tools
    - Error handling, loading states
 
 ### Updated Docs
+
 - **README.md**: Added hooks and components sections
 - **CHANGELOG.md**: Complete v0.2.0 release notes
 - **docs/index.md**: Updated API coverage
@@ -121,6 +130,7 @@ createInheritageToolkit(client) // 4 tools
 ## 🧪 Testing
 
 ### New Test Files
+
 1. **`tests/hooks.test.ts`** (435 lines)
    - Tests for all 9 hooks
    - Mock client implementation
@@ -142,15 +152,18 @@ createInheritageToolkit(client) // 4 tools
 ## 🔧 Infrastructure
 
 ### Build System
+
 - ESM/CJS dual build with `tsup`
 - Tree-shakeable exports
 - Separate entrypoints: `/`, `/langchain`, `/hooks`, `/components`
 
 ### CI/CD
+
 - GitHub Actions workflow for npm publishing
 - Automated build and test on release
 
 ### Dependencies
+
 - `langchain` ^0.2.11
 - `langsmith` ^0.1.30
 - `react` as peer dependency (optional)
@@ -181,13 +194,15 @@ git push origin v0.2.0
 ## 🎯 Next Steps
 
 ### 1. Create GitHub Release
-1. Go to: https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/releases/new
+
+1. Go to: <https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/releases/new>
 2. Select tag: `v0.2.0`
 3. Title: "v0.2.0: React Hooks, LangChain Integration, AI Metadata"
 4. Description: Copy from `CHANGELOG.md`
 5. Publish release
 
 ### 2. Publish to npm
+
 ```bash
 cd sdk
 npm run prepublishOnly  # Clean, build, test
@@ -195,17 +210,20 @@ npm publish --access public
 ```
 
 ### 3. Verify Publication
+
 ```bash
 npm view @inheritage-foundation/sdk
 npm install @inheritage-foundation/sdk@0.2.0
 ```
 
 ### 4. Update Documentation
+
 - Update main site docs with new examples
 - Update GitHub README badges
 - Link to v0.2.0 release notes
 
 ### 5. Announce
+
 - Blog post: "Inheritage SDK v0.2.0: React Hooks for Heritage Data"
 - Social media announcements
 - Dev.to article
@@ -240,7 +258,6 @@ Use `<InheritageCitation />` component for automatic compliance.
 **Built with ❤️ by Inheritage Foundation**  
 Preserving India's cultural heritage through open data.
 
-**Repository**: https://github.com/Inheritage-Foundation/Inheritage-SDK-v1  
-**npm Package**: https://www.npmjs.com/package/@inheritage-foundation/sdk  
-**Documentation**: https://inheritage.foundation/docs
-
+**Repository**: <https://github.com/Inheritage-Foundation/Inheritage-SDK-v1>  
+**npm Package**: <https://www.npmjs.com/package/@inheritage-foundation/sdk>  
+**Documentation**: <https://www.inheritage.foundation/docs>

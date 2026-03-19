@@ -15,7 +15,7 @@ describeIf('Institutional Format Methods', () => {
 
   beforeAll(() => {
     client = new InheritageClient({
-      baseUrl: process.env.INHERITAGE_API_URL || 'https://inheritage.foundation/api/v1',
+      baseUrl: process.env.INHERITAGE_API_URL || 'https://www.inheritage.foundation/api/v1',
     })
   })
 
@@ -183,7 +183,7 @@ describeIf('Google Maps Proxy Methods', () => {
 
   beforeAll(() => {
     client = new InheritageClient({
-      baseUrl: process.env.INHERITAGE_API_URL || 'https://inheritage.foundation/api/v1',
+      baseUrl: process.env.INHERITAGE_API_URL || 'https://www.inheritage.foundation/api/v1',
     })
   })
 
@@ -234,7 +234,7 @@ describeIf('Atlas and Additional Methods', () => {
 
   beforeAll(() => {
     client = new InheritageClient({
-      baseUrl: process.env.INHERITAGE_API_URL || 'https://inheritage.foundation/api/v1',
+      baseUrl: process.env.INHERITAGE_API_URL || 'https://www.inheritage.foundation/api/v1',
     })
   })
 

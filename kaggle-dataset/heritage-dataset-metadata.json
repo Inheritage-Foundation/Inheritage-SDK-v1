@@ -1,7 +1,7 @@
 {
   "title": "Inheritage Cultural Heritage Dataset (India)",
   "subtitle": "Open dataset of Indian & GLobal Indic Heritage Sites, temples, and monuments with architecture, cultural, geospatial, media, and AI metadata.",
-  "description": "This dataset is maintained by the Inheritage Foundation and mirrors the public API suite (v1.0). It includes denormalised records for 7,000+ Indian heritage sites, geospatial features (GeoJSON), media bundles (images, tours, CAD), citation metadata, platform headers (rate limits, caching), and AI-ready narratives/embeddings. All data is published under CC BY 4.0 with mandatory visible attribution. Developers can access the live API at https://inheritage.foundation/api/v1 and the TypeScript SDK at https://www.npmjs.com/package/@inheritage-foundation/sdk.",
+  "description": "This dataset is maintained by the Inheritage Foundation and mirrors the public API suite (v1.0). It includes denormalised records for 7,000+ Indian heritage sites, geospatial features (GeoJSON), media bundles (images, tours, CAD), citation metadata, platform headers (rate limits, caching), and AI-ready narratives/embeddings. All data is published under CC BY 4.0 with mandatory visible attribution. Developers can access the live API at https://www.inheritage.foundation/api/v1 and the TypeScript SDK at https://www.npmjs.com/package/@inheritage-foundation/sdk.",
   "id": "inheritage-cultural-heritage-dataset",
   "licenses": [
     {
@@ -50,9 +50,8 @@
   ],
   "private": false,
   "isDraft": false,
-  "source": "https://inheritage.foundation/api/v1",
+  "source": "https://www.inheritage.foundation/api/v1",
   "maintainer": "Inheritage Foundation",
-  "dataUrl": "https://inheritage.foundation/api/v1",
-  "url": "https://inheritage.foundation/dataset"
+  "dataUrl": "https://www.inheritage.foundation/api/v1",
+  "url": "https://www.inheritage.foundation/dataset"
 }
-

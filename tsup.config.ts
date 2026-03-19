@@ -15,7 +15,7 @@ export default defineConfig({
     }
   },
   clean: true,
-  sourcemap: false,
+  sourcemap: true,
   treeshake: true,
 })
 

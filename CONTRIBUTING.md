@@ -43,11 +43,14 @@ This project adheres to a code of conduct that all contributors are expected to 
 
 1. Fork the repository on GitHub
 2. Clone your fork:
+
    ```bash
    git clone https://github.com/YOUR_USERNAME/Inheritage-SDK-v1.git
    cd Inheritage-SDK-v1
    ```
+
 3. Add the upstream repository:
+
    ```bash
    git remote add upstream https://github.com/Inheritage-Foundation/Inheritage-SDK-v1.git
    ```
@@ -95,6 +98,7 @@ npm run prepublishOnly
 ### Development Workflow
 
 1. **Create a branch** from `main`:
+
    ```bash
    git checkout -b feature/your-feature-name
    # or
@@ -108,12 +112,14 @@ npm run prepublishOnly
 3. **Write tests** for your changes (see [Testing](#testing))
 
 4. **Run tests and linting**:
+
    ```bash
    npm run lint
    npm test
    ```
 
 5. **Build the project** to ensure it compiles:
+
    ```bash
    npm run build
    ```
@@ -121,6 +127,7 @@ npm run prepublishOnly
 6. **Commit your changes** (see [Commit Message Guidelines](#commit-message-guidelines))
 
 7. **Push to your fork**:
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -424,6 +431,7 @@ npm test tests/client.test.ts
 ### PR Title Format
 
 Use conventional commit format:
+
 - `feat: Add new useAIVectorIndex hook`
 - `fix: Correct ETag caching in hooks`
 - `docs: Update README with new examples`
@@ -525,7 +533,7 @@ test(client): Add tests for rate limit handling
 
 ### AI Usage
 
-- **AI Data**: See [AI Usage Policy](https://inheritage.foundation/license/ai)
+- **AI Data**: See [AI Usage Policy](https://www.inheritage.foundation/license/ai)
 - **Embeddings**: Include `embedding_checksum` and `model_version` in AI responses
 - **Metadata**: Include AI metadata headers in responses
 
@@ -535,9 +543,9 @@ test(client): Add tests for rate limit handling
 
 ### Resources
 
-- **Documentation**: [https://inheritage.foundation/docs](https://inheritage.foundation/docs)
-- **API Playground**: [https://inheritage.foundation/docs/playground](https://inheritage.foundation/docs/playground)
-- **OpenAPI Spec**: [https://inheritage.foundation/openapi/v1.yaml](https://inheritage.foundation/openapi/v1.yaml)
+- **Documentation**: [https://www.inheritage.foundation/docs](https://www.inheritage.foundation/docs)
+- **API Playground**: [https://www.inheritage.foundation/docs/playground](https://www.inheritage.foundation/docs/playground)
+- **OpenAPI Spec**: [https://www.inheritage.foundation/openapi/v1.yaml](https://www.inheritage.foundation/openapi/v1.yaml)
 
 ### Communication
 
@@ -548,6 +556,7 @@ test(client): Add tests for rate limit handling
 ### Questions?
 
 If you're unsure about anything:
+
 1. Check existing issues and PRs
 2. Ask in a GitHub issue
 3. Reach out via email or Discord
@@ -557,9 +566,9 @@ If you're unsure about anything:
 ## Recognition
 
 Contributors will be recognized in:
+
 - CHANGELOG.md (for significant contributions)
 - Release notes
 - Project documentation
 
 Thank you for contributing to the Inheritage SDK! 🎉
-

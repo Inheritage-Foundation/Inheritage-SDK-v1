@@ -598,7 +598,7 @@ export function useTimelineFeatured(options: UseHeritageOptions = {}): UseTimeli
  * Search heritage sites
  */
 export function useHeritageSearch(
-  params: HeritageSearchParams = {},
+  params: { q: string; state?: string; style?: string; country?: string; limit?: number; fields?: string[] } = { q: '' },
   options: UseHeritageOptions = {}
 ): UseHeritageSearchResult {
   const [data, setData] = useState<HeritageListResponse | null>(null)
@@ -609,13 +609,20 @@ export function useHeritageSearch(
   const enabled = options.enabled !== false
 
   const fetchData = useCallback(async () => {
-    if (!enabled) return
+    if (!enabled || !params.q) return
 
     try {
       setLoading(true)
       setError(null)
       const response = await client.searchHeritage(params)
-      setData(response.data)
+      setData({
+        data: response.data.data,
+        meta: {
+          total: response.data.meta.total,
+          limit: response.data.meta.limit,
+          offset: 0,
+        },
+      })
     } catch (err) {
       setError(err instanceof Error ? err : new Error(String(err)))
     } finally {
@@ -780,13 +787,13 @@ export function useAIVision(
   const enabled = options.enabled !== false
 
   const fetchData = useCallback(async () => {
-    if (!enabled || !request.image) return
+    if (!enabled) return
 
     try {
       setLoading(true)
       setError(null)
       const response = await client.getAIVisionContext(request)
-      setData(response.data)
+      setData(response.data as AIVisionResponse | null)
     } catch (err) {
       setError(err instanceof Error ? err : new Error(String(err)))
     } finally {
@@ -795,7 +802,7 @@ export function useAIVision(
   }, [JSON.stringify(request), enabled, client])
 
   useEffect(() => {
-    if (enabled && request.image) {
+    if (enabled) {
       fetchData()
     }
   }, [fetchData])
@@ -857,7 +864,7 @@ export function useHeritageCIDOC(
       setLoading(true)
       setError(null)
       const response = await client.getHeritageCIDOC(slug)
-      setData(response.data)
+      setData(response.data as string | null)
     } catch (err) {
       setError(err instanceof Error ? err : new Error(String(err)))
     } finally {

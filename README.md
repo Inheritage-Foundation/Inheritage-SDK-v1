@@ -4,10 +4,10 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CI](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/actions/workflows/ci.yml/badge.svg)](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/actions)
 
-Official TypeScript SDK for the [Inheritage Foundation](https://inheritage.foundation) public API. Access India's documented heritage programmatically—temples, monuments, cultural sites—with zero gatekeeping, full attribution, and production-grade ergonomics.
+Official TypeScript SDK for the [Inheritage Foundation](https://www.inheritage.foundation) public API. Access India's documented heritage programmatically—temples, monuments, cultural sites—with zero gatekeeping, full attribution, and production-grade ergonomics.
 
 **License:** Apache 2.0 (SDK code) | Data under CC BY 4.0  
-**Data Attribution:** Required per CC BY 4.0 — see [AI Usage Policy](https://inheritage.foundation/license/ai)
+**Data Attribution:** Required per CC BY 4.0 — see [AI Usage Policy](https://www.inheritage.foundation/license/ai)
 
 ---
 
@@ -47,7 +47,7 @@ pnpm add @inheritage-foundation/sdk
 import { InheritageClient } from '@inheritage-foundation/sdk'
 
 const client = new InheritageClient({
-  baseUrl: 'https://inheritage.foundation/api/v1', // optional, this is default
+  baseUrl: 'https://www.inheritage.foundation/api/v1', // optional, this is default
   attribution: 'visible', // required for CC BY 4.0 compliance
 })
 
@@ -135,7 +135,7 @@ similar.data.data.forEach(entry => {
 const metadata = await client.getAIMetadata('taj-mahal')
 console.log(metadata.data.model) // "inheritage-d1"
 console.log(metadata.data.model_version) // "2025-01-15"
-console.log(metadata.data.license_url) // "https://inheritage.foundation/license/ai"
+console.log(metadata.data.license_url) // "https://www.inheritage.foundation/license/ai"
 
 // Stream vector index for database sync
 const vectors = await client.getAIVectorIndex({ limit: 100, offset: 0 })
@@ -182,6 +182,7 @@ const llm = new ChatOpenAI({ modelName: 'gpt-4-turbo' })
 **Endpoints**: `GET /heritage/:slug`, `GET /heritage`, `GET /heritage/featured`, `GET /heritage/top`
 
 Fetch detailed information about cultural heritage sites including:
+
 - Name, description, historical context
 - Location (state, coordinates, geolocation)
 - Architecture (style, materials, construction)
@@ -203,6 +204,7 @@ console.log(site.data.media.primary_image) // "https://cdn.inheritage.foundation
 **Endpoints**: `GET /geo/nearby`, `GET /geo/region`, `GET /geo/:slug`
 
 GeoJSON-first geospatial queries:
+
 - Nearby search by lat/lon with radius
 - Region/bounding box queries
 - Single-site GeoJSON feature
@@ -227,6 +229,7 @@ nearby.data.features.forEach(feature => {
 **Endpoints**: `GET /media/:slug`
 
 Fetch media bundles including:
+
 - Primary images, galleries, panoramas
 - 360° virtual tours, floor plans, site plans
 - Point clouds, mesh data, CAD files
@@ -260,6 +263,7 @@ console.log(citation.data.license) // "CC BY 4.0"
 Access heritage data in international museum standards:
 
 **CIDOC-CRM JSON-LD** (ISO 21127:2023):
+
 ```typescript
 const cidoc = await client.getHeritageCIDOC('hoysaleswara-temple')
 console.log(cidoc.data['@type']) // "E22_Human-Made_Object"
@@ -267,6 +271,7 @@ console.log(cidoc.data.sameAs) // ["https://www.wikidata.org/entity/Q570336", ..
 ```
 
 **LIDO XML** (for museums, Europeana):
+
 ```typescript
 // Single site
 const lido = await client.getHeritageLIDO('red-fort', false)
@@ -282,6 +287,7 @@ const lidoZip = await client.exportHeritageLIDO({
 ```
 
 **OAI-PMH 2.0** (for automated harvesting):
+
 ```typescript
 // Repository identification
 const identify = await client.oaipmhIdentify()
@@ -304,6 +310,7 @@ const record = await client.oaipmhGetRecord(
 **Endpoints**: `GET /ai/context/:slug`, `/ai/embedding/:slug`, `POST /ai/similar`, `GET /ai/meta/:slug`, `POST /ai/vision/context`, `GET /ai/vector-index.ndjson`, `GET /license/ai`
 
 **Features**:
+
 - Deterministic narratives + 1536-d embeddings with checksum + model version headers
 - Similarity endpoint accepts either `slug` or a custom `embedding` array, returning cosine-ranked matches with reference metadata
 - Metadata endpoint mirrors the production schema (`embedding_checksum`, `sources`, `same_as`) for LangChain/LangGraph ingestion
@@ -330,7 +337,7 @@ console.table(similar.data.data.map(entry => ({
 // AI Metadata
 const metadata = await client.getAIMetadata('ajanta-caves-maharashtra')
 console.log(metadata.data.embedding_checksum) // Stable SHA-256 checksum
-console.log(metadata.data.license_url) // "https://inheritage.foundation/license/ai"
+console.log(metadata.data.license_url) // "https://www.inheritage.foundation/license/ai"
 
 // Vector Index Feed
 const vectorFeed = await client.getAIVectorIndex({ limit: 100 })
@@ -429,6 +436,7 @@ const { data, loading, error, hasMore, loadMore } = useAIVectorIndex({
 Renders CC BY 4.0 attribution for Inheritage data.
 
 **Props**:
+
 - `citation` (CitationEntry): Citation data from API response
 - `display` ('inline' | 'block'): Display mode (default: 'inline')
 - `className` (string): Custom CSS class
@@ -554,7 +562,7 @@ We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guideline
 
 - **SDK Code**: Apache 2.0
 - **API Data**: CC BY 4.0 (requires attribution: "Data © Inheritage Foundation")
-- **AI Usage**: See [AI Usage Policy](https://inheritage.foundation/license/ai)
+- **AI Usage**: See [AI Usage Policy](https://www.inheritage.foundation/license/ai)
 
 When using this SDK, you **must** provide visible attribution per CC BY 4.0. The SDK automatically includes required headers. For web applications, use the `<InheritageCitation />` component.
 
@@ -562,10 +570,10 @@ When using this SDK, you **must** provide visible attribution per CC BY 4.0. The
 
 ## Resources
 
-- **Documentation**: [https://inheritage.foundation/docs](https://inheritage.foundation/docs)
-- **API Playground**: [https://inheritage.foundation/docs/playground](https://inheritage.foundation/docs/playground)
-- **OpenAPI Spec**: [https://inheritage.foundation/openapi/v1.yaml](https://inheritage.foundation/openapi/v1.yaml)
-- **LangChain Guide**: [https://inheritage.foundation/docs/langchain](https://inheritage.foundation/docs/langchain)
+- **Documentation**: [https://www.inheritage.foundation/docs](https://www.inheritage.foundation/docs)
+- **API Playground**: [https://www.inheritage.foundation/docs/playground](https://www.inheritage.foundation/docs/playground)
+- **OpenAPI Spec**: [https://www.inheritage.foundation/openapi/v1.yaml](https://www.inheritage.foundation/openapi/v1.yaml)
+- **LangChain Guide**: [https://www.inheritage.foundation/docs/langchain](https://www.inheritage.foundation/docs/langchain)
 - **GitHub**: [https://github.com/Inheritage-Foundation/Inheritage-SDK-v1](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1)
 - **Issues**: [https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/issues](https://github.com/Inheritage-Foundation/Inheritage-SDK-v1/issues)
 
@@ -575,8 +583,8 @@ When using this SDK, you **must** provide visible attribution per CC BY 4.0. The
 
 - **Email**: [hello@inheritage.foundation](mailto:hello@inheritage.foundation)
 - **Discord**: [Join our community](https://discord.gg/inheritage)
-- **Funding**: [Support our mission](https://inheritage.foundation/donate)
+- **Funding**: [Support our mission](https://www.inheritage.foundation/donate)
 
 ---
 
-**Built with ❤️ by [Inheritage Foundation](https://inheritage.foundation)** | Preserving India's cultural heritage through open data
+**Built with ❤️ by [Inheritage Foundation](https://www.inheritage.foundation)** | Preserving India's cultural heritage through open data

@@ -5,7 +5,7 @@
  * Provides type-safe access to India's cultural heritage data
  * 
  * @license Apache-2.0
- * @see https://inheritage.foundation/docs/api
+ * @see https://www.inheritage.foundation/docs/api
  */
 
 export * from "./types"

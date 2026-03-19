@@ -57,6 +57,7 @@ Compact format for embedding within text:
 ```
 
 Output:
+
 ```
 Data © Inheritage Foundation | Inheritage Foundation | CC BY 4.0
 ```
@@ -181,7 +182,7 @@ function MyComponent({ response }) {
 ```typescript
 interface CitationEntry {
   name: string                // "Inheritage Foundation"
-  url: string                 // "https://inheritage.foundation"
+  url: string                 // "https://www.inheritage.foundation"
   license: string             // "CC BY 4.0"
   required_display: string    // "Data © Inheritage Foundation"
 }
@@ -354,6 +355,5 @@ Planned components for future releases:
 
 - [Hooks Guide](./hooks.md)
 - [LangChain Integration](./langchain.md)
-- [API Documentation](https://inheritage.foundation/docs/api)
+- [API Documentation](https://www.inheritage.foundation/docs/api)
 - [Examples](../examples/)
-

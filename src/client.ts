@@ -59,7 +59,7 @@ import {
   type PilotApplicationRequest,
 } from "./types"
 
-const DEFAULT_BASE_URL = "https://inheritage.foundation/api/v1"
+const DEFAULT_BASE_URL = "https://www.inheritage.foundation/api/v1"
 const ATTRIBUTION_VISIBLE = "visible"
 const ATTRIBUTION_SUPPRESSED = "suppressed"
 const PLAN_PUBLIC = "public"
@@ -210,7 +210,7 @@ export class InheritageClient {
     }
     this.baseHeaders.set(
       "User-Agent",
-      options.userAgent ?? "inheritage-sdk/0.1 (+https://inheritage.foundation/docs/api)"
+      options.userAgent ?? "inheritage-sdk/0.3.0 (+https://www.inheritage.foundation/docs/api)"
     )
 
     if (options.defaultHeaders) {
@@ -1268,9 +1268,17 @@ export class InheritageClient {
     request: PilotApplicationRequest,
     options: ApiRequestOptions = {}
   ): Promise<ApiResponse<{ success: boolean }>> {
-    const requiredFields = ["organization", "contact_name", "email", "role", "intended_use", "data_needs", "timeline"]
+    const requiredFields: Array<keyof PilotApplicationRequest> = [
+      "organization",
+      "contact_name",
+      "email",
+      "role",
+      "intended_use",
+      "data_needs",
+      "timeline"
+    ]
     for (const field of requiredFields) {
-      if (!(request as any)[field]) {
+      if (!request[field]) {
         throw new Error(`${field} is required`)
       }
     }

@@ -15,7 +15,7 @@ import {
   createInheritageToolkit,
 } from '../src/langchain'
 
-const API_URL = process.env['INHERITAGE_API_URL'] || 'https://inheritage.foundation/api/v1'
+const API_URL = process.env['INHERITAGE_API_URL'] || 'https://www.inheritage.foundation/api/v1'
 
 describe('E2E Tests', () => {
   let client: InheritageClient

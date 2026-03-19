@@ -27,7 +27,7 @@ describe("InheritageClient", () => {
   it("fetches dataset manifest and returns metadata", async () => {
     const body = {
       dataset: { name: "Inheritage Cultural Heritage Dataset" },
-      links: [{ rel: "openapi", href: "https://inheritage.foundation/openapi/v1.yaml" }],
+      links: [{ rel: "openapi", href: "https://www.inheritage.foundation/openapi/v1.yaml" }],
     }
 
     fetchMock.mockResolvedValue(
@@ -43,7 +43,7 @@ describe("InheritageClient", () => {
 
     const result = await client.getDatasetManifest()
 
-    expect(fetchMock).toHaveBeenCalledWith("https://inheritage.foundation/api/v1/", {
+    expect(fetchMock).toHaveBeenCalledWith("https://www.inheritage.foundation/api/v1/", {
       method: "GET",
       headers: expect.any(Headers),
       body: undefined,
@@ -104,7 +104,7 @@ describe("InheritageClient", () => {
     )
 
     const result = await client.getHeritageFilters()
-    expect(fetchMock).toHaveBeenCalledWith("https://inheritage.foundation/api/v1/heritage/filters", {
+    expect(fetchMock).toHaveBeenCalledWith("https://www.inheritage.foundation/api/v1/heritage/filters", {
       method: "GET",
       headers: expect.any(Headers),
       body: undefined,
@@ -121,7 +121,7 @@ describe("InheritageClient", () => {
             code: "RATE_LIMITED",
             message: "Rate limit exceeded.",
             hint: "Respect Retry-After.",
-            doc: "https://inheritage.foundation/docs/api/errors#RATE_LIMITED",
+            doc: "https://www.inheritage.foundation/docs/api/errors#RATE_LIMITED",
             trace_id: "trace-429",
           },
         }),
@@ -160,7 +160,7 @@ describe("InheritageClient", () => {
         name: "CC BY 4.0",
         citation_required: true,
         ai_use_allowed: true,
-        ai_license_terms: "https://inheritage.foundation/license/ai",
+        ai_license_terms: "https://www.inheritage.foundation/license/ai",
       },
       model: "inheritage-d1",
       model_version: "2025-01-15",
@@ -201,7 +201,7 @@ describe("InheritageClient", () => {
     )
 
     const result = await client.getAIMetadata("taj-mahal")
-    expect(fetchMock).toHaveBeenCalledWith("https://inheritage.foundation/api/v1/ai/meta/taj-mahal", {
+    expect(fetchMock).toHaveBeenCalledWith("https://www.inheritage.foundation/api/v1/ai/meta/taj-mahal", {
       method: "GET",
       headers: expect.any(Headers),
       body: undefined,
@@ -231,7 +231,7 @@ describe("InheritageClient", () => {
     )
 
     const result = await client.getTimelineFeatured()
-    expect(fetchMock).toHaveBeenCalledWith("https://inheritage.foundation/api/v1/timeline/featured", {
+    expect(fetchMock).toHaveBeenCalledWith("https://www.inheritage.foundation/api/v1/timeline/featured", {
       method: "GET",
       headers: expect.any(Headers),
       body: undefined,
@@ -250,7 +250,7 @@ describe("InheritageClient", () => {
           published: true,
           operation: "upsert",
           checksum: "abc123",
-          url: "https://inheritage.foundation/heritage/taj-mahal",
+          url: "https://www.inheritage.foundation/heritage/taj-mahal",
         },
       ],
       meta: {
@@ -279,7 +279,7 @@ describe("InheritageClient", () => {
     const mockCall = fetchMock.mock.calls[0]
     if (mockCall && Array.isArray(mockCall)) {
       const [url] = mockCall
-      expect(url).toBe("https://inheritage.foundation/api/v1/changes?since=2025-11-01T00%3A00%3A00.000Z&limit=10")
+      expect(url).toBe("https://www.inheritage.foundation/api/v1/changes?since=2025-11-01T00%3A00%3A00.000Z&limit=10")
     }
     expect(result.data?.data?.[0]?.slug).toBe("taj-mahal")
     expect(result.data?.data?.[0]?.operation).toBe("upsert")
@@ -300,7 +300,7 @@ describe("InheritageClient", () => {
         prompt_template_version: "v1.1.0",
         retrieval_policy: "full:v1",
         license: "CC BY 4.0",
-        license_url: "https://inheritage.foundation/license/ai",
+        license_url: "https://www.inheritage.foundation/license/ai",
         updated_at: "2025-01-01T00:00:00Z",
       }),
       "",
@@ -336,20 +336,20 @@ describe("InheritageClient", () => {
       version: "2025.01",
       license: "CC BY 4.0",
       human_summary: "CC BY 4.0 with AI allowances.",
-      url: "https://inheritage.foundation/license/ai",
+      url: "https://www.inheritage.foundation/license/ai",
       requirements: {
         attribution_header: "X-Inheritage-Attribution: visible",
         license_header: "X-Inheritage-License: CC-BY-4.0",
         ai_headers: {
           "AI-Use-Allowed": "true",
         },
-        citation_snippets_endpoint: "https://inheritage.foundation/api/v1/citation/{slug}",
+        citation_snippets_endpoint: "https://www.inheritage.foundation/api/v1/citation/{slug}",
       },
       obligations: ["Display citation."],
       allowances: ["Train models."],
       prohibitions: ["Resell raw dataset."],
       enforcement: {
-        violation_reporting: "https://inheritage.foundation/api/v1/citation/report",
+        violation_reporting: "https://www.inheritage.foundation/api/v1/citation/report",
         revocation_policy: "Keys can be revoked.",
         contact: "hello@inheritage.foundation",
       },
@@ -375,7 +375,7 @@ describe("InheritageClient", () => {
     )
 
     const result = await client.getAILicense()
-    expect(fetchMock).toHaveBeenCalledWith("https://inheritage.foundation/api/v1/license/ai", {
+    expect(fetchMock).toHaveBeenCalledWith("https://www.inheritage.foundation/api/v1/license/ai", {
       method: "GET",
       headers: expect.any(Headers),
       body: undefined,
@@ -400,7 +400,7 @@ describe("InheritageClient", () => {
     const result = await client.getHeritageDump({ batch: 250 })
     const [url, init] = fetchMock.mock.calls[0]
     const headers = new Headers(init?.headers as HeadersInit)
-    expect(url).toBe("https://inheritage.foundation/api/v1/dump/heritage.ndjson?batch=250")
+    expect(url).toBe("https://www.inheritage.foundation/api/v1/dump/heritage.ndjson?batch=250")
     expect(headers.get("Accept")).toBe("application/x-ndjson")
     expect(result.data).toBe(ndjson)
   })
@@ -420,7 +420,7 @@ describe("InheritageClient", () => {
     const result = await client.getAIContextDump({ batch: 100, includeEmbedding: true })
     const [url, init] = fetchMock.mock.calls[0]
     const headers = new Headers(init?.headers as HeadersInit)
-    expect(url).toBe("https://inheritage.foundation/api/v1/dump/ai-context.jsonl?batch=100&include=embedding")
+    expect(url).toBe("https://www.inheritage.foundation/api/v1/dump/ai-context.jsonl?batch=100&include=embedding")
     expect(headers.get("Accept")).toBe("application/jsonl")
     expect(result.data).toBe(jsonl)
   })
@@ -456,7 +456,7 @@ describe("InheritageClient", () => {
 
   it("fetches CIDOC JSON-LD payload", async () => {
     const body = {
-      "@context": "https://inheritage.foundation/context/cidoc-crm.jsonld",
+      "@context": "https://www.inheritage.foundation/context/cidoc-crm.jsonld",
       "@type": "E22_Human-Made_Object",
       name: "Taj Mahal",
     }
@@ -494,7 +494,7 @@ describe("InheritageClient", () => {
     const result = await client.getHeritageLIDO("red-fort", { download: true })
     const [url, init] = fetchMock.mock.calls[0]
     const headers = new Headers(init?.headers as HeadersInit)
-    expect(url).toBe("https://inheritage.foundation/api/v1/lido/red-fort?download=true")
+    expect(url).toBe("https://www.inheritage.foundation/api/v1/lido/red-fort?download=true")
     expect(headers.get("Accept")).toBe("application/xml")
     expect(result.data).toContain("<lido:lido")
   })
@@ -515,7 +515,7 @@ describe("InheritageClient", () => {
     const result = await client.exportHeritageLIDO({ state: "Karnataka", limit: 10 })
     const [url, init] = fetchMock.mock.calls[0]
     const headers = new Headers(init?.headers as HeadersInit)
-    expect(url).toBe("https://inheritage.foundation/api/v1/lido/export?state=Karnataka&limit=10")
+    expect(url).toBe("https://www.inheritage.foundation/api/v1/lido/export?state=Karnataka&limit=10")
     expect(headers.get("Accept")).toBe("application/zip")
     expect(result.data).toBeInstanceOf(ArrayBuffer)
   })
@@ -553,7 +553,7 @@ describe("InheritageClient", () => {
     )
 
     const result = await client.getAIVisionContext({ image_url: "https://example.org/image.jpg" })
-    expect(fetchMock).toHaveBeenCalledWith("https://inheritage.foundation/api/v1/ai/vision/context", {
+    expect(fetchMock).toHaveBeenCalledWith("https://www.inheritage.foundation/api/v1/ai/vision/context", {
       method: "POST",
       headers: expect.any(Headers),
       body: JSON.stringify({ image_url: "https://example.org/image.jpg" }),

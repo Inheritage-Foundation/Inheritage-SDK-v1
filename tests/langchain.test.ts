@@ -145,7 +145,7 @@ describe("LangChain helpers", () => {
               },
             },
             citations: [],
-            official_url: "https://inheritage.foundation/heritage/ram-mandir-ayodhya",
+            official_url: "https://www.inheritage.foundation/heritage/ram-mandir-ayodhya",
             same_as: [],
           },
         },
@@ -185,7 +185,7 @@ describe("LangChain helpers", () => {
         prompt_template_version: "v1.1.0",
         retrieval_policy: "full:v1",
         license: "CC BY 4.0",
-        license_url: "https://inheritage.foundation/license/ai",
+        license_url: "https://www.inheritage.foundation/license/ai",
         updated_at: "2025-01-01T00:00:00Z",
       },
     ]

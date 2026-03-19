@@ -64,10 +64,12 @@ const { data } = useHeritage('taj-mahal', { client: customClient })
 Fetch a single heritage site by slug.
 
 **Parameters**:
+
 - `slug` (string): The heritage site slug
 - `options` (UseHeritageOptions): Optional configuration
 
 **Returns**: `UseHeritageResult`
+
 - `data` (Heritage | null): The heritage site data
 - `loading` (boolean): Loading state
 - `error` (Error | null): Error if request failed
@@ -98,6 +100,7 @@ function HeritagePage({ slug }: { slug: string }) {
 Fetch a paginated list of heritage sites with optional filters.
 
 **Parameters**:
+
 - `params` (HeritageListParams): Query parameters (state, category, limit, offset, etc.)
 - `options` (UseHeritageOptions): Optional configuration
 
@@ -146,6 +149,7 @@ function HeritageList() {
 Fetch nearby heritage sites as GeoJSON.
 
 **Parameters**:
+
 - `params` (GeoNearbyParams): lat, lon, radius, limit
 - `options` (UseHeritageOptions): Optional configuration
 
@@ -191,6 +195,7 @@ function NearbyMap() {
 Fetch media bundle for a heritage site.
 
 **Parameters**:
+
 - `slug` (string): The heritage site slug
 - `options` (UseHeritageOptions): Optional configuration
 
@@ -226,6 +231,7 @@ function MediaGallery({ slug }: { slug: string }) {
 Fetch citation/attribution metadata.
 
 **Parameters**:
+
 - `entityId` (string): Entity ID or slug
 - `options` (UseHeritageOptions): Optional configuration
 
@@ -250,6 +256,7 @@ function CitationDisplay({ entityId }: { entityId: string }) {
 Fetch AI context and embedding for a heritage site.
 
 **Parameters**:
+
 - `slug` (string): The heritage site slug
 - `options` (UseHeritageOptions): Optional configuration
 
@@ -285,6 +292,7 @@ function AIContextPanel({ slug }: { slug: string }) {
 Find semantically similar heritage sites.
 
 **Parameters**:
+
 - `params` (AISimilarParams): { slug?, embedding?, limit? }
 - `options` (UseHeritageOptions): Optional configuration
 
@@ -321,6 +329,7 @@ function SimilarSites({ slug }: { slug: string }) {
 Fetch comprehensive AI metadata for a heritage site.
 
 **Parameters**:
+
 - `slug` (string): The heritage site slug
 - `options` (UseHeritageOptions): Optional configuration
 
@@ -345,10 +354,12 @@ function MetadataInspector({ slug }: { slug: string }) {
 Paginate through the AI vector index with infinite scroll support.
 
 **Parameters**:
+
 - `params` (AIVectorIndexParams): { limit?, offset? }
 - `options` (UseHeritageOptions): Optional configuration
 
 **Returns**: `UseAIVectorIndexResult`
+
 - `data` (AIVectorRecord[] | null)
 - `loading` (boolean)
 - `error` (Error | null)
@@ -489,10 +500,12 @@ const { data: aiData }: { data: AIContextResponse | null } = useAIContext('taj-m
 
 1. **Use `enabled` for conditional fetching** to avoid unnecessary requests
 2. **Memoize params** to prevent infinite re-renders:
+
    ```tsx
    const params = useMemo(() => ({ state: 'Karnataka', limit: 20 }), [])
    const { data } = useHeritageList(params)
    ```
+
 3. **Show loading and error states** for better UX
 4. **Use `<InheritageCitation />`** component to comply with CC BY 4.0
 5. **Respect rate limits** by caching aggressively and using `refetch` sparingly
@@ -503,6 +516,5 @@ const { data: aiData }: { data: AIContextResponse | null } = useAIContext('taj-m
 
 - [Component Reference](./components.md)
 - [LangChain Integration](./langchain.md)
-- [API Documentation](https://inheritage.foundation/docs/api)
+- [API Documentation](https://www.inheritage.foundation/docs/api)
 - [Examples](../examples/)
-

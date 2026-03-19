@@ -19,10 +19,10 @@ console.log(data.map((site) => site.name))
 
 ## Useful Links
 
-- API Reference — <https://inheritage.foundation/docs/api>
-- Dataset Manifest — <https://inheritage.foundation/api/v1>
-- OpenAPI 3.1 Spec — <https://inheritage.foundation/openapi/v1.yaml>
-- Playground — <https://inheritage.foundation/docs/api#playground>
+- API Reference — <https://www.inheritage.foundation/docs/api>
+- Dataset Manifest — <https://www.inheritage.foundation/api/v1>
+- OpenAPI 3.1 Spec — <https://www.inheritage.foundation/openapi/v1.yaml>
+- Playground — <https://www.inheritage.foundation/docs/api#playground>
 - AI Roadmap — [`ai-api-enhancement.md`](./ai-api-enhancement.md)
 
 ## LangChain & LangGraph Helpers
@@ -57,4 +57,3 @@ Inheritage Foundation curates and publishes open cultural datasets across India 
 - Report issues: <https://github.com/0xMilord/Inheritage-SDK-v1/issues>
 - Start a discussion: <https://github.com/0xMilord/Inheritage-SDK-v1/discussions>
 - Share project ideas: open a new discussion or comment on pinned topics.
-

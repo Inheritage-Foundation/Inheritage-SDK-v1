@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises"
 import path from "node:path"
 
 const OUTPUT_DIR = path.resolve("kaggle-dataset")
-const BASE_URL = "https://inheritage.foundation/api/v1"
+const BASE_URL = "https://www.inheritage.foundation/api/v1"
 const HEADERS = {
   "X-Inheritage-Attribution": "visible",
   "Accept": "application/json",

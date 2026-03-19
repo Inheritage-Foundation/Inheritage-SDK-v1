@@ -23,7 +23,7 @@ import type { Heritage, MediaResponse, AIContextResponse, AISimilarResponse, Geo
 
 // Create a shared client instance (optional, hooks create their own if not provided)
 const client = new InheritageClient({
-  baseUrl: 'https://inheritage.foundation/api/v1',
+  baseUrl: 'https://www.inheritage.foundation/api/v1',
   attribution: 'visible',
 })
 
